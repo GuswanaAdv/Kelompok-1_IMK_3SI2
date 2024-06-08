@@ -1,4 +1,4 @@
-<nav class="bg-gradient-to-r from-lime-500 from-5% via-green via-50% to-darkgreen to-90% drop-shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-10 border-b border-gray-300">
+<nav class="bg-gradient-to-r from-lime-500 from-5% via-green via-10% to-darkgreen to-95% drop-shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-10 border-b border-gray-300">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
       <div class="absolute inset-y-0 pr-4 right-0 flex items-center sm:hidden">
@@ -31,8 +31,8 @@
         </div>
         <div class="hidden sm:ml-6 sm:block mr-52 ">
           <div class="flex space-x-4">
-           <a href="#" class=" text-white hover:bg-green hover:bg-opacity-25 rounded-md px-1 py-2 text-xs font-roboto" aria-current="page">BERANDA</a>
-            <a href="#" class="text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">PROFILE <span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
+           <a href="{{ route('beranda') }}" class=" text-white hover:bg-green hover:bg-opacity-25 rounded-md px-1 py-2 text-xs font-roboto" aria-current="page">BERANDA</a>
+            <a href="{{ route('profil') }}" class="text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">PROFIL & FASILITAS<span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
             <a href="#" class="text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">BERITA <span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
             <a href="#" class="text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">DATA DESA <span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
           </div>
