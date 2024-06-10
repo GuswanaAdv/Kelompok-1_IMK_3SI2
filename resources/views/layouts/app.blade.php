@@ -47,7 +47,7 @@
   </div>
 
   {{--Foter--}}
-  <div class="z-30">
+  <div class="">
     @include('partials.footer')
   </div>
   
