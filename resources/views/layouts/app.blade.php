@@ -35,6 +35,8 @@
         </style>
     <link rel='stylesheet' href='https://unpkg.com/leaflet@1.8.0/dist/leaflet.css' crossorigin='' />
   {{-- Untuk peta --}}
+  
+  @yield('head')
 </head>
 
 <body class="">
