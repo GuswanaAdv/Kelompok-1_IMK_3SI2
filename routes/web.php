@@ -16,11 +16,11 @@ use App\Http\Controllers\BlogPostController;
 |
 */
 
-Route::get('/', function () {
-    return view('template');
-});
+// Route::get('/', function () {
+//     return view('template');
+// });
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('beranda');
 })->name('beranda');
 
@@ -75,7 +75,7 @@ Route::get('/profil/fasilitas_kesehatan', function () {
 Route::get('/profil/profil_umum', [MapController::class, 'index'])->name('profil');
 Route::get('/berita', function () {
     return view('berita');
-});
+})->name('berita');
 
 Route::get('/cardBerita', function () {
     return view('cardBerita');
