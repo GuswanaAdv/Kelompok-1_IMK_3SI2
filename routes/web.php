@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/data_desa', function () {
     return view('datadesa');
-});
+})->name('datadesa');
 
 Route::get('/data_desa_umur', function () {
     return view('datadesa_umur');
