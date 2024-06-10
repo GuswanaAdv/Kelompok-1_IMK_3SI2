@@ -8,12 +8,12 @@
   <link href="{{ asset('js/app.js') }}" rel="stylesheet">
 </head>
 
-<body>
+<body class="">
   {{--Navbar--}}
   @include('partials.navbar')
 
   {{--Main--}}
-  <div>
+  <div class="px-10">
     @yield('content')
   </div>
 
