@@ -9472,9 +9472,6 @@ details.collapse summary::-webkit-details-marker {
 .collapse {
   visibility: collapse;
 }
-.static {
-  position: static;
-}
 .fixed {
   position: fixed;
 }
@@ -9540,6 +9537,9 @@ details.collapse summary::-webkit-details-marker {
 .mb-4 {
   margin-bottom: 1rem;
 }
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -9561,6 +9561,9 @@ details.collapse summary::-webkit-details-marker {
 .mr-1 {
   margin-right: 0.25rem;
 }
+.mr-4 {
+  margin-right: 1rem;
+}
 .mr-52 {
   margin-right: 13rem;
 }
@@ -9575,12 +9578,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .mt-6 {
   margin-top: 1.5rem;
-}
-.mr-4 {
-  margin-right: 1rem;
-}
-.mb-7 {
-  margin-bottom: 1.75rem;
 }
 .block {
   display: block;
@@ -9665,12 +9662,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .w-full {
   width: 100%;
-}
-.w-2\/4 {
-  width: 50%;
-}
-.w-2\/5 {
-  width: 40%;
 }
 .min-w-0 {
   min-width: 0px;
@@ -9776,6 +9767,11 @@ details.collapse summary::-webkit-details-marker {
 .gap-y-10 {
   row-gap: 2.5rem;
 }
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -9800,11 +9796,6 @@ details.collapse summary::-webkit-details-marker {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-.space-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .self-center {
   align-self: center;
@@ -9861,9 +9852,9 @@ details.collapse summary::-webkit-details-marker {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
-.bg-lightgreen {
+.bg-green {
   --tw-bg-opacity: 1;
-  background-color: rgb(222 252 42 / var(--tw-bg-opacity));
+  background-color: rgb(147 193 61 / var(--tw-bg-opacity));
 }
 .bg-red-50 {
   --tw-bg-opacity: 1;
@@ -9880,14 +9871,6 @@ details.collapse summary::-webkit-details-marker {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 193 61 / var(--tw-bg-opacity));
-}
-.bg-lightgrey {
-  --tw-bg-opacity: 1;
-  background-color: rgb(217 232 225 / var(--tw-bg-opacity));
 }
 .bg-opacity-10 {
   --tw-bg-opacity: 0.1;
@@ -9922,9 +9905,6 @@ details.collapse summary::-webkit-details-marker {
 .via-10\% {
   --tw-gradient-via-position: 10%;
 }
-.via-15\% {
-  --tw-gradient-via-position: 15%;
-}
 .to-darkgreen {
   --tw-gradient-to: #006633 var(--tw-gradient-to-position);
 }
@@ -9943,9 +9923,6 @@ details.collapse summary::-webkit-details-marker {
 .stroke-red-500 {
   stroke: #ef4444;
 }
-.p-1 {
-  padding: 0.25rem;
-}
 .p-2 {
   padding: 0.5rem;
 }
@@ -9959,6 +9936,10 @@ details.collapse summary::-webkit-details-marker {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -9971,9 +9952,17 @@ details.collapse summary::-webkit-details-marker {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .py-1 {
   padding-top: 0.25rem;
@@ -9995,22 +9984,6 @@ details.collapse summary::-webkit-details-marker {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -10019,6 +9992,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+.pb-4 {
+  padding-bottom: 1rem;
 }
 .pb-6 {
   padding-bottom: 1.5rem;
@@ -10040,15 +10016,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .pt-6 {
   padding-top: 1.5rem;
-}
-.pt-0 {
-  padding-top: 0px;
-}
-.pb-0 {
-  padding-bottom: 0px;
-}
-.pb-4 {
-  padding-bottom: 1rem;
 }
 .text-left {
   text-align: left;
@@ -10386,6 +10353,11 @@ details.collapse summary::-webkit-details-marker {
     src: url('/fonts/Inter/Inter-Black.ttf') format('truetype');
   }
 
+  .hover\:bg-darkgreen:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 102 51 / var(--tw-bg-opacity));
+}
+
   .hover\:bg-gray-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
@@ -10399,11 +10371,6 @@ details.collapse summary::-webkit-details-marker {
   .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-  .hover\:bg-darkgreen:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 102 51 / var(--tw-bg-opacity));
 }
 
   .hover\:bg-opacity-25:hover {
@@ -10428,10 +10395,6 @@ details.collapse summary::-webkit-details-marker {
   .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-  .hover\:underline:hover {
-  text-decoration-line: underline;
 }
 
   .focus\:outline-none:focus {
@@ -10464,22 +10427,11 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
-  .peer:checked ~ .peer-checked\:bg-lightgreen {
-  --tw-bg-opacity: 1;
-  background-color: rgb(222 252 42 / var(--tw-bg-opacity));
-}
-
-  .peer:checked ~ .peer-checked\:bg-secondary {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-s,oklch(var(--s)/var(--tw-bg-opacity)));
-}
-
-  .peer:checked ~ .peer-checked\:bg-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 193 61 / var(--tw-bg-opacity));
-}
-
   @media (min-width: 640px) {
+
+  .sm\:mb-0 {
+    margin-bottom: 0px;
+  }
 
   .sm\:ml-6 {
     margin-left: 1.5rem;
@@ -10487,10 +10439,6 @@ details.collapse summary::-webkit-details-marker {
 
   .sm\:ml-7 {
     margin-left: 1.75rem;
-  }
-
-  .sm\:mb-0 {
-    margin-bottom: 0px;
   }
 
   .sm\:block {
