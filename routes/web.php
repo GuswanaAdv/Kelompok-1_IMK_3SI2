@@ -81,6 +81,10 @@ Route::get('/cardBerita', function () {
     return view('cardBerita');
 });
 
+Route::get('/berita_page', function () {
+    return view('berita_page');
+});
+
 Route::get('/category', function () {
     return view('category');
 });
