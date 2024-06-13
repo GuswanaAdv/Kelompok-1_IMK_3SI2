@@ -45,6 +45,8 @@ Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
 
 Route::post('/berita_cari', [BeritaController::class, 'search'])->name('berita.search');
 
+Route::get('/berita_cari', [BeritaController::class, 'search2'])->name('berita.pagination');
+
 Route::get('/data_desa_umur', function () {
     return view('datadesa_umur',[
         "kategori"=>"umur",

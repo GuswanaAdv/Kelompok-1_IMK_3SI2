@@ -19,6 +19,18 @@
 }
   </style>
 
+  <script>
+    function submitPaginationForm(page) {
+        var form = document.getElementById('pagination-form');
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'page';
+        input.value = page;
+        form.appendChild(input);
+        form.submit();
+    }
+  </script>
+
       {{-- header --}}
       <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24">
         <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-6">
@@ -37,8 +49,8 @@
                   
               <div id="sortDropdown" class="hidden absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="sortDropdownButton" tabindex="-1">
                 <div class="py-1" role="none">
-                  <a href="#" class="text-gray-900 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" data-sort="Popular" tabindex="-1">Popular</a>
-                  <a href="#" class="text-gray-500 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" data-sort="Terbaru" tabindex="-1">Terbaru</a>
+                  <a href="{{ route('berita.index', array_merge(request()->query(), ['sort' => 'populer'])) }}" class="text-gray-900 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" data-sort="Popular" tabindex="-1">Popular</a>
+                  <a href="{{ route('berita.index', ['sort' => 'terbaru']) }}" class="text-gray-500 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" data-sort="Terbaru" tabindex="-1">Terbaru</a>
                 </div>
               </div>
             </div>
@@ -171,20 +183,19 @@
           
           <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4 ">
             <!-- Filters -->
-            <form class="hidden lg:block" action="{{ route('berita.search') }}" method="POST" id="cari" name="cari">
+            <form class="hidden lg:block" action="{{ route('berita.pagination') }}" method="GET" id="cari" name="cari">
               @csrf
               <h3 class="sr-only">Categories</h3>
               <div class="relative max-w-lg mx-auto border-b border-gray-200 pb-6">
-                    <input id="cari_berita1" name="cari_berita1" class="w-full border rounded-md pl-4 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" 
+                    <input id="cari_berita1" name="cari_berita1" value="{{!empty($search)? $search : ''}}" class="w-full border rounded-md pl-4 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" 
                     type="text" placeholder="p">
                     <button type ="submit" class="absolute inset-y-0 right-0 pl-3 flex items-center pb-6 pr-4">
                       <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
                           <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                   </button>
-                </div>
-                
-  
+                </div> 
+
               <div class="border-b border-gray-200 py-6">
                 <h3 class="-my-3 flow-root">
                     <!-- Expand/collapse section button -->
@@ -324,7 +335,7 @@
               {{-- {{ $berita->onEachSide(1)->links('pagination::tailwind') }} --}}
               <div class="my-4">
                 {{ $berita->links('vendor.pagination.tailwind') }}
-            </div>
+              </div>
             
               <!-- End Pagination -->
               </div>
