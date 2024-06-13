@@ -24,6 +24,10 @@ Route::get('/', function () {
     return view('beranda');
 })->name('beranda');
 
+Route::get('/beranda', function () {
+    return view('beranda_lama');
+})->name('beranda_lama');
+
 Route::get('/data_desa', function () {
     return view('datadesa');
 })->name('datadesa');

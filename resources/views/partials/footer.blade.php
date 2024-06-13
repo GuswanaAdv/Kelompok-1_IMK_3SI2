@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bottom-0 w-full bg-gradient-to-r from-lime-500 from-5% via-green via-10% to-darkgreen to-95% text-white py-4 mt-4">
+<footer class="bg-gradient-to-r from-lime-500 from-5% via-green via-10% to-darkgreen to-95% text-white py-4 mt-4">
     <div class="container mx-auto px-4">
         <div class="flex justify-evenly items-start border-b border-gray-300 pb-4">
             <div class="flex items-center space-x-2">
