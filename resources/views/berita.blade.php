@@ -1,8 +1,8 @@
-@extends('layouts.app')
-@section('content')
+{{-- @extends('layouts.app')
+@section('content') --}}
 
 <!--Category-->
 {{-- @include('category') --}}
-@include('gabungan')
+{{-- @include('gabungan')
 
-@endsection
+@endsection --}}

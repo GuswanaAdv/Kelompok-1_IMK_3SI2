@@ -44,66 +44,7 @@
         </button>
       </div>
       <div class="space-y-4">
-        <!-- Category Filter -->
-        <div>
-          <h2 class="text-lg font-semibold mb-2">Category</h2>
-          <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" value="electronics">
-              <span class="ml-2 text-gray-700">Electronics</span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" value="books">
-              <span class="ml-2 text-gray-700">Books</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Category Filter -->
-        <div>
-          <h2 class="text-lg font-semibold mb-2">Category</h2>
-          <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" value="electronics">
-              <span class="ml-2 text-gray-700">Electronics</span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" value="books">
-              <span class="ml-2 text-gray-700">Books</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Category Filter -->
-        <div>
-          <h2 class="text-lg font-semibold mb-2">Category</h2>
-          <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" value="electronics">
-              <span class="ml-2 text-gray-700">Electronics</span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" value="books">
-              <span class="ml-2 text-gray-700">Books</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Category Filter -->
-        <div>
-          <h2 class="text-lg font-semibold mb-2">Category</h2>
-          <div class="space-y-2">
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" value="electronics">
-              <span class="ml-2 text-gray-700">Electronics</span>
-            </label>
-            <label class="flex items-center">
-              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" value="books">
-              <span class="ml-2 text-gray-700">Books</span>
-            </label>
-          </div>
-        </div>
-
+        
         <!-- Category Filter -->
         <div>
           <h2 class="text-lg font-semibold mb-2">Category</h2>

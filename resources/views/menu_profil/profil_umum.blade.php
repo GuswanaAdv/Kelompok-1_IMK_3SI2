@@ -1,6 +1,22 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mx-auto mt-4 flex">
+    <style>
+        .text-center {
+            text-align: center;
+        }
+        #map {
+            width: 1200px;
+            height: 400px;
+    background-color: lightblue;
+    border: 2px solid white; 
+        }
+        h1 {
+        color: white;
+    }
+    </style>
+    <link rel='stylesheet' href='https://unpkg.com/leaflet@1.8.0/dist/leaflet.css' crossorigin='' />
+
+<div class="container mx-auto mt-0 flex pt-24">
     <!-- Sidebar -->
     @include('partials.sidebar')
     

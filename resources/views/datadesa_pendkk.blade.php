@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="mx-10 my-10">
+<div class="mx-10 my-10 mt-0 pt-24">
     <div class="grid grid-cols-2 gap-6">
       <!-- Data Table -->
       <div class="bg-lime-200 p-4 rounded-lg">
@@ -10,7 +10,7 @@
           <label class="text-center">Kategori:</label>
           <select id="data-category" class="mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="redirectToCategory()">
             <option>Umur</option>
-            <option>Pendidikan Kepala Keluarga</option>
+            <option {{ $kategori==='pendidikan'? 'selected' : ''}}>Pendidikan Kepala Keluarga</option>
             <option>Pekerjaan</option>
             <option>Status Perkawinan</option>
           </select>
