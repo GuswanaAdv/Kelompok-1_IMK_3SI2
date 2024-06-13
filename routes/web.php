@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('beranda');
 })->name('beranda');
 
-Route::get('/data_desa', function () {
+Route::get('/data_desa_umur', function () {
     return view('datadesa_umur',[
         "kategori"=>"umur",
     ]);

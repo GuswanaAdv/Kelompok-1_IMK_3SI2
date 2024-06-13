@@ -12,7 +12,7 @@
                     <option>Umur</option>
                     <option>Pendidikan Kepala Keluarga</option>
                     <option>Pekerjaan</option>
-                    <option {{ $kategori==='status kawin'? 'selected' : ''}}>Status Perkawinan</option>
+                    <option {{ $kategori==='status_kawin'? 'selected' : ''}}>Status Perkawinan</option>
                 </select>
             </div>
             <table id="dataTable" class="mt-4 w-full border-collapse border border-gray-400">
