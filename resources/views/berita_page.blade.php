@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('head')
-<style>
+{{-- <style>
 body {
   font-family: 'Inter', sans-serif;
   font-weight: 200;
 }
-</style>
+</style> --}}
 @endsection
 
 @section('content')
