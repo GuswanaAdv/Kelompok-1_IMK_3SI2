@@ -18,12 +18,12 @@
   {{-- Untuk peta --}}
 </head>
 
-<body>
+<body class="">
   {{--Navbar--}}
   @include('partials.navbar')
 
   {{--Main--}}
-  <div>
+  <div class="px-10">
     @yield('content')
   </div>
 
