@@ -8,8 +8,8 @@
             <h2 class="text-lg font-bold text-center underline underline-offset-8">Tabel Data</h2>
             <div class="mt-4">
                 <label class="text-center">Kategori:</label>
-                <select id="data-category" class="mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="redirectToCategory()">
-                    <option value=" ">Pilih Kategori</option>
+                <select id="data-category" class="mx-auto bg-white border border-gray-300 p-1 rounded-lg">
+                    <option value="" disabled selected class="placeholder-option">Pilih Kategori</option>
                     <option value="Umur">Umur</option>
                     <option value="Pendidikan Kepala Keluarga">Pendidikan Kepala Keluarga</option>
                     <option value="Pekerjaan">Pekerjaan</option>
@@ -92,28 +92,30 @@ document.getElementById('data-category').addEventListener('change', function() {
     redirectToCategory();
 });
 
-function redirectToCategory() {
-    const category = document.getElementById('data-category').value;
-    let url;
 
-    switch (category) {
-        case 'Umur':
-            url = '/data_desa_umur'; // Replace with your actual route
-            break;
-        case 'Pendidikan Kepala Keluarga':
-            url = '/data_desa_pendidikan_KK'; // Replace with your actual route
-            break;
-        case 'Pekerjaan':
-            url = '/data_desa_pekerjaan'; // Replace with your actual route
-            break;
-        case 'Status Perkawinan':
-            url = '/data_desa_status_kawin'; // Replace with your actual route
-            break;
-        default:
-            url = '/data_desa';
+function redirectToCategory() {
+    var selectElement = document.getElementById("data-category");
+    var selectedIndex = selectElement.selectedIndex;
+    var selectedValue = selectElement.value;
+    var selectedText = selectElement.options[selectedIndex].text;
+
+    // Update the placeholder option with the selected text
+    selectElement.options[0].text = selectedText;
+    selectElement.options[0].value = selectedValue;
+
+    // Redirect to the appropriate URL
+    if (selectedValue === "Umur") {
+        window.location.href = '/data_desa_umur';
+    } else if (selectedValue === "Pendidikan Kepala Keluarga") {
+        window.location.href = '/data_desa_pendidikan_KK';
+    } else if (selectedValue === "Pekerjaan") {
+        window.location.href = '/data_desa_pekerjaan';
+    } else if (selectedValue === "Status Perkawinan") {
+        window.location.href = '/data_desa_status_kawin';
     }
 
-    window.location.href = url;
+    // Reset the selected index to the placeholder
+    selectElement.selectedIndex = 0;
 }
 
 document.getElementById('chart-category').addEventListener('change', function() {
