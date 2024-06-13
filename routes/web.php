@@ -21,17 +21,13 @@ use App\Http\Controllers\BlogPostController;
 //     return view('template');
 // });
 
-Route::get('/', function () {
-    return view('template');
-});
+// Route::get('/', function () {
+//     return view('template');
+// });
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('beranda');
 })->name('beranda');
-
-Route::get('/berita', function () {
-    return view('berita');
-})->name('berita');
 
 Route::get('/cardBerita', function () {
     return view('cardBerita');
@@ -45,11 +41,9 @@ Route::get('/category', function () {
     return view('category');
 });
 
-Route::get('/gabungan', [BeritaController::class, 'index'])->name('berita.index');
+Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
 
-Route::get('/', function () {
-    return view('beranda');
-})->name('beranda');
+Route::post('/berita_cari', [BeritaController::class, 'search'])->name('berita.search');
 
 Route::get('/data_desa_umur', function () {
     return view('datadesa_umur',[
@@ -74,10 +68,6 @@ Route::get('/data_desa_status_kawin', function () {
         "kategori"=>"status_kawin",
     ]);
 });
-
-// Route::get('/profil', function () {
-//     return view('profil');
-// })->name('profil');
 
 Route::get('/profil/visi_misi', function () {
     return view('menu_profil.visi_misi');
@@ -104,14 +94,6 @@ Route::get('/profil/fasilitas_kesehatan', function () {
 })->name('fasilitas_kesehatan');
 
 Route::get('/profil/profil_umum', [MapController::class, 'index'])->name('profil');
-
-Route::get('/berita', function () {
-    return view('berita');
-})->name('berita');
-
-Route::get('/cardBerita', function () {
-    return view('cardBerita');
-});
 
 Route::get('/berita_page', function () {
     return view('berita_page');
