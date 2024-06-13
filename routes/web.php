@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MapController;
 use Jcf\Geocode\Geocode;
@@ -19,6 +20,32 @@ use App\Http\Controllers\BlogPostController;
 // Route::get('/', function () {
 //     return view('template');
 // });
+
+Route::get('/', function () {
+    return view('template');
+});
+
+Route::get('/index', function () {
+    return view('beranda');
+})->name('beranda');
+
+Route::get('/berita', function () {
+    return view('berita');
+})->name('berita');
+
+Route::get('/cardBerita', function () {
+    return view('cardBerita');
+});
+
+Route::get('/berita_page', function () {
+    return view('berita_page');
+});
+
+Route::get('/category', function () {
+    return view('category');
+});
+
+Route::get('/gabungan', [BeritaController::class, 'index'])->name('berita.index');
 
 Route::get('/', function () {
     return view('beranda');
@@ -92,19 +119,4 @@ Route::get('/berita_page', function () {
 
 Route::get('/category', function () {
     return view('category');
-});
-
-Route::get('/gabungan', function () {
-    // $data = [
-    //     "judul" => "Membangkitkan Semangat di Tengah Pandemi",
-    //     "date" => "9 Juni 2024",
-    //     "body" => "Di masa pandemi ini, menjaga semangat dan motivasi menjadi sangat penting. Banyak kisah inspiratif yang bisa kita ambil pelajaran, salah satunya adalah perjuangan seorang ibu tunggal yang berhasil membuka usaha kecil-kecilan di tengah segala keterbatasan",
-    //     "category" => "Motivasi"
-    // ];
-    return view('gabungan', [
-        "judul" => "Membangkitkan Semangat di Tengah Pandemi",
-        "date" => "9 Juni 2024",
-        "body" => "Di masa pandemi ini, menjaga semangat dan motivasi menjadi sangat penting. Banyak kisah inspiratif yang bisa kita ambil pelajaran, salah satunya adalah perjuangan seorang ibu tunggal yang berhasil membuka usaha kecil-kecilan di tengah segala keterbatasan",
-        "category" => "Motivasi"
-    ]);
 });
