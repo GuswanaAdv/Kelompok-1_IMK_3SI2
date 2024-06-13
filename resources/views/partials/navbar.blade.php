@@ -1,4 +1,4 @@
-<nav class="z-30 absolute w-full bg-gradient-to-r from-lime-500 from-5% via-green via-10% to-darkgreen to-95% drop-shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-10 border-b border-gray-300">
+<nav class="bg-gradient-to-r from-lime-500 from-5% via-green via-10% to-darkgreen to-95% drop-shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-10 border-b border-gray-300">
 
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
