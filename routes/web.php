@@ -19,6 +19,13 @@ Route::get('/', function () {
     return view('beranda');
 })->name('beranda');
 
+Route::get('/berita_page', function () {
+    return view('berita_page');
+})->name('berita_page');
+
+Route::get('/berita', function () {
+    return view('gabungan');
+})->name('berita');
 // Route::get('/profil', function () {
 //     return view('profil');
 // })->name('profil');
