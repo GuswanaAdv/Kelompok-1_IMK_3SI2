@@ -20,7 +20,7 @@
   </style>
 
       {{-- header --}}
-      <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24">
         <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-6">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900">Berita</h1>
   
@@ -43,7 +43,7 @@
               </div>
             </div>
 
-            <div class="filter-button md:hidden block">
+            <div class="filter-button md:hidden">
               {{-- kalo gk mau ada bordernya hapus border border-gray-300 rounded-md px-4 py-2 --}}
               <button id="filterToggleBtn" type="button" class="flex items-center -m-2 p-2 text-gray-400 hover:text-gray-500 border border-gray-300 rounded-md px-4 py-1.5 md:ml-6 lg:hidden">
                 <span class="text-gray-700">Filter</span>
