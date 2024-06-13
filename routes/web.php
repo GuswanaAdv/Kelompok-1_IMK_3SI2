@@ -25,23 +25,27 @@ Route::get('/', function () {
 })->name('beranda');
 
 Route::get('/data_desa', function () {
-    return view('datadesa');
+    return view('datadesa_umur',[
+        "kategori"=>"umur",
+    ]);
 })->name('datadesa');
 
-Route::get('/data_desa_umur', function () {
-    return view('datadesa_umur');
-});
-
 Route::get('/data_desa_pendidikan_KK', function () {
-    return view('datadesa_pendkk');
+    return view('datadesa_pendkk',[
+        "kategori"=>"pendidikan",
+    ]);
 });
 
 Route::get('/data_desa_pekerjaan', function () {
-    return view('datadesa_kerja');
+    return view('datadesa_kerja',[
+        "kategori"=>"pekerjaan",
+    ]);
 });
 
 Route::get('/data_desa_status_kawin', function () {
-    return view('datadesa_kawin');
+    return view('datadesa_kawin',[
+        "kategori"=>"status_kawin",
+    ]);
 });
 
 // Route::get('/profil', function () {
