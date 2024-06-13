@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <div class="bg-white">
   <style>
     .filter-panel {
@@ -35,15 +37,15 @@
                   
               <div id="sortDropdown" class="hidden absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="sortDropdownButton" tabindex="-1">
                 <div class="py-1" role="none">
-                  <a href="#" class="text-gray-900 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" data-sort="Popular" tabindex="-1">Popular</a>
-                  <a href="#" class="text-gray-500 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" data-sort="Terbaru" tabindex="-1">Terbaru</a>
+                  <a href="{{ route('berita.index', array_merge(request()->query(), ['sort' => 'populer'])) }}" class="text-gray-900 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" data-sort="Popular" tabindex="-1">Popular</a>
+                  <a href="{{ route('berita.index', ['sort' => 'terbaru']) }}" class="text-gray-500 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" data-sort="Terbaru" tabindex="-1">Terbaru</a>
                 </div>
               </div>
             </div>
 
-            <div class="filter-button md:hidden md:block">
+            <div class="filter-button md:hidden block">
               {{-- kalo gk mau ada bordernya hapus border border-gray-300 rounded-md px-4 py-2 --}}
-              <button id="filterToggleBtn" type="button" class="flex items-center -m-2 p-2 text-gray-400 hover:text-gray-500 border border-gray-300 rounded-md px-4 py-1.5 sm:ml-6 lg:hidden">
+              <button id="filterToggleBtn" type="button" class="flex items-center -m-2 p-2 text-gray-400 hover:text-gray-500 border border-gray-300 rounded-md px-4 py-1.5 md:ml-6 lg:hidden">
                 <span class="text-gray-700">Filter</span>
                 <svg class="h-5 w-5 ml-2" aria-hidden="true" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.037c0 .684-.31 1.33-.844 1.757l-1.937 1.55A.75.75 0 018 18.25v-5.757a2.25 2.25 0 00-.659-1.591L2.659 6.22A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z" clip-rule="evenodd" />
@@ -161,7 +163,7 @@
                 <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
-            <input class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="Search">
+            <input class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="Cari">
           </div>
           
           <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4 ">
@@ -174,7 +176,7 @@
                         <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </span>
-                    <input class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="Search">
+                    <input class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="p">
                 </div>
                 
   
@@ -308,12 +310,17 @@
             <!-- Product grid -->
             <div class="lg:col-span-3">
               <!-- Your content -->
-              @include('cardBerita')
+              @include('cardBerita',['berita'=>$berita])
               <!-- End content -->
           
               <div class="pt-6">
                 <!-- Pagination =-->
-              @include('pagination')
+              {{-- @include('pagination') --}}
+              {{-- {{ $berita->onEachSide(1)->links('pagination::tailwind') }} --}}
+              <div class="my-4">
+                {{ $berita->links('vendor.pagination.tailwind') }}
+            </div>
+            
               <!-- End Pagination -->
               </div>
               
@@ -376,3 +383,4 @@
         document.getElementById('filterPanel').style.display = 'none';
       });
 </script>
+@endsection

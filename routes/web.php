@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogPostController;
 
@@ -19,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/index', function () {
-    return view('beranda');
+    return view('index');
 });
 
 Route::get('/berita', function () {
@@ -34,17 +35,4 @@ Route::get('/category', function () {
     return view('category');
 });
 
-Route::get('/gabungan', function () {
-    // $data = [
-    //     "judul" => "Membangkitkan Semangat di Tengah Pandemi",
-    //     "date" => "9 Juni 2024",
-    //     "body" => "Di masa pandemi ini, menjaga semangat dan motivasi menjadi sangat penting. Banyak kisah inspiratif yang bisa kita ambil pelajaran, salah satunya adalah perjuangan seorang ibu tunggal yang berhasil membuka usaha kecil-kecilan di tengah segala keterbatasan",
-    //     "category" => "Motivasi"
-    // ];
-    return view('gabungan', [
-        "judul" => "Membangkitkan Semangat di Tengah Pandemi",
-        "date" => "9 Juni 2024",
-        "body" => "Di masa pandemi ini, menjaga semangat dan motivasi menjadi sangat penting. Banyak kisah inspiratif yang bisa kita ambil pelajaran, salah satunya adalah perjuangan seorang ibu tunggal yang berhasil membuka usaha kecil-kecilan di tengah segala keterbatasan",
-        "category" => "Motivasi"
-    ]);
-});
+Route::get('/gabungan', [BeritaController::class, 'index'])->name('berita.index');
