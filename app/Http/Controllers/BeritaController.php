@@ -12,21 +12,17 @@ class BeritaController extends Controller
     public function index(Request $request): View
     {
         $query = Berita::query();
-        Carbon::setLocale('id');
-        
-        if ($request->has('search')) {
-            $search = $request->input('search');
-            $query->where('judul', 'LIKE', "%{$search}%")
-                  ->orWhere('slug', 'LIKE', "%{$search}%");
-        }
 
         // Handle sort query
         if ($request->has('sort')) {
-            if ($request->input('sort') == 'populer') {
+            if ($request->sort == 'populer') {
                 $query->orderBy('views', 'desc');
-            } elseif ($request->input('sort') == 'terbaru') {
+            } elseif ($request->sort == 'terbaru') {
                 $query->orderBy('published_datetime', 'desc');
             }
+        } else {
+            // Default sorting jika tidak ada query parameter sort
+            $query->orderBy('published_datetime', 'desc');
         }
 
         $berita = Berita::paginate(6)->withQueryString();
@@ -35,4 +31,5 @@ class BeritaController extends Controller
             'berita' => $berita
         ]);
     }
+
 }

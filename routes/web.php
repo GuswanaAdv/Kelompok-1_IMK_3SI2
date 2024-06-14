@@ -46,6 +46,7 @@ Route::get('/category', function () {
 });
 
 Route::get('/gabungan', [BeritaController::class, 'index'])->name('berita.index');
+// Route::get('/berita/sort/{sortType}', [BeritaController::class, 'sort'])->name('berita.sort');
 
 Route::get('/', function () {
     return view('beranda');
