@@ -17,125 +17,111 @@ use App\Http\Controllers\BlogPostController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('template');
-// });
-
+// Beranda
 Route::get('/', function () {
-    return view('template');
-});
-
-Route::get('/', function () {
-    return view('beranda');
+    return view('beranda',[
+        "judul_halaman"=>"Beranda",
+    ]);
 })->name('beranda');
+//
 
-Route::get('/beranda', function () {
-    return view('beranda_lama');
-})->name('beranda_lama');
 
-Route::get('/berita', function () {
-    return view('berita');
-})->name('berita');
-
+// Berita
 Route::get('/cardBerita', function () {
     return view('cardBerita');
 });
 
 Route::get('/berita_page', function () {
-    return view('berita_page');
+    return view('berita_page',[
+        "judul_halaman"=>"Halaman Berita",
+    ]);
 });
 
 Route::get('/category', function () {
     return view('category');
 });
 
-Route::get('/gabungan', [BeritaController::class, 'index'])->name('berita.index');
+Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
 
-Route::get('/', function () {
-    return view('beranda');
-})->name('beranda');
+Route::post('/berita_cari', [BeritaController::class, 'search'])->name('berita.search');
 
-Route::get('/data_desa', function () {
+Route::get('/berita_cari', [BeritaController::class, 'search2'])->name('berita.pagination');
+//
+
+
+// Data Desa
+Route::get('/data_desa_umur', function () {
     return view('datadesa_umur',[
         "kategori"=>"umur",
+        "judul_halaman"=>"Data Desa",
     ]);
 })->name('datadesa');
 
 Route::get('/data_desa_pendidikan_KK', function () {
     return view('datadesa_pendkk',[
         "kategori"=>"pendidikan",
+        "judul_halaman"=>"Data Desa",
     ]);
 });
 
 Route::get('/data_desa_pekerjaan', function () {
     return view('datadesa_kerja',[
         "kategori"=>"pekerjaan",
+        "judul_halaman"=>"Data Desa",
     ]);
 });
 
 Route::get('/data_desa_status_kawin', function () {
     return view('datadesa_kawin',[
         "kategori"=>"status_kawin",
+        "judul_halaman"=>"Data Desa",
     ]);
 });
+//
 
-// Route::get('/profil', function () {
-//     return view('profil');
-// })->name('profil');
 
+// Profil dan Fasilitas
 Route::get('/profil/visi_misi', function () {
-    return view('menu_profil.visi_misi');
+    return view('menu_profil.visi_misi',[
+        "judul_halaman"=>"Profil dan Fasilitas",
+        "menu_sidebar"=>"Visi Misi"
+    ]);
 })->name('visi_misi');
 
 Route::get('/profil/profil_pemerintahan', function () {
-    return view('menu_profil.profil_pemerintahan');
+    return view('menu_profil.profil_pemerintahan',[
+        "judul_halaman"=>"Profil dan Fasilitas",
+        "menu_sidebar"=>"Profil Pemerintahan"
+    ]);
 })->name('profil_pemerintahan');
 
 Route::get('/profil/profil_kelembagaan', function () {
-    return view('menu_profil.profil_kelembagaan');
+    return view('menu_profil.profil_kelembagaan',[
+        "judul_halaman"=>"Profil dan Fasilitas",
+        "menu_sidebar"=>"Profil Kelembagaan"
+    ]);
 })->name('profil_kelembagaan');
 
 Route::get('/profil/dukcapil_online', function () {
-    return view('menu_profil.dukcapil_online');
+    return view('menu_profil.dukcapil_online', [
+        "judul_halaman"=>"Profil dan Fasilitas",
+        "menu_sidebar"=>"Dukcapil Online"
+    ]);
 })->name('dukcapil_online');
 
 Route::get('/profil/fasilitas_pendidikan', function () {
-    return view('menu_profil.fasilitas_pendidikan');
+    return view('menu_profil.fasilitas_pendidikan',[
+        "judul_halaman"=>"Profil dan Fasilitas",
+        "menu_sidebar"=>"Fasilitas Pendidikan"
+    ]);
 })->name('fasilitas_pendidikan');
 
 Route::get('/profil/fasilitas_kesehatan', function () {
-    return view('menu_profil.fasilitas_kesehatan');
+    return view('menu_profil.fasilitas_kesehatan',[
+        "judul_halaman"=>"Profil dan Fasilitas",
+        "menu_sidebar"=>"Fasilitas Kesehatan"
+    ]);
 })->name('fasilitas_kesehatan');
 
 Route::get('/profil/profil_umum', [MapController::class, 'index'])->name('profil');
-
-Route::get('/berita', function () {
-    return view('berita');
-})->name('berita');
-
-Route::get('/cardBerita', function () {
-    return view('cardBerita');
-});
-
-Route::get('/berita_page', function () {
-    return view('berita_page');
-});
-
-Route::get('/category', function () {
-    return view('category');
-});
-
-Route::get('/gabungan', function () {
-    // $data = [
-    //     "judul" => "Membangkitkan Semangat di Tengah Pandemi",
-    //     "date" => "9 Juni 2024",
-    //     "body" => "Di masa pandemi ini, menjaga semangat dan motivasi menjadi sangat penting. Banyak kisah inspiratif yang bisa kita ambil pelajaran, salah satunya adalah perjuangan seorang ibu tunggal yang berhasil membuka usaha kecil-kecilan di tengah segala keterbatasan",
-    //     "category" => "Motivasi"
-    // ];
-    return view('gabungan', [
-        "judul" => "Membangkitkan Semangat di Tengah Pandemi",
-        "date" => "9 Juni 2024",
-        "body" => "Di masa pandemi ini, menjaga semangat dan motivasi menjadi sangat penting. Banyak kisah inspiratif yang bisa kita ambil pelajaran, salah satunya adalah perjuangan seorang ibu tunggal yang berhasil membuka usaha kecil-kecilan di tengah segala keterbatasan",
-        "category" => "Motivasi"
-    ]);
-});
+//

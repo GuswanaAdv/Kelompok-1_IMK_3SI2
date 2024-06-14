@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mx-auto mt-0 pt-24 flex">
+<div class="container mx-auto mt-0 flex">
     <!-- Sidebar -->
     @include('partials.sidebar')
     

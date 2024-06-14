@@ -19,8 +19,20 @@
 }
   </style>
 
+  <script>
+    function submitPaginationForm(page) {
+        var form = document.getElementById('pagination-form');
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'page';
+        input.value = page;
+        form.appendChild(input);
+        form.submit();
+    }
+  </script>
+
       {{-- header --}}
-      <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24">
+      <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-6">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900">Berita</h1>
   
@@ -70,31 +82,31 @@
                   <h2 class="text-lg font-semibold mb-2">Kategori</h2>
                   <div class="space-y-2">
                     <div class="flex items-center">
-                      <input id="filter-mobile-color-0" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                      <input id="filter-mobile-color-0" name="color[]" value="Produk Hukum" type="checkbox" {{in_array('Produk Hukum', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                       <label for="filter-mobile-color-0" class="ml-3 min-w-0 flex-1 text-gray-500">Produk Hukum</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="filter-mobile-color-1" name="color[]" value="beige" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                        <input id="filter-mobile-color-1" name="color[]" value="beige" type="checkbox" {{in_array('Produk Hukum', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                         <label for="filter-mobile-color-1" class="ml-3 min-w-0 flex-1 text-gray-500">Pendidikan</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="filter-mobile-color-2" name="color[]" value="blue" type="checkbox" checked class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                        <input id="filter-mobile-color-2" name="color[]" value="blue" type="checkbox" {{in_array('Produk Hukum', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                         <label for="filter-mobile-color-2" class="ml-3 min-w-0 flex-1 text-gray-500">Motivasi</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="filter-mobile-color-3" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                        <input id="filter-mobile-color-3" name="color[]" value="brown" type="checkbox" {{in_array('Produk Hukum', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                         <label for="filter-mobile-color-3" class="ml-3 min-w-0 flex-1 text-gray-500">Teknologi</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="filter-mobile-color-4" name="color[]" value="green" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                        <input id="filter-mobile-color-4" name="color[]" value="green" type="checkbox" {{in_array('Produk Hukum', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                         <label for="filter-mobile-color-4" class="ml-3 min-w-0 flex-1 text-gray-500">UMKM</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="filter-mobile-color-5" name="color[]" value="purple" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                        <input id="filter-mobile-color-5" name="color[]" value="purple" type="checkbox" {{in_array('Produk Hukum', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                         <label for="filter-mobile-color-5" class="ml-3 min-w-0 flex-1 text-gray-500">Wisata dan Sejarah</label>
                     </div>
                     <div class="flex items-center">
-                        <input id="filter-mobile-color-5" name="color[]" value="purple" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                        <input id="filter-mobile-color-5" name="color[]" value="purple" type="checkbox" {{in_array('Produk Hukum', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                         <label for="filter-mobile-color-5" class="ml-3 min-w-0 flex-1 text-gray-500">Galeri Desa</label>
                     </div>
                   </div>
@@ -158,28 +170,32 @@
 
           <!-- Search bar -->
           <div class="relative max-w-lg mx-auto border-b border-gray-200 pb-6 lg:hidden">
-            <span class="absolute inset-y-0 left-0 pl-3 flex items-center pb-6">
-              <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
-                <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <input class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="Cari">
+            <form action="{{ route('berita.pagination') }}" method="GET" id="cari" name="cari" style="display: inline-block; width:100%">
+              @csrf
+              <button type="submit" class="inset-y-0 left-0 pl-3 flex items-center pb-6 pr-4">
+                <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <input name="cari_berita1" class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="Cari">
+            </form>
           </div>
           
           <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4 ">
             <!-- Filters -->
-            <form class="hidden lg:block">
+            <form class="hidden lg:block" action="{{ route('berita.pagination') }}" method="GET" id="cari" name="cari">
+              @csrf
               <h3 class="sr-only">Categories</h3>
               <div class="relative max-w-lg mx-auto border-b border-gray-200 pb-6">
-                <span class="absolute inset-y-0 left-0 pl-3 flex items-center pb-6">
-                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
-                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </span>
-                    <input class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="p">
-                </div>
-                
-  
+                    <input id="cari_berita1" name="cari_berita1" value="{{!empty($search)? $search : ''}}" class="w-full border rounded-md pl-4 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" 
+                    type="text" placeholder="p">
+                    <button type ="submit" class="absolute inset-y-0 right-0 pl-3 flex items-center pb-6 pr-4">
+                      <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+                          <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                  </button>
+                </div> 
+
               <div class="border-b border-gray-200 py-6">
                 <h3 class="-my-3 flow-root">
                     <!-- Expand/collapse section button -->
@@ -201,31 +217,31 @@
                 <div class="pt-6" id="filter-section-0">
                     <div class="space-y-4">
                         <div class="flex items-center">
-                            <input id="filter-color-0" name="color[]" value="white" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                            <input id="filter-color-0" name="berita[]" value="Produk Hukum" type="checkbox" {{in_array('Produk Hukum', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                             <label for="filter-color-0" class="ml-3 text-sm text-gray-600">Produk Hukum</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="filter-color-1" name="color[]" value="beige" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                            <input id="filter-color-1" name="berita[]" value="Pendidikan" type="checkbox" {{in_array('Pendidikan', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                             <label for="filter-color-1" class="ml-3 text-sm text-gray-600">Pendidikan</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="filter-color-2" name="color[]" value="blue" type="checkbox" checked class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                            <input id="filter-color-2" name="berita[]" value="Motivasi" type="checkbox" {{in_array('Motivasi', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                             <label for="filter-color-2" class="ml-3 text-sm text-gray-600">Motivasi</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="filter-color-3" name="color[]" value="brown" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                            <input id="filter-color-3" name="berita[]" value="Teknologi" type="checkbox" {{in_array('Teknologi', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                             <label for="filter-color-3" class="ml-3 text-sm text-gray-600">Teknologi</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="filter-color-4" name="color[]" value="green" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                            <input id="filter-color-4" name="berita[]" value="UMKM" type="checkbox" {{in_array('UMKM', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                             <label for="filter-color-4" class="ml-3 text-sm text-gray-600">UMKM</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="filter-color-5" name="color[]" value="purple" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                            <input id="filter-color-5" name="berita[]" value="Wisata dan Sejarah" type="checkbox" {{in_array('Wisata dan Sejarah', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                             <label for="filter-color-5" class="ml-3 text-sm text-gray-600">Wisata dan Sejarah</label>
                         </div>
                         <div class="flex items-center">
-                            <input id="filter-color-5" name="color[]" value="purple" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                            <input id="filter-color-5" name="berita[]" value="Galeri Desa" type="checkbox" {{in_array('Galeri Desa', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                             <label for="filter-color-5" class="ml-3 text-sm text-gray-600">Galeri Desa</label>
                         </div>
                     </div>
@@ -252,19 +268,19 @@
                 <div class="pt-6 " id="filter-section-2">
                   <div class="space-y-4">
                     <div class="flex items-center">
-                      <input id="filter-category-0" name="category[]" value="new-arrivals" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                      <input id="filter-category-0" name="lembaga[]" value="PKK Desa" type="checkbox" {{in_array('PKK Desa', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                       <label for="filter-category-0" class="ml-3 text-sm text-gray-600">PKK Desa</label>
                     </div>
                     <div class="flex items-center">
-                      <input id="filter-category-1" name="category[]" value="sale" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                      <input id="filter-category-1" name="lembaga[]" value="KPMD Desa" type="checkbox" {{in_array('KPMD Desa', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                       <label for="filter-category-1" class="ml-3 text-sm text-gray-600">KPMD Desa</label>
                     </div>
                     <div class="flex items-center">
-                      <input id="filter-category-2" name="category[]" value="travel" type="checkbox" checked class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                      <input id="filter-category-2" name="lembaga[]" value="LKMD Desa" type="checkbox" {{in_array('LKMD Desa', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                       <label for="filter-category-2" class="ml-3 text-sm text-gray-600">LKMD Desa</label>
                     </div>
                     <div class="flex items-center">
-                      <input id="filter-category-3" name="category[]" value="organization" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                      <input id="filter-category-3" name="lembaga[]" value="BPD Desa" type="checkbox" {{in_array('BPD Desa', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                       <label for="filter-category-3" class="ml-3 text-sm text-gray-600">BPD Desa</label>
                     </div>
                   </div>
@@ -291,15 +307,15 @@
                 <div class="pt-6" id="filter-section-3">
                   <div class="space-y-4">
                     <div class="flex items-center">
-                      <input id="filter-size-0" name="size[]" value="2l" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                      <input id="filter-size-0" name="produk[]" value="Kuliner" type="checkbox" {{in_array('Kuliner', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                       <label for="filter-size-0" class="ml-3 text-sm text-gray-600">Kuliner</label>
                     </div>
                     <div class="flex items-center">
-                      <input id="filter-size-1" name="size[]" value="6l" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                      <input id="filter-size-1" name="produk[]" value="Oleh-oleh" type="checkbox" {{in_array('Oleh-oleh', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                       <label for="filter-size-1" class="ml-3 text-sm text-gray-600">Oleh-oleh</label>
                     </div>
                     <div class="flex items-center">
-                      <input id="filter-size-2" name="size[]" value="12l" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
+                      <input id="filter-size-2" name="produk[]" value="Kerajinan Tangan" type="checkbox" {{in_array('Kerajinan Tangan', $kategori)? 'checked' : ''}} class="h-4 w-4 rounded border-gray-300 text-darkgreen focus:ring-darkgreen">
                       <label for="filter-size-2" class="ml-3 text-sm text-gray-600">Kerajinan Tangan</label>
                     </div>
                   </div>
@@ -319,7 +335,7 @@
               {{-- {{ $berita->onEachSide(1)->links('pagination::tailwind') }} --}}
               <div class="my-4">
                 {{ $berita->links('vendor.pagination.tailwind') }}
-            </div>
+              </div>
             
               <!-- End Pagination -->
               </div>

@@ -16,7 +16,7 @@
     </style>
     <link rel='stylesheet' href='https://unpkg.com/leaflet@1.8.0/dist/leaflet.css' crossorigin='' />
 
-<div class="container mx-auto mt-0 flex pt-24">
+<div class="container mx-auto mt-0 flex ">
     <!-- Sidebar -->
     @include('partials.sidebar')
     

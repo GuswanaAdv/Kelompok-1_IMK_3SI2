@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="mx-10 my-10 pt-24 mt-0">
+<div class="mx-10 my-10 mt-0">
     <div class="grid grid-cols-2 gap-6">
       <!-- Data Table -->
       <div class="bg-lime-200 p-4 rounded-lg">
