@@ -10,7 +10,7 @@ body {
 @endsection
 
 @section('content')
-<div class="pt-16">
+<div class="pt-0">
   <main class="container mx-auto my-8 bg-white py-8 px-5 md:px-10 lg:px-24 rounded-lg shadow-lg">
     <article>
       <h2 class="text-2xl font-bold mb-4">DESA JATINEGARA MENGADAKAN SAYEMBARA</h2>
