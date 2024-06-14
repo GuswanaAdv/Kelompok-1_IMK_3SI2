@@ -32,7 +32,7 @@
   </script>
 
       {{-- header --}}
-      <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24">
+      <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-6">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900">Berita</h1>
   
@@ -170,14 +170,14 @@
 
           <!-- Search bar -->
           <div class="relative max-w-lg mx-auto border-b border-gray-200 pb-6 lg:hidden">
-            <form action="{{ route('berita.search') }}" method="POST" id="cari" name="cari" style="display: inline-block; width:100%">
+            <form action="{{ route('berita.pagination') }}" method="GET" id="cari" name="cari" style="display: inline-block; width:100%">
               @csrf
-              <span class="absolute inset-y-0 left-0 pl-3 flex items-center pb-6">
+              <button type="submit" class="inset-y-0 left-0 pl-3 flex items-center pb-6 pr-4">
                 <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
                   <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-              </span>
-              <input name="cari_berita" class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="Cari">
+              </button>
+              <input name="cari_berita1" class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="Cari">
             </form>
           </div>
           

@@ -14,13 +14,15 @@
     }
   </style>
 
-  {{-- Untuk peta --}}
-  {{-- Untuk peta --}}
+  <title>{{$judul_halaman}}</title>
 </head>
 
 <body class="">
   {{--Navbar--}}
   @include('partials.navbar')
+  @include('partials.breadcrumbs')
+
+  {{--Sidebar--}}
 
   {{--Main--}}
   <div class="px-10">

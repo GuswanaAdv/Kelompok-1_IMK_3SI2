@@ -14,7 +14,8 @@ class BeritaController extends Controller
 
         return view ('gabungan',[
             'berita' => $berita,
-            'kategori' => array()
+            'kategori' => array(),
+            'judul_halaman' => 'Berita'
         ]);
     }
 
@@ -36,7 +37,8 @@ class BeritaController extends Controller
         return view('gabungan',[
             'berita' => $berita,
             'kategori' => $kategori,
-            'search' => $search
+            'search' => $search,
+            'judul_halaman' => 'Berita'
         ]);
     }
 
@@ -58,7 +60,8 @@ class BeritaController extends Controller
         return view('gabungan',[
             'berita' => $berita,
             'kategori' => $kategori,
-            'search' => $search
+            'search' => $search,
+            'judul_halaman' => 'Berita'
         ]);
     }
 }
