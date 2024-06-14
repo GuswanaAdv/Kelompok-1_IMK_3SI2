@@ -10,14 +10,14 @@ body {
 @endsection
 
 @section('content')
-<div class="pt-16">
-  <main class="container mx-auto my-8 bg-white py-8 px-5 md:px-10 lg:px-24 rounded-lg shadow-lg">
+<div class="pt-0">
+  <main class="container mx-auto my-2 bg-white py-8 px-5 md:px-10 lg:px-24 rounded-lg shadow-lg">
     <article>
-      <h2 class="text-2xl font-bold mb-4">DESA JATINEGARA MENGADAKAN SAYEMBARA</h2>
+      <h2 class="text-2xl font-bold mb-4">{{ $berita->judul}}</h2>
       <div class="flex justify-between items-center mb-2">
         <div class="text-gray-500 text-sm">
-          <span>on June 7, 2024</span>
-          <span> by Won-joon Choi</span>
+          <span>{{ \Illuminate\Support\Carbon::parse($berita->published_datetime)->format('j F Y') }}</span>
+          <span> oleh Jatinegara</span>
         </div>
         <div class="flex items-center">
           <div class="flex items-center space-x-2">
@@ -39,22 +39,22 @@ body {
       <div data-collapse="collapse" class="block h-0 w-full mb-4 basis-full overflow-hidden transition-all duration-300 ease-in-out">
         <div class="relative w-full bg-green-700 bg-clip-border text-gray-700 flex justify-center items-center">
         <div class="flex p-5 items-center gap-3 md:flex-row">
-            <a class="text-white hover:text-orange-600 flex items-center justify-center rounded-full border border-white w-7 h-7" aria-label="Icon 1" href="#" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> 
+            <a id="fb-link" class="text-white hover:text-orange-600 flex items-center justify-center rounded-full border border-white w-7 h-7" aria-label="Icon 1" href="#" target="_self">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> 
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
               </svg>
             </a>
-            <a class="text-white hover:text-orange-600 flex items-center justify-center rounded-full border border-white w-7 h-7" aria-label="Icon 2" href="#" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            <a id="tweet-link" class="text-white hover:text-orange-600 flex items-center justify-center rounded-full border border-white w-7 h-7" aria-label="Icon 2" href="#" onclick="tweetCurrentPage()" target="_self" title="X">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
               </svg>
             </a>
-            <a class="text-white hover:text-orange-600 flex items-center justify-center rounded-full border border-white w-7 h-7" aria-label="Icon 3" href="#" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/>
+            <a id="thread-link" class="text-white hover:text-orange-600 flex items-center justify-center rounded-full border border-white w-7 h-7" aria-label="Icon 3" href="#" onclick="shareOnThreads()" target="_self">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 16 16" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
               </svg>
             </a>
-            <a class="text-white hover:text-orange-600 flex items-center justify-center rounded-full border border-white w-7 h-7" aria-label="Icon 4" href="#" target="_blank">
+            <a id="email-link" class="text-white hover:text-orange-600 flex items-center justify-center rounded-full border border-white w-7 h-7" aria-label="Icon 4" href="#" onclick="emailCurrentPage()" target="_self">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
@@ -68,88 +68,50 @@ body {
         </div>
       </div>
       
-      <img src="https://picsum.photos/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
-      <div class="mb-6">
-        <h3 class="text-xl  font-bold text-green-700 mb-2">Lorem Ipsum is not simply</h3>
-        <p class="text-sm md:text-lg">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.</p>
-        <p>&nbsp;</p>
-        <h3 class="text-xl font-bold text-green-700 mb-2">Lorem Ipsum is not simply</h3>
-        <p class="text-sm md:text-lg">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage </p>
-        <p>&nbsp;</p>
-        <p class="text-sm md:text-lg">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage. When Galaxy AI launched the Chinese (Hong Kong) language option, the customer feedback showed that the hard work of the Samsung R&D team was justified. </p>
+      <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
+      <div id="konten" class="mb-6">
+        {!! $berita->konten !!}
       </div>
       <div class=" separator border-t border-gray-300 mb-4"></div>
       <div class="mb-6">
-        <button class="bg-green-100 text-green-700 py-0 px-4 rounded-lg mr-2">Kategori 1</button>
-        <button class="bg-green-100 text-green-700 py-0 px-4 rounded-lg mr-2">Kategori 2</button>
+      <a href="{{ route('berita.pagination', ['berita[]' => $berita->kategori]) }}">
+        <button name="berita[]" value="{{ $berita->kategori }}" class="bg-green-100 text-green-700 py-0 px-4 rounded-lg mr-2">{{$berita->kategori}}</button>
+      </a>
       </div>
     </article>
     <div class=" separator border-t border-gray-300 mb-4"></div>
     
     <section>
       <h3 class="text-xl font-bold mb-4">ARTIKEL TERKAIT</h3>
+      @if($relatedArticles->isEmpty())
+          <p class="text-gray-500">Tidak ada artikel terkait.</p>
+      @else
       <!-- Container for all cards -->
       <div class="grid sm:grid-cols-1 lg:grid-cols-4 gap-4">
+      @foreach($relatedArticles as $article)
         <!-- Card -->
+        <a href="{{ route('beritapage', $article->slug) }}">
         <div class="px-4 transition duration-300 hover:shadow-lg cursor-pointer">
-          <a href="#!">
-            <img width="1920" height="1280" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-          </a>
-          <div class="flex p-4 pl-0 pb-0 bg-white text-neutral-100">
-            <span class="text-gray-500 text-xs">Emir Bardakçı</span> &nbsp;&nbsp; <span class="text-gray-500 text-xs">6 months ago</span>
-          </div>
-          <div class="p-4 pl-0 pt-0">
-            <h5 class="mb-2 text-lg font-bold tracking-wide text-neutral-800"> HyperOS moon super wallpaper is out, get APK for your Xiaomi </h5>
-          </div>
+                <img width="1920" height="1280" src="https://picsum.photos/id/188/720/400" alt="{{ $article->judul }}" />
+            <div class="flex p-4 pl-0 pb-0 bg-white text-neutral-100">
+                <span class="text-gray-500 text-xs">Jatinegara</span>&nbsp;&nbsp;
+                <span class="text-gray-500 text-xs">{{ \Illuminate\Support\Carbon::parse($article->published_datetime)->diffForHumans() }}</span>
+            </div>
+            <div class="p-4 pl-0 pt-0">
+                <h5 class="mb-2 text-lg font-bold tracking-wide text-neutral-800">{{ $article->judul }}</h5>
+            </div>
         </div>
+        </a>
         <!-- End of Card -->
-
-        <!-- Card -->
-        <div class="px-4 transition duration-300 hover:shadow-lg cursor-pointer">
-          <a href="#!">
-            <img width="1920" height="1280" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-          </a>
-          <div class="flex p-4 pl-0 pb-0 bg-white text-neutral-100">
-            <span class="text-gray-500 text-xs">Emir Bardakçı</span> &nbsp;&nbsp; <span class="text-gray-500 text-xs">6 months ago</span>
-          </div>
-          <div class="p-4 pl-0 pt-0">
-            <h5 class="mb-2 text-lg font-bold tracking-wide text-neutral-800"> HyperOS moon super wallpaper is out, get APK for your Xiaomi </h5>
-          </div>
-        </div>
-        <!-- End of Card -->
-
-        <!-- Card -->
-        <div class="px-4 transition duration-300 hover:shadow-lg cursor-pointer">
-          <a href="#!">
-            <img width="1920" height="1280" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-          </a>
-          <div class="flex p-4 pl-0 pb-0 bg-white text-neutral-100">
-            <span class="text-gray-500 text-xs">Emir Bardakçı</span> &nbsp;&nbsp; <span class="text-gray-500 text-xs">6 months ago</span>
-          </div>
-          <div class="p-4 pl-0 pt-0">
-            <h5 class="mb-2 text-lg font-bold tracking-wide text-neutral-800"> HyperOS moon super wallpaper is out, get APK for your Xiaomi </h5>
-          </div>
-        </div>
-        <!-- End of Card -->
-
-        <!-- Card -->
-        <div class="px-4 transition duration-300 hover:shadow-lg cursor-pointer">
-          <a href="#!">
-            <img width="1920" height="1280" src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg" alt="" />
-          </a>
-          <div class="flex p-4 pl-0 pb-0 bg-white text-neutral-100">
-            <span class="text-gray-500 text-xs">Emir Bardakçı</span> &nbsp;&nbsp; <span class="text-gray-500 text-xs">6 months ago</span>
-          </div>
-          <div class="p-4 pl-0 pt-0">
-            <h5 class="mb-2 text-lg font-bold tracking-wide text-neutral-800"> HyperOS moon super wallpaper is out, get APK for your Xiaomi </h5>
-          </div>
-        </div>
-        <!-- End of Card -->
+        @endforeach
       </div>
+      @endif
     </section>
   </main>
   <div class="mt-6 mb-8 text-center">
-    <button class="border-2 border-green-700 text-green-700 py-1 px-6 rounded-full hover:bg-green-700 hover:text-white">Berita Lainnya</button>
+    <a href= "{{ route('berita.index') }}">
+      <button class="border-2 border-green-700 text-green-700 py-1 px-6 rounded-full hover:bg-green-700 hover:text-white">Berita Lainnya</button>
+    </a>  
   </div>
 </div>
 
@@ -169,4 +131,24 @@ body {
   setTimeout(function() { document.getElementById("urlcopy").innerHTML = "URL Copy"; }, 5000)
   }
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var currentUrl = encodeURIComponent(window.location.href);
+
+        var fbLink = document.getElementById('fb-link');
+        fbLink.href = 'https://www.facebook.com/sharer.php?u='+ currentUrl;
+
+        var tweetLink = document.getElementById('tweet-link');
+        tweetLink.href = "https://twitter.com/intent/tweet?text={{ urlencode($berita->judul) }}&url=" + currentUrl;
+
+        var threadLink = document.getElementById('thread-link');
+        threadLink.href = 'https://threads.net/intent/post?text={{urlencode($berita->judul)}} '+currentUrl;
+
+        var emailLink = document.getElementById('email-link');
+        emailLink.href = "https://mail.google.com/mail/?view=cm&fs=1&su={{ urlencode($berita->judul) }}"+ "&body=" + currentUrl;
+    })
+</script>
+
+
 @endsection
