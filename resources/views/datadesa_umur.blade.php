@@ -9,7 +9,7 @@
             <div class="mt-4">
                 <label class="text-center">Kategori:</label>
                 <select id="data-category" class="mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="redirectToCategory()">
-                    <option {{ $kategori==='umur'? 'selected' : ''}}>Umur</option>
+                    <option {{$kategori=='umur'? 'selected' : ''}}>Umur</option>
                     <option>Pendidikan Kepala Keluarga</option>
                     <option>Pekerjaan</option>
                     <option>Status Perkawinan</option>
@@ -145,14 +145,16 @@
             <div class="mt-4">
                 <label class="text-center">Kategori:</label>
                 <select id="chart-category" class="mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="updateChartFromTable()">
-                    <option>Keseluruhan</option>
-                    <option>Laki-laki</option>
-                    <option>Perempuan</option>
+                    <option value="Keseluruhan">Keseluruhan</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
                 </select>
             </div>
             <div class="mt-4">
                 <div class="chart-container" style="position: relative; width: 100%; height: 0; padding-top: 56.25%;">
-                    <canvas id="chart" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+                    <canvas id="chartAll" style="position: absolute; top: 0; left: 0; width: 100%; height: 0;"></canvas>
+                    <canvas id="chartMen" style="position: absolute; top: 0; left: 0; width: 100%; height: 0;"></canvas>
+                    <canvas id="chartFem" style="position: absolute; top: 0; left: 0; width: 100%; height: 0;"></canvas>
                 </div>
             </div>
         </div>
@@ -163,14 +165,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-// Event listener for select element in table
+// Event listener for table category
 function redirectToCategory() {
     const category = document.getElementById('data-category').value;
     let url;
 
     switch (category) {
         case 'Umur':
-            url = '/data_desa_umur'; // Replace with your actual route
+            url = '/data_desa'; // Replace with your actual route
             break;
         case 'Pendidikan Kepala Keluarga':
             url = '/data_desa_pendidikan_KK'; // Replace with your actual route
@@ -188,22 +190,38 @@ function redirectToCategory() {
     window.location.href = url;
 }
 
+// Event listener for chart category
 function updateChartFromTable() {
     const table = document.getElementById('dataTable');
     const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+    const selectedCategory = document.getElementById('chart-category').value;
     const categories = [];
     const maleData = [];
     const femaleData = [];
+    const femaleData2 = [];
 
     for (let i = 0; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName('td');
         categories.push(cells[0].innerText);
         maleData.push(parseInt(cells[1].innerText));
         femaleData.push(parseInt(cells[2].innerText) * -1);
+        femaleData2.push(parseInt(cells[2].innerText));
     }
 
-    const ctx = document.getElementById('chart').getContext('2d');
-    new Chart(ctx, {
+    // Ensure previous charts are destroyed
+    if (window.allChart) window.allChart.destroy();
+    if (window.menChart) window.menChart.destroy();
+    if (window.femChart) window.femChart.destroy();
+
+    const ctxAll = document.getElementById('chartAll').getContext('2d');
+    const ctxMen = document.getElementById('chartMen').getContext('2d');
+    const ctxFem = document.getElementById('chartFem').getContext('2d');
+
+    document.getElementById('chartAll').style.display = selectedCategory === 'Keseluruhan' ? 'block' : 'none';
+    document.getElementById('chartMen').style.display = selectedCategory === 'Laki-laki' ? 'block' : 'none';
+    document.getElementById('chartFem').style.display = selectedCategory === 'Perempuan' ? 'block' : 'none';
+
+    window.allChart = new Chart(ctxAll, {
         type: 'bar',
         data: {
             labels: categories,
@@ -251,6 +269,52 @@ function updateChartFromTable() {
                             return `${label}: ${value}`;
                         }
                     }
+                }
+            }
+        }
+    });
+
+    window.menChart = new Chart(ctxMen, {
+        type: 'bar',
+        data: {
+            labels: categories,
+            datasets: [
+                {
+                    label: 'Laki-laki',
+                    data: maleData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    window.femChart = new Chart(ctxFem, {
+        type: 'bar',
+        data: {
+            labels: categories,
+            datasets: [
+                {
+                    label: 'Perempuan',
+                    data: femaleData2,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
         }

@@ -12,7 +12,7 @@
                     <option>Umur</option>
                     <option>Pendidikan Kepala Keluarga</option>
                     <option>Pekerjaan</option>
-                    <option {{ $kategori==='status_kawin'? 'selected' : ''}}>Status Perkawinan</option>
+                    <option {{ $kategori=='status_kawin'? 'selected' : ''}}>Status Perkawinan</option>
                 </select>
             </div>
             <table id="dataTable" class="mt-4 w-full border-collapse border border-gray-400">
@@ -67,7 +67,7 @@
             <h2 class="text-lg font-bold text-center underline underline-offset-8">Grafik</h2>
             <div class="mt-4">
                 <label class="text-center">Kategori:</label>
-                <select id="chart-category" class="mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="updateChart()">
+                <select id="chart-category" class="mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="updateChartFromTable()">
                     <option value="Keseluruhan">Keseluruhan</option>
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
@@ -75,7 +75,9 @@
             </div>
             <div class="mt-4">
                 <div class="chart-container" style="position: relative; width: 100%; height: 0; padding-top: 56.25%;">
-                    <canvas id="chart" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+                    <canvas id="chartAll" style="position: absolute; top: 0; left: 0; width: 100%; height: 0;"></canvas>
+                    <canvas id="chartMen" style="position: absolute; top: 0; left: 0; width: 100%; height: 0;"></canvas>
+                    <canvas id="chartFem" style="position: absolute; top: 0; left: 0; width: 100%; height: 0;"></canvas>
                 </div>
             </div>
         </div>
@@ -86,18 +88,14 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-// Event listener for select element in table
-document.getElementById('data-category').addEventListener('change', function() {
-    redirectToCategory();
-});
-
+// Event listener for table category
 function redirectToCategory() {
     const category = document.getElementById('data-category').value;
     let url;
 
     switch (category) {
         case 'Umur':
-            url = '/data_desa_umur'; // Replace with your actual route
+            url = '/data_desa'; // Replace with your actual route
             break;
         case 'Pendidikan Kepala Keluarga':
             url = '/data_desa_pendidikan_KK'; // Replace with your actual route
@@ -115,35 +113,11 @@ function redirectToCategory() {
     window.location.href = url;
 }
 
-document.getElementById('chart-category').addEventListener('change', function() {
-    updateChart();
-});
-
-function updateChart() {
-    const selectedCategory = document.getElementById('chart-category').value;
-    let url;
-
-    switch (selectedCategory) {
-        case 'Keseluruhan':
-            url = '/keseluruhan'; // Replace with your actual route
-            break;
-        case 'Laki-laki':
-            url = '/laki-laki'; // Replace with your actual route
-            break;
-        case 'Perempuan':
-            url = '/perempuan'; // Replace with your actual route
-            break;
-        default:
-            url = '/';
-    }
-
-    window.location.href = url;
-}
-
-// Update the chart on page load
+// Event listener for chart category
 function updateChartFromTable() {
     const table = document.getElementById('dataTable');
     const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+    const selectedCategory = document.getElementById('chart-category').value;
     const categories = [];
     const maleData = [];
     const femaleData = [];
@@ -155,12 +129,25 @@ function updateChartFromTable() {
         femaleData.push(parseInt(cells[2].innerText));
     }
 
-    const ctx = document.getElementById('chart').getContext('2d');
-    new Chart(ctx, {
+    // Ensure previous charts are destroyed
+    if (window.allChart) window.allChart.destroy();
+    if (window.menChart) window.menChart.destroy();
+    if (window.femChart) window.femChart.destroy();
+
+    const ctxAll = document.getElementById('chartAll').getContext('2d');
+    const ctxMen = document.getElementById('chartMen').getContext('2d');
+    const ctxFem = document.getElementById('chartFem').getContext('2d');
+
+    document.getElementById('chartAll').style.display = selectedCategory === 'Keseluruhan' ? 'block' : 'none';
+    document.getElementById('chartMen').style.display = selectedCategory === 'Laki-laki' ? 'block' : 'none';
+    document.getElementById('chartFem').style.display = selectedCategory === 'Perempuan' ? 'block' : 'none';
+
+    window.allChart = new Chart(ctxAll, {
         type: 'bar',
         data: {
             labels: categories,
-            datasets: [{
+            datasets: [
+                {
                     label: 'Laki-laki',
                     data: maleData,
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
@@ -184,9 +171,55 @@ function updateChartFromTable() {
             }
         }
     });
+
+    window.menChart = new Chart(ctxMen, {
+        type: 'bar',
+        data: {
+            labels: categories,
+            datasets: [
+                {
+                    label: 'Laki-laki',
+                    data: maleData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    window.femChart = new Chart(ctxFem, {
+        type: 'bar',
+        data: {
+            labels: categories,
+            datasets: [
+                {
+                    label: 'Perempuan',
+                    data: femaleData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 }
 
-// Update the chart on page load
+// Call the function to update the charts initially
 updateChartFromTable();
 </script>
 @endsection

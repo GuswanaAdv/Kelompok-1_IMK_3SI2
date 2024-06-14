@@ -30,7 +30,9 @@
   </div>
 
   {{--Foter--}}
-  @include('partials.footer')
+  <div class="">
+    @include('partials.footer')
+  </div>
   
 </body>
 </html>

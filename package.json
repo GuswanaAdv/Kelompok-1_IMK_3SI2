@@ -13,6 +13,7 @@
     "devDependencies": {
         "autoprefixer": "^10.4.19",
         "axios": "^0.21",
+        "daisyui": "^4.12.2",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.4.38",
@@ -24,7 +25,6 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.5.2",
         "@tailwindcss/forms": "^0.5.7",
-        "daisyui": "^4.12.2",
         "font-family": "^0.2.0"
     }
 }
