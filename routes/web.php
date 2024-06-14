@@ -33,13 +33,6 @@ Route::get('/beranda', function () {
     return view('beranda_lama');
 })->name('beranda_lama');
 
-Route::get('/data_desa', function () {
-    return view('datadesa');
-})->name('datadesa');
-
-Route::get('/data_desa_umur', function () {
-    return view('datadesa_umur');
-});
 Route::get('/berita', function () {
     return view('berita');
 })->name('berita');
