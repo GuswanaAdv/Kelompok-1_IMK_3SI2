@@ -15,128 +15,130 @@
                     <option>Status Perkawinan</option>
                 </select>
             </div>
-            <table id="dataTable" class="mt-1 w-full border-collapse border border-gray-400">
-                <thead>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2" rowspan="2">No.</th>
-                        <th class="border border-gray-300 px-2 py-2" rowspan="2">Kelompok Umur</th>
-                        <th class="border border-gray-300 px-2 py-2" colspan="2">Jenis Kelamin</th>
-                        <th class="border border-gray-300 px-2 py-2" rowspan="2">Jumlah</th>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">Laki-laki</th>
-                        <th class="border border-gray-300 px-2 py-2">Perempuan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Add rows as needed -->
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">1</th>
-                        <td class="border border-gray-300 px-2 py-2">5 - 9 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">125</td>
-                        <td class="border border-gray-300 px-2 py-2">117</td>
-                        <td class="border border-gray-300 px-2 py-2">242</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">2</th>
-                        <td class="border border-gray-300 px-2 py-2">10 - 14 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">214</td>
-                        <td class="border border-gray-300 px-2 py-2">187</td>
-                        <td class="border border-gray-300 px-2 py-2">401</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">3</th>
-                        <td class="border border-gray-300 px-2 py-2">15 - 19 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">183</td>
-                        <td class="border border-gray-300 px-2 py-2">206</td>
-                        <td class="border border-gray-300 px-2 py-2">389</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">4</th>
-                        <td class="border border-gray-300 px-2 py-2">20 - 24 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">205</td>
-                        <td class="border border-gray-300 px-2 py-2">195</td>
-                        <td class="border border-gray-300 px-2 py-2">400</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">5</th>
-                        <td class="border border-gray-300 px-2 py-2">25 - 29 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">206</td>
-                        <td class="border border-gray-300 px-2 py-2">211</td>
-                        <td class="border border-gray-300 px-2 py-2">417</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">6</th>
-                        <td class="border border-gray-300 px-2 py-2">30 - 34 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">262</td>
-                        <td class="border border-gray-300 px-2 py-2">205</td>
-                        <td class="border border-gray-300 px-2 py-2">467</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">7</th>
-                        <td class="border border-gray-300 px-2 py-2">35 - 39 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">202</td>
-                        <td class="border border-gray-300 px-2 py-2">202</td>
-                        <td class="border border-gray-300 px-2 py-2">404</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">8</th>
-                        <td class="border border-gray-300 px-2 py-2">40 - 44 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">227</td>
-                        <td class="border border-gray-300 px-2 py-2">182</td>
-                        <td class="border border-gray-300 px-2 py-2">409</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">9</th>
-                        <td class="border border-gray-300 px-2 py-2">45 - 49 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">192</td>
-                        <td class="border border-gray-300 px-2 py-2">193</td>
-                        <td class="border border-gray-300 px-2 py-2">385</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">10</th>
-                        <td class="border border-gray-300 px-2 py-2">50 - 54 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">184</td>
-                        <td class="border border-gray-300 px-2 py-2">173</td>
-                        <td class="border border-gray-300 px-2 py-2">357</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">11</th>
-                        <td class="border border-gray-300 px-2 py-2">55 - 59 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">156</td>
-                        <td class="border border-gray-300 px-2 py-2">203</td>
-                        <td class="border border-gray-300 px-2 py-2">359</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">12</th>
-                        <td class="border border-gray-300 px-2 py-2">60 - 64 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">166</td>
-                        <td class="border border-gray-300 px-2 py-2">165</td>
-                        <td class="border border-gray-300 px-2 py-2">331</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">13</th>
-                        <td class="border border-gray-300 px-2 py-2">65 - 69 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">117</td>
-                        <td class="border border-gray-300 px-2 py-2">133</td>
-                        <td class="border border-gray-300 px-2 py-2">250</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">14</th>
-                        <td class="border border-gray-300 px-2 py-2">70 - 74 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">79</td>
-                        <td class="border border-gray-300 px-2 py-2">174</td>
-                        <td class="border border-gray-300 px-2 py-2">253</td>
-                    </tr>
-                    <tr>
-                        <th class="border border-gray-300 px-2 py-2">15</th>
-                        <td class="border border-gray-300 px-2 py-2">≥75 tahun</td>
-                        <td class="border border-gray-300 px-2 py-2">129</td>
-                        <td class="border border-gray-300 px-2 py-2">148</td>
-                        <td class="border border-gray-300 px-2 py-2">277</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="overflow-y-auto pt-3" style="max-height: 450px;">
+                <table id="dataTable" class="mt-1 w-full border-collapse border border-gray-400">
+                    <thead>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2" rowspan="2">No.</th>
+                            <th class="border border-gray-300 px-2 py-2" rowspan="2">Kelompok Umur</th>
+                            <th class="border border-gray-300 px-2 py-2" colspan="2">Jenis Kelamin</th>
+                            <th class="border border-gray-300 px-2 py-2" rowspan="2">Jumlah</th>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">Laki-laki</th>
+                            <th class="border border-gray-300 px-2 py-2">Perempuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add rows as needed -->
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">1</th>
+                            <td class="border border-gray-300 px-2 py-2">5 - 9 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">125</td>
+                            <td class="border border-gray-300 px-2 py-2">117</td>
+                            <td class="border border-gray-300 px-2 py-2">242</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">2</th>
+                            <td class="border border-gray-300 px-2 py-2">10 - 14 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">214</td>
+                            <td class="border border-gray-300 px-2 py-2">187</td>
+                            <td class="border border-gray-300 px-2 py-2">401</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">3</th>
+                            <td class="border border-gray-300 px-2 py-2">15 - 19 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">183</td>
+                            <td class="border border-gray-300 px-2 py-2">206</td>
+                            <td class="border border-gray-300 px-2 py-2">389</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">4</th>
+                            <td class="border border-gray-300 px-2 py-2">20 - 24 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">205</td>
+                            <td class="border border-gray-300 px-2 py-2">195</td>
+                            <td class="border border-gray-300 px-2 py-2">400</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">5</th>
+                            <td class="border border-gray-300 px-2 py-2">25 - 29 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">206</td>
+                            <td class="border border-gray-300 px-2 py-2">211</td>
+                            <td class="border border-gray-300 px-2 py-2">417</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">6</th>
+                            <td class="border border-gray-300 px-2 py-2">30 - 34 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">262</td>
+                            <td class="border border-gray-300 px-2 py-2">205</td>
+                            <td class="border border-gray-300 px-2 py-2">467</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">7</th>
+                            <td class="border border-gray-300 px-2 py-2">35 - 39 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">202</td>
+                            <td class="border border-gray-300 px-2 py-2">202</td>
+                            <td class="border border-gray-300 px-2 py-2">404</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">8</th>
+                            <td class="border border-gray-300 px-2 py-2">40 - 44 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">227</td>
+                            <td class="border border-gray-300 px-2 py-2">182</td>
+                            <td class="border border-gray-300 px-2 py-2">409</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">9</th>
+                            <td class="border border-gray-300 px-2 py-2">45 - 49 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">192</td>
+                            <td class="border border-gray-300 px-2 py-2">193</td>
+                            <td class="border border-gray-300 px-2 py-2">385</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">10</th>
+                            <td class="border border-gray-300 px-2 py-2">50 - 54 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">184</td>
+                            <td class="border border-gray-300 px-2 py-2">173</td>
+                            <td class="border border-gray-300 px-2 py-2">357</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">11</th>
+                            <td class="border border-gray-300 px-2 py-2">55 - 59 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">156</td>
+                            <td class="border border-gray-300 px-2 py-2">203</td>
+                            <td class="border border-gray-300 px-2 py-2">359</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">12</th>
+                            <td class="border border-gray-300 px-2 py-2">60 - 64 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">166</td>
+                            <td class="border border-gray-300 px-2 py-2">165</td>
+                            <td class="border border-gray-300 px-2 py-2">331</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">13</th>
+                            <td class="border border-gray-300 px-2 py-2">65 - 69 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">117</td>
+                            <td class="border border-gray-300 px-2 py-2">133</td>
+                            <td class="border border-gray-300 px-2 py-2">250</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">14</th>
+                            <td class="border border-gray-300 px-2 py-2">70 - 74 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">79</td>
+                            <td class="border border-gray-300 px-2 py-2">174</td>
+                            <td class="border border-gray-300 px-2 py-2">253</td>
+                        </tr>
+                        <tr>
+                            <th class="border border-gray-300 px-2 py-2">15</th>
+                            <td class="border border-gray-300 px-2 py-2">≥75 tahun</td>
+                            <td class="border border-gray-300 px-2 py-2">129</td>
+                            <td class="border border-gray-300 px-2 py-2">148</td>
+                            <td class="border border-gray-300 px-2 py-2">277</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- Chart -->
