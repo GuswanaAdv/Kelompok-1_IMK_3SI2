@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="mx-10 my-10 mt-0">
-    <div class="grid grid-cols-2 gap-6">
+    <div class="grid md:grid-cols-2 gap-6">
         <!-- Data Table -->
         <div class="bg-lime-200 p-4 rounded-lg">
             <h2 class="text-lg font-bold text-center underline underline-offset-8">Tabel Data</h2>

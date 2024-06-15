@@ -40,7 +40,8 @@
             <div class="flex items-center">
               <div class="relative inline-block text-left mr-4">
                   <div>
-                      <form action="{{ route('berita.sort') }}" method="GET" id="sortForm">
+                      <form action="{{route('berita.sort')}}" method="GET" id="sortForm" name="sortForm">
+                          @csrf
                           <button type="button" class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-300 rounded-md px-4 py-2" id="sortDropdownButton" aria-expanded="false" aria-haspopup="true">
                               @if(request('sort') == 'populer')
                                   Populer
@@ -56,6 +57,8 @@
           
                           <div id="sortDropdown" class="hidden absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="sortDropdownButton" tabindex="-1">
                               <div class="py-1" role="none">
+                                  <input type="hidden" name="cari_berita1" value="{{!empty($search)? $search : ''}}">
+                                  <input type="hidden" name="kategori" value="{{!empty($kategori)? implode(', ', $kategori) : ''}}">
                                   <button type="submit" name="sort" value="populer" class="text-gray-900 block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1">Populer</button>
                                   <button type="submit" name="sort" value="terbaru" class="text-gray-500 block w-full text-left px-4 py-2 text-sm hover:bg-gray-100" role="menuitem" tabindex="-1">Terbaru</button>
                               </div>
@@ -169,6 +172,8 @@
               {{-- end facated --}}
       
               <!-- Search Button for Small Screens -->
+              <input name="cari_berita1" type="hidden" class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" 
+              value="{{!empty($search)? $search : ''}}" type="text" placeholder="Cari">
               <div class="py-6">
                 <button type="submit" class="w-full p-3 block bg-darkgreen text-white px-4 py-2 rounded-md mt-4 mx-auto  focus:ring-darkgreen md:hidden">Cari</button>
               </div>
@@ -184,12 +189,13 @@
           <div class="relative max-w-lg mx-auto border-b border-gray-200 pb-6 lg:hidden">
             <form action="{{ route('berita.pagination') }}" method="GET" id="cari" name="cari" class="relative inline-block w-full">
               @csrf
-              <button type="submit" class="absolute inset-y-0 left-0 pl-3 flex items-center">
+              <button type="submit" class="absolute inset-y-0 right-0 flex items-center pr-4">
                   <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
                       <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
               </button>
-              <input name="cari_berita1" class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" type="text" placeholder="Cari">
+              <input name="cari_berita1" class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" 
+              value="{{!empty($search)? $search : ''}}" type="text" placeholder="Cari">
           </form>
           </div>
           
@@ -201,7 +207,7 @@
               <div class="relative max-w-lg mx-auto border-b border-gray-200 pb-6">
                     <input id="cari_berita1" name="cari_berita1" value="{{!empty($search)? $search : ''}}" class="w-full border rounded-md pl-4 pr-4 py-2 focus:border-darkgreen focus:outline-none focus:shadow-outline" 
                     type="text" placeholder="Cari">
-                    <button type ="submit" class="absolute inset-y-0 right-0 pl-3 flex items-center pb-6 pr-4">
+                    <button type ="submit" class="absolute inset-y-0 right-0 flex items-center pb-6 pr-4">
                       <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
                           <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>

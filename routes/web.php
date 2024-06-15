@@ -43,7 +43,7 @@ Route::post('/berita_cari', [BeritaController::class, 'search'])->name('berita.s
 
 Route::get('/berita_cari', [BeritaController::class, 'search2'])->name('berita.pagination');
 
-Route::get('/berita/sort', [BeritaController::class, 'sort'])->name('berita.sort');
+Route::get('/berita_sort', [BeritaController::class, 'sort'])->name('berita.sort');
 //
 
 
