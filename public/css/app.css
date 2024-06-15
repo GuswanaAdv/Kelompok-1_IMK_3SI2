@@ -10199,6 +10199,12 @@ details.collapse summary::-webkit-details-marker {
   top: 0px;
   bottom: 0px;
 }
+.bottom-14 {
+  bottom: 3.5rem;
+}
+.bottom-4 {
+  bottom: 1rem;
+}
 .left-0 {
   left: 0px;
 }
@@ -10210,6 +10216,12 @@ details.collapse summary::-webkit-details-marker {
 }
 .right-0 {
   right: 0px;
+}
+.right-12 {
+  right: 3rem;
+}
+.right-2 {
+  right: 0.5rem;
 }
 .right-4 {
   right: 1rem;
@@ -10276,13 +10288,13 @@ details.collapse summary::-webkit-details-marker {
   margin-top: -0.75rem;
   margin-bottom: -0.75rem;
 }
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
-}
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
 }
 .mx-auto {
   margin-left: auto;
@@ -10292,13 +10304,13 @@ details.collapse summary::-webkit-details-marker {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 .-ml-px {
   margin-left: -1px;
@@ -10471,9 +10483,6 @@ details.collapse summary::-webkit-details-marker {
 .w-3 {
   width: 0.75rem;
 }
-.w-3\/4 {
-  width: 75%;
-}
 .w-4 {
   width: 1rem;
 }
@@ -10643,14 +10652,11 @@ details.collapse summary::-webkit-details-marker {
 .justify-between {
   justify-content: space-between;
 }
-.justify-around {
-  justify-content: space-around;
-}
 .justify-evenly {
   justify-content: space-evenly;
 }
-.gap-3 {
-  gap: 0.75rem;
+.gap-1 {
+  gap: 0.25rem;
 }
 .gap-4 {
   gap: 1rem;
@@ -10843,6 +10849,10 @@ details.collapse summary::-webkit-details-marker {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
@@ -10884,6 +10894,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
+}
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
 }
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -11050,6 +11063,9 @@ details.collapse summary::-webkit-details-marker {
 .pl-4 {
   padding-left: 1rem;
 }
+.pr-12 {
+  padding-right: 3rem;
+}
 .pr-4 {
   padding-right: 1rem;
 }
@@ -11082,12 +11098,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .pt-9 {
   padding-top: 2.25rem;
-}
-.pr-16 {
-  padding-right: 4rem;
-}
-.pr-12 {
-  padding-right: 3rem;
 }
 .text-left {
   text-align: left;
@@ -11166,6 +11176,10 @@ details.collapse summary::-webkit-details-marker {
 }
 .tracking-wide {
   letter-spacing: 0.025em;
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .text-blue-500 {
   --tw-text-opacity: 1;
@@ -11716,6 +11730,11 @@ details.collapse summary::-webkit-details-marker {
 
   @media (min-width: 640px) {
 
+  .sm\:mx-5 {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+
   .sm\:mb-0 {
     margin-bottom: 0px;
   }
@@ -11768,9 +11787,28 @@ details.collapse summary::-webkit-details-marker {
     justify-content: space-between;
   }
 
+  .sm\:p-3 {
+    padding: 0.75rem;
+  }
+
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
@@ -11788,6 +11826,10 @@ details.collapse summary::-webkit-details-marker {
     z-index: auto;
   }
 
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .md\:mb-2 {
     margin-bottom: 0.5rem;
   }
@@ -11796,20 +11838,16 @@ details.collapse summary::-webkit-details-marker {
     margin-left: 0px;
   }
 
+  .md\:ml-4 {
+    margin-left: 1rem;
+  }
+
   .md\:ml-6 {
     margin-left: 1.5rem;
   }
 
   .md\:ml-64 {
     margin-left: 16rem;
-  }
-
-  .md\:mb-0 {
-    margin-bottom: 0px;
-  }
-
-  .md\:ml-4 {
-    margin-left: 1rem;
   }
 
   .md\:block {
@@ -11852,6 +11890,10 @@ details.collapse summary::-webkit-details-marker {
     align-items: center;
   }
 
+  .md\:gap-3 {
+    gap: 0.75rem;
+  }
+
   .md\:space-x-4 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -11866,6 +11908,10 @@ details.collapse summary::-webkit-details-marker {
     padding: 0px;
   }
 
+  .md\:p-4 {
+    padding: 1rem;
+  }
+
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -11877,6 +11923,11 @@ details.collapse summary::-webkit-details-marker {
 
   .md\:text-lg {
     font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
@@ -11982,9 +12033,9 @@ details.collapse summary::-webkit-details-marker {
     padding-right: 3rem;
   }
 
-  .lg\:px-24 {
-    padding-left: 6rem;
-    padding-right: 6rem;
+  .lg\:px-28 {
+    padding-left: 7rem;
+    padding-right: 7rem;
   }
 
   .lg\:px-8 {
@@ -12021,5 +12072,10 @@ details.collapse summary::-webkit-details-marker {
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
