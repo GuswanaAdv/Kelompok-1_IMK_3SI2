@@ -17,6 +17,8 @@ class CreateBeritaTable extends Migration
             $table->id();
             $table->string('judul');
             $table->text('slug');
+            $table->text('preview');
+            $table->text('konten');
             $table->string('kategori');
             $table->string('thumbnail')->nullable();
             $table->integer('views')->default(0); // default to 0 views

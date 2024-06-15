@@ -31,11 +31,7 @@ Route::get('/cardBerita', function () {
     return view('cardBerita');
 });
 
-Route::get('/berita_page', function () {
-    return view('berita_page',[
-        "judul_halaman"=>"Halaman Berita",
-    ]);
-});
+Route::get('/berita/{slug}', [BeritaController::class, 'beritaPage'])->name('beritapage');
 
 Route::get('/category', function () {
     return view('category');
