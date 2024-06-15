@@ -32,9 +32,20 @@ tabs.forEach(tab =>{
         <div class="container px-5 py-0 mx-auto">
        
             <div class="flex flex-wrap -m-4">
-                
+           
+                @if(!empty($message))
+                <div class="p-4 w-full md:w-1/2 mx-auto">
+                    <div class="overflow-hidden relative">
+                        <div class="p-6 transition duration-300 ease-in text-center">
+                            <h2 class="text-xl font-semibold text-darkgreen mb-3">{{ $message }}</h2>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
         @foreach($berita as $berita)
         <div class="p-4 w-full md:w-1/2">
+            <a href= "{{ route('beritapage', $berita->slug) }}">
             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden relative">
                 <img class="lg:h-72 md:h-48 w-full object-cover object-center" src="https://picsum.photos/id/188/720/400" alt="blog">
                 <div class="absolute top-0 left-0 mt-4 ml-4">
@@ -43,9 +54,9 @@ tabs.forEach(tab =>{
                 <div class="p-6 hover:bg-darkgreen hover:text-white transition duration-300 ease-in">
                     <h2 class="text-base font-medium text-lime-400 300 mb-1">{{ $berita->formatted_published_datetime }}</h2>
                     <h1 class="text-2xl font-semibold mb-3">{{ $berita->judul }}</h1>
-                    <p class="leading-relaxed mb-3">{{ $berita->slug }}</p>
+                    <p class="leading-relaxed mb-3">{{ $berita->preview }}</p>
                     <div class="flex items-center flex-wrap">
-                        <a class="text-lime-400 inline-flex items-center md:mb-2 lg:mb-0">Selengkapnya
+                        <a href= "{{ route('beritapage', $berita->slug) }}" class="text-lime-400 inline-flex items-center md:mb-2 lg:mb-0">Selengkapnya
                             <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                 fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M5 12h14"></path>
@@ -62,6 +73,7 @@ tabs.forEach(tab =>{
                     </div>
                 </div>
             </div>
+            <a>
         </div>
         @endforeach
 
