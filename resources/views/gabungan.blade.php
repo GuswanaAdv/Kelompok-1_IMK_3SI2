@@ -349,7 +349,7 @@
               {{-- @include('pagination') --}}
               {{-- {{ $berita->onEachSide(1)->links('pagination::tailwind') }} --}}
               <div class="my-4">
-                {{ $berita->links('vendor.pagination.tailwind') }}
+                {{ $berita->onEachSide(1)->links('vendor.pagination.tailwind') }}
               </div>
             
               <!-- End Pagination -->
