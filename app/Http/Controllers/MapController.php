@@ -31,6 +31,9 @@ class MapController extends Controller
                 'draggable' => true
             ]
         ];
-        return view('menu_profil.profil_umum', compact('initialMarkers'));
+        return view('menu_profil.profil_umum', [
+            'judul_halaman' => 'Profil dan Fasilitas',
+            'menu_sidebar' => 'Profil Umum'
+        ], compact('initialMarkers'));
     }
 }

@@ -32,7 +32,17 @@ tabs.forEach(tab =>{
         <div class="container px-5 py-0 mx-auto">
        
             <div class="flex flex-wrap -m-4">
-                
+           
+                @if(!empty($message))
+                <div class="p-4 w-full md:w-1/2 mx-auto">
+                    <div class="overflow-hidden relative">
+                        <div class="p-6 transition duration-300 ease-in text-center">
+                            <h2 class="text-xl font-semibold text-darkgreen mb-3">{{ $message }}</h2>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
         @foreach($berita as $berita)
         <div class="p-4 w-full md:w-1/2">
             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden relative">
