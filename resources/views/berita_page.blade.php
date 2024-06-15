@@ -125,7 +125,7 @@ body {
               </svg>
             </a>
         </div>
-        <p class="text-white text-sm" id="url"></p>
+        <p class="text-white text-sm max-w-full truncate" id="url"></p>
         <div class="mx-0 sm:mx-5 bg-green-100 text-green-700 py-2 px-2 rounded-xl font-bold text-xs">
           <button id="urlcopy" onclick="copyurl()">URL copy</button>
         </div>
