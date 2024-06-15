@@ -172,7 +172,7 @@ function redirectToCategory() {
 
     switch (category) {
         case 'Umur':
-            url = '/data_desa'; // Replace with your actual route
+            url = '/data_desa_umur'; // Replace with your actual route
             break;
         case 'Pendidikan Kepala Keluarga':
             url = '/data_desa_pendidikan_KK'; // Replace with your actual route
