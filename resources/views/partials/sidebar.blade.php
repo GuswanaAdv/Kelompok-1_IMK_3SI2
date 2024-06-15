@@ -1,4 +1,4 @@
-<aside class="w-1/4 p-4 bg-white shadow-md">
+<aside class="w-1/4 p-4 bg-white shadow-md hidden md:block">
     <div class="mb-4">
         <h2 class="text-xl font-inter font-bold mb-2">Profil</h2>
         <ul class="space-y-2">
