@@ -1,10 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    body{
+        background-color:white;
+    }
+</style>
+
 <div class="mx-10 my-10 mt-0">
     <div class="grid md:grid-cols-2 gap-6">
         <!-- Data Table -->
-        <div class="bg-lime-200 p-4 rounded-lg">
+        <div class="bg-white shadow-lg p-4 rounded-lg">
             <h2 class="text-lg font-bold text-center underline underline-offset-8">Tabel Data</h2>
             <div class="mt-4">
                 <label class="text-center">Kategori:</label>
@@ -63,7 +69,7 @@
         </div>
 
         <!-- Chart -->
-        <div class="bg-lime-200 p-4 rounded-lg">
+        <div class="bg-white shadow-lg p-4 rounded-lg">
             <h2 class="text-lg font-bold text-center underline underline-offset-8">Grafik</h2>
             <div class="mt-4">
                 <label class="text-center">Kategori:</label>

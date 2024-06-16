@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+<style>
+    body{
+        background-color:white;
+    }
+</style>
+
 <div class="container mx-auto mt-0 flex">
     <!-- Sidebar -->
     @include('partials.sidebar')
