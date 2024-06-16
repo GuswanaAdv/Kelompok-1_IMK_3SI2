@@ -10186,14 +10186,14 @@ details.collapse summary::-webkit-details-marker {
 .-inset-0 {
   inset: -0px;
 }
-.-inset-0\.5 {
-  inset: -0.125rem;
-}
 .-inset-1 {
   inset: -0.25rem;
 }
 .inset-0 {
   inset: 0px;
+}
+.inset-0\.5 {
+  inset: 0.125rem;
 }
 .inset-y-0 {
   top: 0px;
@@ -10350,9 +10350,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .ml-2 {
   margin-left: 0.5rem;
-}
-.ml-20 {
-  margin-left: 5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -10534,6 +10531,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .max-w-7xl {
   max-width: 80rem;
+}
+.max-w-full {
+  max-width: 100%;
 }
 .max-w-lg {
   max-width: 32rem;
@@ -10723,6 +10723,11 @@ details.collapse summary::-webkit-details-marker {
 }
 .overflow-y-auto {
   overflow-y: auto;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -11087,6 +11092,9 @@ details.collapse summary::-webkit-details-marker {
 .pt-24 {
   padding-top: 6rem;
 }
+.pt-3 {
+  padding-top: 0.75rem;
+}
 .pt-4 {
   padding-top: 1rem;
 }
@@ -11098,9 +11106,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .pt-9 {
   padding-top: 2.25rem;
-}
-.pt-3 {
-  padding-top: 0.75rem;
 }
 .text-left {
   text-align: left;
@@ -11740,6 +11745,10 @@ details.collapse summary::-webkit-details-marker {
 
   .sm\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .sm\:ml-20 {
+    margin-left: 5rem;
   }
 
   .sm\:ml-6 {

@@ -34,7 +34,7 @@
           <div class="flex space-x-4">
            <a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md px-1 py-2 text-xs font-roboto" aria-current="page">BERANDA</a>
             <a href="{{ route('profil') }}" class="{{$judul_halaman=='Profil dan Fasilitas'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">PROFIL & FASILITAS<span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
-            <a href="{{ route('berita.index') }}" class="{{$judul_halaman=='Berita'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">BERITA <span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
+            <a href="{{ route('berita.index') }}" class="{{$judul_halaman=='Berita'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">BERITA</a>
             <a href="{{ route('datadesa') }}" class="{{$judul_halaman=='Data Desa'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">DATA DESA <span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
           </div>
         </div>
@@ -47,7 +47,7 @@
     <div class="space-y-1 px-2 pb-3 pt-2">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
       <a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'bg-white bg-opacity-25':''}} text-white block rounded-md px-3 py-2 text-sm font-roboto">BERANDA</a>
-      <a href="{{ route('profil') }}" class="{{$judul_halaman=='Profil dan Fasilitas'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">PROFILE</a>
+      <a href="{{ route('profil') }}" class="{{$judul_halaman=='Profil dan Fasilitas'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">PROFIL & FASILITAS</a>
       <a href="{{ route('berita.index') }}" class="{{$judul_halaman=='Berita'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">BERITA</a>
       <a href="{{ route('datadesa') }}" class="{{$judul_halaman=='Data Desa'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">DATA DESA</a>
     </div>
