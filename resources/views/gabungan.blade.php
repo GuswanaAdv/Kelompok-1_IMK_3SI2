@@ -33,8 +33,8 @@
 
       {{-- header --}}
       <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-6">
-          <h1 class="text-4xl font-bold tracking-tight text-gray-900">Berita</h1>
+        <div class="flex items-baseline justify-between border-b border-gray-200 pb-0 pt-6">
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900 mr-2">Berita</h1>
   
           <div class="flex items-center">
             <div class="flex items-center">
@@ -354,7 +354,7 @@
                 <!-- Pagination =-->
               {{-- @include('pagination') --}}
               {{-- {{ $berita->onEachSide(1)->links('pagination::tailwind') }} --}}
-              <div class="my-4">
+              <div class="m-4">
                 {{ $berita->onEachSide(1)->links('vendor.pagination.tailwind') }}
               </div>
             
