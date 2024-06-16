@@ -21,7 +21,11 @@
 <body class="">
   {{--Navbar--}}
   @include('partials.navbar')
-  @include('partials.breadcrumbs')
+  @if($judul_halaman=='Beranda')
+
+  @else
+    @include('partials.breadcrumbs')
+  @endif
 
   {{--Sidebar--}}
 
