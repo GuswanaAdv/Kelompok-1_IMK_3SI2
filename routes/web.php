@@ -21,6 +21,7 @@ use App\Http\Controllers\BlogPostController;
 Route::get('/', function () {
     return view('beranda',[
         "judul_halaman"=>"Beranda",
+        "menu_sidebar"=>""
     ]);
 })->name('beranda');
 //
@@ -52,6 +53,7 @@ Route::get('/data_desa_umur', function () {
     return view('datadesa_umur',[
         "kategori"=>"umur",
         "judul_halaman"=>"Data Desa",
+        "menu_sidebar"=>""
     ]);
 })->name('datadesa');
 
@@ -59,22 +61,25 @@ Route::get('/data_desa_pendidikan_KK', function () {
     return view('datadesa_pendkk',[
         "kategori"=>"pendidikan",
         "judul_halaman"=>"Data Desa",
+        "menu_sidebar"=>""
     ]);
-});
+})->name('datadesa.pendidikan');
 
 Route::get('/data_desa_pekerjaan', function () {
     return view('datadesa_kerja',[
         "kategori"=>"pekerjaan",
         "judul_halaman"=>"Data Desa",
+        "menu_sidebar"=>""
     ]);
-});
+})->name('datadesa.pekerjaan');
 
 Route::get('/data_desa_status_kawin', function () {
     return view('datadesa_kawin',[
         "kategori"=>"status_kawin",
         "judul_halaman"=>"Data Desa",
+        "menu_sidebar"=>""
     ]);
-});
+})->name('datadesa.status_kawin');
 //
 
 

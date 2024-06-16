@@ -18,7 +18,7 @@
                 1. BPD
             </div>
             <div class="collapse-content border-t">
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
+                <img src="https://mattoanging.desa.id/wp-content/uploads/2022/09/images-32.jpeg" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
                 <p class="mt-4">Badan Permusyawaratan Desa (BPD) Adalah lembaga perdujudan demokrasi 
                     dalam penyelenggaraan pemerintahan desa. BPD bisa disebut sebagai parlemen di desa. 
                     BPD adalah lembaga baru di desa pada masa otonomi daerah di Indonesia. Berdasarkan 
@@ -53,7 +53,7 @@
                 2. PKK
             </div>
             <div class="collapse-content border-t">
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
+                <img src="https://bungko.desa.id/wp-content/uploads/2023/08/filemanager-1627125966-pkk.jpg" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
                 <p class="mt-4">Pemberdayaan Kesejahteraan Keluarga (PKK) sebagai gerakan pembangunan masyarakat 
                     bermula dari seminar ekonomi rumah tangga di Bogor tahun 1957[1]. Sebagai tindak lanjut dari 
                     seminar tersebut, pada tahun 1961 panitia penyusunan tata susunan pelajaran pada Pendidikan 
@@ -89,7 +89,7 @@
                 3. Posyandu
             </div>
             <div class="collapse-content border-t">
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
+                <img src="https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/2022/04/30/1430107270.jpeg" style="height: 300px" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
                 <p class="mt-4">Pos Pelayanan Keluarga Berencana - Kesehatan Terpadu (Posyandu) adalah 
                     kegiatan kesehatan dasar yang diselenggarakan dari, oleh dan untuk masyarakat yang 
                     dibantu oleh petugas kesehatan. Posyandu merupakan salah satu upaya kesehatan 
@@ -131,7 +131,7 @@
                 4. Karang Taruna
             </div>
             <div class="collapse-content border-t">
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
+                <img src="https://bungko.desa.id/wp-content/uploads/2023/03/sedang_1634793296_sedang_1624874831_KARANG-TARUNA.jpg" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
                 <p class="mt-4">Karang Taruna adalah organisasi kepemudaan di Indonesia yang dibentuk oleh 
                     masyarakat sebagai wadah generasi muda untuk mengembangkan diri, tumbuh, dan berkembang 
                     atas dasar kesadaran serta tanggung jawab sosial dari, oleh, dan untuk generasi muda, yang 
@@ -161,7 +161,7 @@
                 5. Rukun Warga
             </div>
             <div class="collapse-content border-t">
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
+                <img src="https://rumahkeadilan.or.id/wp-content/uploads/2019/07/gambar-1-kerukunan.jpg" alt="Article Image" style="height: 300px" class="w-full mx-auto mb-4 rounded mt-4"> 
                 <p class="mt-4">Rukun Warga (RW) adalah istilah pembagian wilayah di bawah Kelurahan. Rukun Warga 
                     (RW) adalah Lembaga Masyarakat yang dibentuk melalui musyawarah pengurus Rukun Tetangga (RT) 
                     di wilayah kerjanya dalam rangka pelayanan pemerintah dan masyarakat yang diakui dan dibina oleh 
@@ -183,7 +183,7 @@
                 6. Rukun Tetangga
             </div>
             <div class="collapse-content border-t">
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
+                <img src="https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/klikanggaran/2016/09/images_berita_Sep16_1-FAIZ-Gotong.jpg" style="height: 300px" alt="Article Image" class="w-full mx-auto mb-4 rounded mt-4"> 
                 <p class="mt-4">Rukun Tetangga (RT) adalah pembagian wilayah di Indonesia di bawah Rukun Warga. 
                     Rukun Tetangga bukanlah termasuk pembagian administrasi pemerintahan, dan pembentukannya adalah 
                     melalui musyawarah masyarakat setempat dalam rangka pelayanan kemasyarakatan yang ditetapkan oleh 
