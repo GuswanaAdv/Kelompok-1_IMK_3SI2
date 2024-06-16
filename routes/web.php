@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\BerandaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MapController;
 use Jcf\Geocode\Geocode;
@@ -18,13 +19,7 @@ use App\Http\Controllers\BlogPostController;
 */
 
 // Beranda
-Route::get('/', function () {
-    return view('beranda',[
-        "judul_halaman"=>"Beranda",
-        "menu_sidebar"=>""
-    ]);
-})->name('beranda');
-//
+Route::get('/', [BerandaController::class, 'beranda'])->name('beranda');
 
 
 // Berita

@@ -72,30 +72,18 @@
             <hr class="lg:hidden w-64 h-px my-8 bg-black border-0 dark:bg-black">
         </div>
         <div class="gird grid-cols-1">
+            @foreach($beritaTerbaru as $berita)
+            <a href= "{{ route('beritapage', $berita->slug) }}">
             <div class="flex lg:items-center">
-                <img class="w-24 h-24 lg:w-[224px] lg:h-[140.92px] object-cover" src="{{asset('images/berita-4.jpeg')}}" alt="" srcset="">
+                <img class="w-24 h-24 lg:w-[224px] lg:h-[140.92px] object-cover" src="{{ $berita->thumbnail }}" alt="" srcset="">
                 <div class="p-4">
-                    <h1 class="font-plusjakartasans font-medium text-xl lg:text-2xl">Rumah di Sempor Rusak Akibat Bencana</h1>
-                    <p class="hidden lg:block text-sm font-roboto">Faktanya ketika dipantau di lapangan rumah warga yang lain tidak ada masalah. Ia bersama BPBD dan Pemerintah Desa juga telah mengecek di sekitar rumah, tidak ada bukti tanah bergerak....</p>
+                    <h1 class="font-plusjakartasans font-medium text-xl lg:text-2xl">{{ $berita->judul }}</h1>
+                    <p class="hidden lg:block text-sm font-roboto">{{ $berita->preview }}</p>
                 </div>
             </div>
             <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
-            <div class="flex items-center">
-                <img class="w-24 h-24 lg:w-[224px] lg:h-[140.92px] object-cover" src="{{asset('images/berita-5.jpeg')}}" alt="" srcset="">
-                <div class="p-4">
-                    <h1 class="font-plusjakartasans font-medium text-xl lg:text-2xl">Teladani Muassis NU, Pergunu Sempor Kebumen Ziarah ke</h1>
-                    <p class="hidden lg:block text-sm font-roboto">Faktanya ketika dipantau di lapangan rumah warga yang lain tidak ada masalah. Ia bersama BPBD dan Pemerintah Desa juga telah mengecek di sekitar rumah, tidak ada bukti tanah bergerak....</p>
-                </div>
-            </div>
-            <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
-            <div class="flex items-center">
-                <img class="w-24 h-24 lg:w-[224px] lg:h-[140.92px] object-cover" src="{{asset('images/berita-6.jpg')}}" alt="" srcset="">
-                <div class="p-4">
-                    <h1 class="font-plusjakartasans font-medium text-xl lg:text-2xl">Rumah di Sempor Rusak Akibat Bencana</h1>
-                    <p class="hidden lg:block text-sm font-roboto">Faktanya ketika dipantau di lapangan rumah warga yang lain tidak ada masalah. Ia bersama BPBD dan Pemerintah Desa juga telah mengecek di sekitar rumah, tidak ada bukti tanah bergerak....</p>
-                </div>
-            </div>
-            <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
+            </a>
+            @endforeach
         </div>
         <div class="text-end pt-8 pb-4">
             <a href="{{route('berita.index')}}" class="text-green ">Selengkapnya</a>
@@ -110,26 +98,14 @@
             <hr class="lg:hidden w-64 h-px my-8 bg-black border-0 dark:bg-black">
         </div>
         <div class="gird grid-cols-1">
+        @foreach($beritaPopular as $berita)
+        <a href= "{{ route('beritapage', $berita->slug) }}">
             <div class="p-4">
-                <h1 class="font-plusjakartasans font-medium text-xl">1. Rumah di Sempor Rusak Akibat Bencana</h1>
+                <h1 class="font-plusjakartasans font-medium text-xl">{{ $berita->judul }}</h1>
             </div>
             <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
-            <div class="p-4">
-                <h1 class="font-plusjakartasans font-medium text-xl">2. Teladani Muassis NU, Pergunu Sempor Kebumen Ziarah ke</h1>
-            </div>
-            <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
-            <div class="p-4">
-                <h1 class="font-plusjakartasans font-medium text-xl">3. Rumah di Sempor Rusak Akibat Bencana</h1>
-            </div>
-            <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
-            <div class="p-4">
-                <h1 class="font-plusjakartasans font-medium text-xl">4. Teladani Muassis NU, Pergunu Sempor Kebumen Ziarah ke</h1>
-            </div>
-            <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
-            <div class="p-4">
-                <h1 class="font-plusjakartasans font-medium text-xl">5. Rumah di Sempor Rusak Akibat Bencana</h1>
-            </div>
-            <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
+        </a>
+        @endforeach
         </div>
     </div>
 </section>

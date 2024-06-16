@@ -21,6 +21,7 @@ class Berita extends Model
         'kategori',
         'thumbnail',
         'published_datetime',
+        'views'
     ];
 
     public $timestamps = true;
