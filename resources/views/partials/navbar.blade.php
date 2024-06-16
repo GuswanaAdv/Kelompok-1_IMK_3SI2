@@ -1,41 +1,97 @@
 <nav class="bg-gradient-to-r z-40 absolute w-full from-lime-500 from-5% via-green via-10% to-darkgreen to-95% drop-shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-10 border-b border-gray-300">
 
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-16 items-center justify-between">
-      <div class="absolute inset-y-0 pr-4 right-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
-        <button id="menu-button" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-green hover:bg-opacity-25 hover:text-green focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green" aria-controls="mobile-menu" aria-expanded="false">
-          <span class="absolute inset-0.5"></span>
-          <span class="sr-only">Open main menu</span>
-          <!--
-            Icon when menu is closed.
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
-          <svg id="menu-icon-closed" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <!--
-            Icon when menu is open.
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
-          <svg id="menu-icon-open" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="flex flex-1 items-center justify-between sm:items-stretch sm:justify-between">
-        <div class="flex flex-shrink-0 items-center">
-          <img class="h-8 w-auto" src="https://jatinegara.kec-sempor.kebumenkab.go.id/assets/logo/kbm.png" alt="Your Company">
-          <h1 class="text-lg text-white ml-3 font-roboto font-semibold">Desa Jatinegara</h1>
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 pr-4 right-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button id="menu-button" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-green hover:bg-opacity-25 hover:text-green focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
+  
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg id="menu-icon-closed" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!--
+              Icon when menu is open.
+  
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg id="menu-icon-open" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
-        <div class="hidden sm:ml-6 sm:block mr-52 ">
-          <div class="flex space-x-4">
-           <a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md px-1 py-2 text-xs font-roboto" aria-current="page">BERANDA</a>
-            <a href="{{ route('profil') }}" class="{{$judul_halaman=='Profil dan Fasilitas'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">PROFIL & FASILITAS<span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
-            <a href="{{ route('berita.index') }}" class="{{$judul_halaman=='Berita'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">BERITA</a>
-            <a href="{{ route('datadesa') }}" class="{{$judul_halaman=='Data Desa'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">DATA DESA <span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
+        <div class="flex flex-1 items-center justify-between sm:items-stretch sm:justify-between">
+          <div class="flex flex-shrink-0 items-center">
+            <img class="h-8 w-auto" src="https://jatinegara.kec-sempor.kebumenkab.go.id/assets/logo/kbm.png" alt="Your Company">
+            <h1 class="text-lg text-white ml-3 font-roboto font-semibold">Desa Jatinegara</h1>
+          </div>
+          <div class="hidden sm:ml-6 sm:block mr-52 ">
+            <div class="flex space-x-4">
+                <ul class="menu menu-horizontal px-1">
+                    <li class="ml-8"><a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md px-1 py-2 text-xs font-roboto" aria-current="page">BERANDA</a></li>
+                    <li class="ml-8">
+                      <details>
+                        <summary class="{{$judul_halaman=='Profil dan Fasilitas'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">
+                          PROFIL & FASILITAS
+                        </summary>
+                        <ul class="p-2 bg-base-100 rounded-t-none">
+                            <li>
+                                <details>
+                                <summary class="text-black hover:bg-green hover:bg-opacity-30 rounded-md px-4 py-2 text-xs font-roboto"
+                                style="width:220px;">
+                                    PROFIL  
+                                </summary>
+                                <ul class="p-2 bg-base-100 rounded-t-none">
+                                    <li><a class="hover:bg-green hover:bg-opacity-30" href="{{ route('profil') }}"
+                                        style="width:200px;" >Profil Umum</a></li>
+                                    <li><a class="hover:bg-green hover:bg-opacity-30" href="{{ route('visi_misi') }}"
+                                        style="width:200px;" >Visi Misi</a></li>
+                                    <li><a class="hover:bg-green hover:bg-opacity-30" href="{{ route('profil_pemerintahan') }}"
+                                        style="width:200px;" >Profil Pemerintahan</a></li>
+                                    <li><a class="hover:bg-green hover:bg-opacity-30" href="{{ route('profil_kelembagaan') }}"
+                                        style="width:200px;" >Profil Kelembagaan</a></li>
+                                </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                <summary class="text-black hover:bg-green hover:bg-opacity-30 rounded-md px-4 py-2 text-xs font-roboto"
+                                style="width:220px;">
+                                    FASILITAS
+                                </summary>
+                                <ul class="p-2 bg-base-100 rounded-t-none">
+                                    <li><a class="hover:bg-green hover:bg-opacity-30" href="{{ route('dukcapil_online') }}"
+                                        style="width:200px;" >Dukcapil Online</a></li>
+                                    <li><a class="hover:bg-green hover:bg-opacity-30" href="{{ route('fasilitas_pendidikan') }}"
+                                        style="width:200px;" >Fasilitas Pendidikan</a></li>
+                                    <li><a class="hover:bg-green hover:bg-opacity-30" href="{{ route('fasilitas_kesehatan') }}"
+                                        style="width:200px;" >Fasilitas Kesehatan</a></li>
+                                </ul>
+                                </details>
+                            </li>
+                        </ul>
+                      </details>
+                    </li>
+                    <li class="ml-8"><a href="{{ route('berita.index') }}" class="{{$judul_halaman=='Berita'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">BERITA</a></li>
+                    <li class="ml-8">
+                        <details>
+                          <summary class="{{$judul_halaman=='Data Desa'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">
+                            DATA DESA
+                          </summary>
+                          <ul class="p-2 bg-base-100 rounded-t-none">
+                            <li><a class="hover:bg-green hover:bg-opacity-30" style="width:200px;" href="{{ route('datadesa') }}">Kategori Umur</a></li>
+                            <li><a class="hover:bg-green hover:bg-opacity-30" style="width:200px;" href="{{ route('datadesa.pendidikan') }}">Kategori Pendidikan</a></li>
+                            <li><a class="hover:bg-green hover:bg-opacity-30" style="width:200px;" href="{{ route('datadesa.pekerjaan') }}">Kategori Pekerjaan</a></li>
+                            <li><a class="hover:bg-green hover:bg-opacity-30" style="width:200px;" href="{{ route('datadesa.status_kawin') }}">Kategori Status Pernikahan</a></li>
+                          </ul>
+                        </details>
+                    </li>
+                </ul>
           </div>
         </div>
       </div>
@@ -55,7 +111,7 @@
       </div>
       <div class="hidden pl-3 space-y-1" id="profilfasilitas-sub">
         <div id="profil" class="flex justify-between items-center pr-4 text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">
-          Profil
+            PROFIL
           <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
             <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
           </svg>
@@ -67,7 +123,7 @@
           <a href="{{ route('profil_kelembagaan') }}" class="text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto pl-6">Profil Kelembagaan</a>
         </div>
         <div id="fasilitas" class="flex justify-between items-center pr-4 text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">
-          Fasilitas
+            FASILITAS
           <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
             <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
           </svg>
@@ -114,11 +170,12 @@
     profilMenu.addEventListener('click', function () {
       // Toogle profil menu visibility
       profilSubMenu.classList.toggle('hidden');
+      fasilitasSubMenu.classList.add('hidden');
     });
 
     fasilitasMenu.addEventListener('click', function () {
       // Toogle profil menu visibility
       fasilitasSubMenu.classList.toggle('hidden');
-    });
-  });
-</script>
+      profilSubMenu.classList.add('hidden');
+    })});
+  </script>
