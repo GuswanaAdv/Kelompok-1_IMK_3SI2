@@ -35,17 +35,17 @@
   </script>
 
       {{-- header --}}
-      <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex items-baseline justify-between border-b border-gray-200 pb-0 pt-6">
-          <h1 class="text-3xl font-bold tracking-tight text-gray-900 mr-2">Berita</h1>
+      <main class="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between border-b border-gray-200 pb-0 pt-6">
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900 mr-2 pb-3 sm:pb-1">Berita</h1>
   
           <div class="flex items-center">
             <div class="flex items-center">
-              <div class="relative inline-block text-left mr-4">
+              <div class="relative inline-block text-left mr-1">
                   <div>
                       <form action="{{route('berita.sort')}}" method="GET" id="sortForm" name="sortForm">
                           @csrf
-                          <button type="button" class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-300 bg-white rounded-md px-4 py-2" id="sortDropdownButton" aria-expanded="false" aria-haspopup="true">
+                          <button type="button" class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-300 bg-white rounded-md px-4 py-2 mb-2 sm:mb-0" id="sortDropdownButton" aria-expanded="false" aria-haspopup="true">
                               @if(request('sort') == 'populer')
                                   Populer
                               @elseif(request('sort') == 'terbaru')
@@ -73,7 +73,7 @@
           
             <div class="filter-button lg:hidden">
               {{-- kalo gk mau ada bordernya hapus border border-gray-300 bg-white rounded-md px-4 py-2 --}}
-              <button id="filterToggleBtn" type="button" class="flex items-center -m-2 p-2 text-gray-400 hover:text-gray-500 border border-gray-300 bg-white rounded-md px-4 py-1.5 md:ml-6 lg:hidden">
+              <button id="filterToggleBtn" type="button" class="flex items-center text-gray-400 hover:text-gray-500 border border-gray-300 bg-white rounded-md px-4 py-2 mb-2 sm:mb-0 md:ml-6 lg:hidden">
                 <span class="text-gray-700">Filter</span>
                 <svg class="h-5 w-5 ml-2" aria-hidden="true" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M2.628 1.601C5.028 1.206 7.49 1 10 1s4.973.206 7.372.601a.75.75 0 01.628.74v2.288a2.25 2.25 0 01-.659 1.59l-4.682 4.683a2.25 2.25 0 00-.659 1.59v3.037c0 .684-.31 1.33-.844 1.757l-1.937 1.55A.75.75 0 018 18.25v-5.757a2.25 2.25 0 00-.659-1.591L2.659 6.22A2.25 2.25 0 012 4.629V2.34a.75.75 0 01.628-.74z" clip-rule="evenodd" />
@@ -185,7 +185,7 @@
           </div>
         </div> 
   
-        <section aria-labelledby="products-heading" class="pb-24 pt-6">
+        <section aria-labelledby="products-heading" class="pb-2 pt-6">
           <h2 id="products-heading" class="sr-only">Products</h2>
 
           <!-- Search bar -->
@@ -357,7 +357,7 @@
                 <!-- Pagination =-->
               {{-- @include('pagination') --}}
               {{-- {{ $berita->onEachSide(1)->links('pagination::tailwind') }} --}}
-              <div class="m-4">
+              <div class="mr-10 sm:mr-4 ml-0 sm:ml-4">
                 {{ $berita->onEachSide(1)->links('vendor.pagination.tailwind') }}
               </div>
             
