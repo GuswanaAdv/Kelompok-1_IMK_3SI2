@@ -11900,6 +11900,11 @@ details.collapse summary::-webkit-details-marker {
     margin-right: 1.25rem;
   }
 
+  .sm\:mx-10 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+
   .sm\:mb-0 {
     margin-bottom: 0px;
   }
@@ -11963,6 +11968,11 @@ details.collapse summary::-webkit-details-marker {
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .sm\:text-base {
