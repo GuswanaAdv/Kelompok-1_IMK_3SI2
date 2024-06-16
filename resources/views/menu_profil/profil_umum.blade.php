@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <style>
+        body{
+            background-color:white;
+        }
         .text-center {
             text-align: center;
         }

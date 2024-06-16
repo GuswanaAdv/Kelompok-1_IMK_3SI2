@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    body{
+        background-color:white;
+    }
+</style>
+
 <div class="mx-10 my-10 mt-0">
     <div class="grid md:grid-cols-2 gap-6">
         <!-- Data Table -->
