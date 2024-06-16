@@ -36,7 +36,7 @@
                     <li class="ml-8"><a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md px-1 py-2 text-xs font-roboto" aria-current="page">BERANDA</a></li>
                     <li class="ml-8">
                       <details>
-                        <summary class="{{$judul_halaman=='Profil dan Fasilitas'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">
+                        <summary class="{{$judul_halaman=='Profil & Fasilitas'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">
                           PROFIL & FASILITAS
                         </summary>
                         <ul class="p-2 bg-base-100 rounded-t-none">
