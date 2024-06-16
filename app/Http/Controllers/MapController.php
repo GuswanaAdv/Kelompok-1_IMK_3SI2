@@ -32,7 +32,7 @@ class MapController extends Controller
             ]
         ];
         return view('menu_profil.profil_umum', [
-            'judul_halaman' => 'Profil dan Fasilitas',
+            'judul_halaman' => 'Profil & Fasilitas',
             'menu_sidebar' => 'Profil Umum'
         ], compact('initialMarkers'));
     }

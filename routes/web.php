@@ -21,6 +21,7 @@ use App\Http\Controllers\BlogPostController;
 Route::get('/', function () {
     return view('beranda',[
         "judul_halaman"=>"Beranda",
+        "menu_sidebar"=>""
     ]);
 })->name('beranda');
 //
@@ -31,7 +32,7 @@ Route::get('/cardBerita', function () {
     return view('cardBerita');
 });
 
-Route::get('/berita/{slug}', [BeritaController::class, 'beritaPage'])->name('beritapage');
+// Route::get('/berita/{slug}', [BeritaController::class, 'beritaPage'])->name('beritapage');
 
 Route::get('/category', function () {
     return view('category');
@@ -43,8 +44,9 @@ Route::post('/berita_cari', [BeritaController::class, 'search'])->name('berita.s
 
 Route::get('/berita_cari', [BeritaController::class, 'search2'])->name('berita.pagination');
 
-Route::get('/berita_sort', [BeritaController::class, 'sort'])->name('berita.sort');
-//
+Route::get('/berita/sort', [BeritaController::class, 'sort'])->name('berita.sort');
+
+Route::get('/berita/{slug}', [BeritaController::class, 'beritaPage'])->name('beritapage');
 
 
 // Data Desa
@@ -52,6 +54,7 @@ Route::get('/data_desa_umur', function () {
     return view('datadesa_umur',[
         "kategori"=>"umur",
         "judul_halaman"=>"Data Desa",
+        "menu_sidebar"=>""
     ]);
 })->name('datadesa');
 
@@ -59,65 +62,68 @@ Route::get('/data_desa_pendidikan_KK', function () {
     return view('datadesa_pendkk',[
         "kategori"=>"pendidikan",
         "judul_halaman"=>"Data Desa",
+        "menu_sidebar"=>""
     ]);
-});
+})->name('datadesa.pendidikan');
 
 Route::get('/data_desa_pekerjaan', function () {
     return view('datadesa_kerja',[
         "kategori"=>"pekerjaan",
         "judul_halaman"=>"Data Desa",
+        "menu_sidebar"=>""
     ]);
-});
+})->name('datadesa.pekerjaan');
 
 Route::get('/data_desa_status_kawin', function () {
     return view('datadesa_kawin',[
         "kategori"=>"status_kawin",
         "judul_halaman"=>"Data Desa",
+        "menu_sidebar"=>""
     ]);
-});
+})->name('datadesa.status_kawin');
 //
 
 
 // Profil dan Fasilitas
 Route::get('/profil/visi_misi', function () {
     return view('menu_profil.visi_misi',[
-        "judul_halaman"=>"Profil dan Fasilitas",
+        "judul_halaman"=>"Profil & Fasilitas",
         "menu_sidebar"=>"Visi Misi"
     ]);
 })->name('visi_misi');
 
 Route::get('/profil/profil_pemerintahan', function () {
     return view('menu_profil.profil_pemerintahan',[
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Profil Pemerintahan"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Pemerintahan"
     ]);
 })->name('profil_pemerintahan');
 
 Route::get('/profil/profil_kelembagaan', function () {
     return view('menu_profil.profil_kelembagaan',[
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Profil Kelembagaan"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Kelembagaan"
     ]);
 })->name('profil_kelembagaan');
 
 Route::get('/profil/dukcapil_online', function () {
     return view('menu_profil.dukcapil_online', [
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Dukcapil Online"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Dukcapil"
     ]);
 })->name('dukcapil_online');
 
 Route::get('/profil/fasilitas_pendidikan', function () {
     return view('menu_profil.fasilitas_pendidikan',[
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Fasilitas Pendidikan"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Pendidikan"
     ]);
 })->name('fasilitas_pendidikan');
 
 Route::get('/profil/fasilitas_kesehatan', function () {
     return view('menu_profil.fasilitas_kesehatan',[
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Fasilitas Kesehatan"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Kesehatan"
     ]);
 })->name('fasilitas_kesehatan');
 

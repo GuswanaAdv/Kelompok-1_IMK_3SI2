@@ -17,7 +17,8 @@ class BeritaController extends Controller
         return view ('gabungan',[
             'berita' => $berita,
             'kategori' => array(),
-            'judul_halaman' => 'Berita'
+            'judul_halaman' => 'Berita',
+            "menu_sidebar"=>""
         ]);
     }
 
@@ -51,7 +52,8 @@ class BeritaController extends Controller
             'kategori' => $kategori,
             'search' => $search,
             'judul_halaman' => 'Berita',
-            'message' => $message
+            'message' => $message,
+            "menu_sidebar"=>""
         ]);
     }
 
@@ -77,7 +79,8 @@ class BeritaController extends Controller
             'kategori' => $kategori,
             'search' => $search,
             'judul_halaman' => 'Berita',
-            'message' => $message
+            'message' => $message,
+            "menu_sidebar"=>""
         ]);
     }
 
@@ -105,7 +108,8 @@ class BeritaController extends Controller
             'kategori' => $kategori,
             'search' => $search,
             'judul_halaman' => 'Berita',
-            'message' => $message
+            'message' => $message,
+            "menu_sidebar"=>""
         ]);
     }
 
@@ -143,7 +147,8 @@ class BeritaController extends Controller
             return view('berita_page', [
                 'judul_halaman' => "Halaman Berita",
                 'berita' => $berita,
-                'relatedArticles' => $relatedArticles
+                'relatedArticles' => $relatedArticles,
+                "menu_sidebar"=>""
             ]);
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

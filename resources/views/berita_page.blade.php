@@ -132,7 +132,7 @@ body {
         </div>
       </div>
       
-      <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
+      <img style="height: 200px;" src=" {{ $berita->thumbnail }} " alt="Article Image" class="w-full mx-auto mb-4 rounded">
       <div id="konten" class="mb-6">
         {!! $berita->konten !!}
       </div>
@@ -156,7 +156,7 @@ body {
         <!-- Card -->
         <a href="{{ route('beritapage', $article->slug) }}">
         <div class="px-4 transition duration-300 hover:shadow-lg cursor-pointer">
-                <img width="1920" height="1280" src="https://picsum.photos/id/188/720/400" alt="{{ $article->judul }}" />
+                <img width="1920" height="1280" src=" {{ $article->thumbnail }} " alt="{{ $article->judul }}" />
             <div class="flex pt-2 pl-0 pb-0 bg-white text-neutral-100">
                 <span class="text-gray-500 text-xs sm:text-sm">Jatinegara</span>&nbsp;&nbsp;
                 <span class="text-gray-500 text-xs sm:text-sm">{{ \Illuminate\Support\Carbon::parse($article->published_datetime)->diffForHumans() }}</span>

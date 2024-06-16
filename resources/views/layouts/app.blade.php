@@ -8,11 +8,10 @@
   <link href="{{ asset('js/app.js') }}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    .sidebar-item:hover,
-    .sidebar-item:focus,
-    .sidebar-item:active {
-      background-color: #93C13D !important;
-      color: white !important;
+    .sidebar-item:hover, .sidebar-item:focus, .sidebar-item:active {
+        /* background-color: #93C13D !important; */
+        background-color: #FFFFFF;
+        color: white !important;
     }
   </style>
 
@@ -26,7 +25,7 @@
   {{--Sidebar--}}
 
   {{--Main--}}
-  <div>
+  <div class="@yield('main-class', 'px-10')">
     @yield('content')
   </div>
   @include('partials.top_button')

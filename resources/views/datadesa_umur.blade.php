@@ -1,14 +1,22 @@
 @extends('layouts.app')
 
+@section('main-class', 'px-4 sm:px-10')
+
 @section('content')
-<div class="mx-10 my-10 mt-0">
+<style>
+    body{
+        background-color:white;
+    }
+</style>
+
+<div class="mx-0 sm:mx-10 my-10 mt-0">
     <div class="grid md:grid-cols-2 gap-6">
         <!-- Data Table -->
-        <div class="bg-lime-200 p-4 rounded-lg">
-            <h2 class="text-lg font-bold text-center underline underline-offset-8">Tabel Data</h2>
+        <div class="bg-white shadow-lg p-4 rounded-lg">
+            <h2 class="text-sm sm:text-lg font-bold text-center underline underline-offset-8">Tabel Data</h2>
             <div class="mt-4">
-                <label class="text-center">Kategori:</label>
-                <select id="data-category" class="mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="redirectToCategory()">
+                <label class="text-sm sm:text-base text-center">Kategori:</label>
+                <select id="data-category" class="text-sm sm:text-base mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="redirectToCategory()">
                     <option {{$kategori=='umur'? 'selected' : ''}}>Umur</option>
                     <option>Pendidikan Kepala Keluarga</option>
                     <option>Pekerjaan</option>
@@ -16,7 +24,7 @@
                 </select>
             </div>
             <div class="overflow-y-auto pt-3" style="max-height: 450px;">
-                <table id="dataTable" class="mt-1 w-full border-collapse border border-gray-400">
+                <table id="dataTable" class="text-xs sm:text-base mt-1 w-full border-collapse border border-gray-300">
                     <thead>
                         <tr>
                             <th class="border border-gray-300 px-2 py-2" rowspan="2">No.</th>
@@ -142,11 +150,11 @@
         </div>
 
         <!-- Chart -->
-        <div class="bg-lime-200 p-4 rounded-lg">
-            <h2 class="text-lg font-bold text-center underline underline-offset-8">Grafik</h2>
+        <div class="bg-white shadow-lg p-4 rounded-lg">
+            <h2 class="text-sm sm:text-lg font-bold text-center underline underline-offset-8">Grafik</h2>
             <div class="mt-4">
-                <label class="text-center">Kategori:</label>
-                <select id="chart-category" class="mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="updateChartFromTable()">
+                <label class="text-sm sm:text-base text-center">Kategori:</label>
+                <select id="chart-category" class="text-sm sm:text-base mx-auto bg-white border border-gray-300 p-1 rounded-lg" onchange="updateChartFromTable()">
                     <option value="Keseluruhan">Keseluruhan</option>
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
