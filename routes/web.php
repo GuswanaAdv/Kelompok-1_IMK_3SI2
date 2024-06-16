@@ -87,43 +87,43 @@ Route::get('/data_desa_status_kawin', function () {
 // Profil dan Fasilitas
 Route::get('/profil/visi_misi', function () {
     return view('menu_profil.visi_misi',[
-        "judul_halaman"=>"Profil dan Fasilitas",
+        "judul_halaman"=>"Profil & Fasilitas",
         "menu_sidebar"=>"Visi Misi"
     ]);
 })->name('visi_misi');
 
 Route::get('/profil/profil_pemerintahan', function () {
     return view('menu_profil.profil_pemerintahan',[
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Profil Pemerintahan"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Pemerintahan"
     ]);
 })->name('profil_pemerintahan');
 
 Route::get('/profil/profil_kelembagaan', function () {
     return view('menu_profil.profil_kelembagaan',[
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Profil Kelembagaan"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Kelembagaan"
     ]);
 })->name('profil_kelembagaan');
 
 Route::get('/profil/dukcapil_online', function () {
     return view('menu_profil.dukcapil_online', [
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Dukcapil Online"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Dukcapil"
     ]);
 })->name('dukcapil_online');
 
 Route::get('/profil/fasilitas_pendidikan', function () {
     return view('menu_profil.fasilitas_pendidikan',[
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Fasilitas Pendidikan"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Pendidikan"
     ]);
 })->name('fasilitas_pendidikan');
 
 Route::get('/profil/fasilitas_kesehatan', function () {
     return view('menu_profil.fasilitas_kesehatan',[
-        "judul_halaman"=>"Profil dan Fasilitas",
-        "menu_sidebar"=>"Fasilitas Kesehatan"
+        "judul_halaman"=>"Profil & Fasilitas",
+        "menu_sidebar"=>"Kesehatan"
     ]);
 })->name('fasilitas_kesehatan');
 
