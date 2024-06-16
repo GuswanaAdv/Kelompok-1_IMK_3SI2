@@ -47,7 +47,7 @@ tabs.forEach(tab =>{
         <div class="p-4 w-full md:w-1/2">
             <a href= "{{ route('beritapage', $berita->slug) }}">
             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden relative">
-                <img class="lg:h-72 md:h-48 w-full object-cover object-center" src="https://picsum.photos/id/188/720/400" alt="blog">
+                <img class="lg:h-72 md:h-48 w-full object-cover object-center" src="{{ $berita->thumbnail }}" alt="blog">
                 <div class="absolute top-0 left-0 mt-4 ml-4">
                     <span class="bg-darkgreen text-white px-2 py-1 text-xs font-medium rounded mr-2">{{ $berita->kategori }}</span>
                 </div>

@@ -31,7 +31,7 @@ Route::get('/cardBerita', function () {
     return view('cardBerita');
 });
 
-Route::get('/berita/{slug}', [BeritaController::class, 'beritaPage'])->name('beritapage');
+// Route::get('/berita/{slug}', [BeritaController::class, 'beritaPage'])->name('beritapage');
 
 Route::get('/category', function () {
     return view('category');
@@ -44,6 +44,8 @@ Route::post('/berita_cari', [BeritaController::class, 'search'])->name('berita.s
 Route::get('/berita_cari', [BeritaController::class, 'search2'])->name('berita.pagination');
 
 Route::get('/berita/sort', [BeritaController::class, 'sort'])->name('berita.sort');
+
+Route::get('/berita/{slug}', [BeritaController::class, 'beritaPage'])->name('beritapage');
 //
 
 
