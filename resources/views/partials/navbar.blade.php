@@ -47,7 +47,29 @@
     <div class="space-y-1 px-2 pb-3 pt-2">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
       <a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'bg-white bg-opacity-25':''}} text-white block rounded-md px-3 py-2 text-sm font-roboto">BERANDA</a>
-      <a href="{{ route('profil') }}" class="{{$judul_halaman=='Profil dan Fasilitas'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">PROFILE</a>
+      <div id="profil" class="flex justify-between items-center pr-4 {{$judul_halaman=='Profil dan Fasilitas'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">
+        <a href="{{ route('profil') }}">PROFIL</a>
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </div>
+      <div class="hidden" id="profil-sub">
+        <a href="{{ route('profil') }}" class="{{$judul_halaman=='Berita'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto pl-6">Profil Umum</a>
+        <a href="{{ route('visi_misi') }}" class="{{$judul_halaman=='Data Desa'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto pl-6">Visi Misi</a>
+        <a href="{{ route('profil_pemerintahan') }}" class="{{$judul_halaman=='Berita'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto pl-6">Profil Pemerintahan</a>
+        <a href="{{ route('profil_kelembagaan') }}" class="{{$judul_halaman=='Data Desa'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto pl-6">Profil Kelembagaan</a>
+      </div>
+      <div id="fasilitas" class="flex justify-between items-center pr-4 {{$judul_halaman=='Profil dan Fasilitas'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">
+        <a href="{{ route('profil') }}">FASILITAS</a>
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </div>
+      <div class="hidden" id="fasilitas-sub">
+        <a href="{{ route('dukcapil_online') }}" class="{{$judul_halaman=='Berita'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto pl-6">Dukcapil Online</a>
+        <a href="{{ route('fasilitas_pendidikan') }}" class="{{$judul_halaman=='Data Desa'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto pl-6">Fasilitas Pendidikan</a>
+        <a href="{{ route('fasilitas_kesehatan') }}" class="{{$judul_halaman=='Berita'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto pl-6">Fasilitas Kesehatan</a>
+      </div>
       <a href="{{ route('berita.index') }}" class="{{$judul_halaman=='Berita'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">BERITA</a>
       <a href="{{ route('datadesa') }}" class="{{$judul_halaman=='Data Desa'? 'bg-white bg-opacity-25':''}} text-white hover:bg-white hover:bg-opacity-25 hover:text-white block rounded-md px-3 py-2 text-sm font-roboto">DATA DESA</a>
     </div>
@@ -60,6 +82,10 @@
     var menuIconClosed = document.getElementById('menu-icon-closed');
     var menuIconOpen = document.getElementById('menu-icon-open');
     var mobileMenu = document.getElementById('mobile-menu');
+    var profilMenu = document.getElementById('profil');
+    var profilSubMenu = document.getElementById('profil-sub');
+    var fasilitasMenu = document.getElementById('fasilitas');
+    var fasilitasSubMenu = document.getElementById('fasilitas-sub');
 
     menuButton.addEventListener('click', function () {
       // Toggle menu visibility
@@ -68,7 +94,16 @@
       // Toggle icon visibility
       menuIconClosed.classList.toggle('hidden');
       menuIconOpen.classList.toggle('hidden');
+    });
 
+    profilMenu.addEventListener('click', function () {
+      // Toogle profil menu visibility
+      profilSubMenu.classList.toggle('hidden');
+    });
+
+    fasilitasMenu.addEventListener('click', function () {
+      // Toogle profil menu visibility
+      fasilitasSubMenu.classList.toggle('hidden');
     });
   });
 </script>
