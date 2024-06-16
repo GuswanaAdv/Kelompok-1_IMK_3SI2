@@ -132,12 +132,12 @@ body {
         </div>
       </div>
       
-      <img style="height: 200px;" src=" {{ $berita->thumbnail }} " alt="Article Image" class="w-full mx-auto mb-4 rounded">
+      <img src=" {{ $berita->thumbnail }} " alt="Article Image" class="w-full h-48 sm:h-64 mx-auto mb-4 rounded">
       <div id="konten" class="mb-6">
         {!! $berita->konten !!}
       </div>
       <div class=" separator border-t border-gray-300 mb-4"></div>
-      <div class="mb-4 text-sm sm:text-base md:text-lg lg:text-xl">
+      <div class="mb-4 text-sm sm:text-base md:text-lg">
       <a href="{{ route('berita.pagination', ['berita[]' => $berita->kategori]) }}">
         <button name="berita[]" value="{{ $berita->kategori }}" class="bg-green-100 text-green-700 py-0 px-4 rounded-lg mr-2">{{$berita->kategori}}</button>
       </a>
@@ -156,13 +156,13 @@ body {
         <!-- Card -->
         <a href="{{ route('beritapage', $article->slug) }}">
         <div class="px-4 transition duration-300 hover:shadow-lg cursor-pointer">
-                <img width="1920" height="1280" src=" {{ $article->thumbnail }} " alt="{{ $article->judul }}" />
+                <img class="w-full h-44" src=" {{ $article->thumbnail }} " alt="{{ $article->judul }}" />
             <div class="flex pt-2 pl-0 pb-0 bg-white text-neutral-100">
-                <span class="text-gray-500 text-xs sm:text-sm">Jatinegara</span>&nbsp;&nbsp;
-                <span class="text-gray-500 text-xs sm:text-sm">{{ \Illuminate\Support\Carbon::parse($article->published_datetime)->diffForHumans() }}</span>
+                <span class="text-gray-500 text-xs">Jatinegara</span>&nbsp;&nbsp;
+                <span class="text-gray-500 text-xs truncate">{{ \Illuminate\Support\Carbon::parse($article->published_datetime)->diffForHumans() }}</span>
             </div>
             <div class="p-4 pl-0 pt-0">
-                <h5 class="mb-2 text-sm sm:text-base font-bold tracking-wide text-neutral-800">{{ $article->judul }}</h5>
+                <h5 class="mb-2 text-sm font-bold tracking-wide text-neutral-800 overflow-hidden" style="-webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical;">{{ $article->judul }}</h5>
             </div>
         </div>
         </a>
