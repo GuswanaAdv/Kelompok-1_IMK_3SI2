@@ -7,10 +7,16 @@
             <div class="text-3xl lg:text-8xl font-roboto font-extrabold bg-gradient-to-r from-green-900 from-10% via-green-500 via-30% to-green-500 to-90% inline-block text-transparent bg-clip-text">/Jatinegara/</div>
             <div class="mt-8 lg:mt-12 grid grid-cols-1 lg:grid-cols-2 w-max gap-4 lg:gap-1">
                 <div>
-                    <button class="bg-darkgreen rounded-[36px] text-white px-8 lg:px-12 py-1 lg:py-3 mr-4 font-inter">Cari Data</button>
+                    <a href="{{route('datadesa')}}">
+                        <button class="bg-darkgreen rounded-[36px] text-white px-8 lg:px-12 py-1 lg:py-3 mr-4 font-inter">
+                        Cari Data </button>
+                    </a>
                 </div>
                 <div>
-                    <button class="border-1 border-darkgreen rounded-[36px] px-4 lg:px-8 py-1 lg:py-3 outline outline-darkgreen font-inter">Tentang Desa</button>
+                    <a href="{{route('profil')}}">
+                        <button class="border-1 border-darkgreen rounded-[36px] px-4 lg:px-8 py-1 lg:py-3 outline outline-darkgreen font-inter">
+                        Tentang Desa </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -62,7 +68,7 @@
     <div class="bg-white shadow-xl p-4">
         <div class="inline-flex items-center justify-center w-full">
             <hr class="lg:hidden w-64 h-px my-8 bg-black border-0 dark:bg-black">
-            <h1 class="font-roboto font-bold text-2xl px-4">Berita</h1>
+            <a href="{{route('berita.index')}}"><h1 class="font-roboto font-bold text-2xl px-4">Berita</h1></a>
             <hr class="lg:hidden w-64 h-px my-8 bg-black border-0 dark:bg-black">
         </div>
         <div class="gird grid-cols-1">
@@ -92,13 +98,15 @@
             <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
         </div>
         <div class="text-end pt-8 pb-4">
-            <a class="text-green ">Selengkapnya</a>
+            <a href="{{route('berita.index')}}" class="text-green ">Selengkapnya</a>
         </div>
     </div>
     <div class="bg-white shadow-xl p-4">
         <div class="inline-flex items-center justify-center w-full">
             <hr class="lg:hidden w-64 h-px my-8 bg-black border-0 dark:bg-black">
-            <h1 class="font-roboto font-bold text-2xl px-4">Trending</h1>
+            <a href="/berita/sort?_token=sT1Mik2X4zxvd8Cb1cbdDlGFNb8aU39xiNPuWcOG&cari_berita1=&kategori=&sort=populer">
+                <h1 class="font-roboto font-bold text-2xl px-4">Trending</h1>
+            </a>
             <hr class="lg:hidden w-64 h-px my-8 bg-black border-0 dark:bg-black">
         </div>
         <div class="gird grid-cols-1">
