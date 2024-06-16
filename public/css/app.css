@@ -11143,11 +11143,8 @@ details.collapse summary::-webkit-details-marker {
 .pt-3 {
   padding-top: 0.75rem;
 }
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-.pb-1 {
-  padding-bottom: 0.25rem;
+.pl-6 {
+  padding-left: 1.5rem;
 }
 .text-left {
   text-align: left;
