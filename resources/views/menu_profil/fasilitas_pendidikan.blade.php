@@ -17,8 +17,10 @@
                 <ol class="list-decimal list-inside ml-4 mt-6">
                     <li class="mb-4 ml-4 font-roboto">
                         PAUD LESTARI  1 : Jl. Kaligandu Jatinegara</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                     <li class="mb-4 ml-4 font-roboto">
                         PAUD LESTARI 2 : Jl. Kanjuruan Jatinegara</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                 </ol>
             </div>
         </div>
@@ -32,10 +34,13 @@
                 <ol class="list-decimal list-inside ml-4 mt-6">
                     <li class="mb-4 ml-4 font-roboto">
                         TK Pertiwi : Kompleks SDN 3 Jatinegara, Dukuh Salekan</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                     <li class="mb-4 ml-4 font-roboto">
                         TK At Taqwa : Kompleks Masjid Taqwa Jatinegara</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                     <li class="mb-4 ml-4 font-roboto">
-                        TK Aisiyah : Kompleks Masjid Darussalam Jatinegara</li> 
+                        TK Aisiyah : Kompleks Masjid Darussalam Jatinegara</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded"> 
                 </ol>
                 
             </div>
@@ -50,12 +55,16 @@
                 <ol class="list-decimal list-inside ml-4 mt-6">
                     <li class="mb-4 ml-4 font-roboto">
                         SDN 1 Jatinegara : Jl. Kaligandu Jatinegara </li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                     <li class="mb-4 ml-4 font-roboto">
                         SDN 2 Jatinegara : Jl. Kaligede Jatinegara </li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                     <li class="mb-4 ml-4 font-roboto">
                         SDN 3 Jatinegara : Jl. Romakebon Jatinegara</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                     <li class="mb-4 ml-4 font-roboto">
                         MI Plus Jatinegara : Kompleks Masjid Taqwa Jatinegara</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                 </ol>
             </div>
         </div>
@@ -69,10 +78,13 @@
                 <ol class="list-decimal list-inside ml-4 mt-6">
                     <li class="mb-4 ml-4 font-roboto">
                         SMPN 1 Sempor : Jl. Kaligandu Jatinegara</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                     <li class="mb-4 ml-4 font-roboto">
                         SMP PGRI Sempor : Jl. Tentara Pelajar Jatinegara</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                     <li class="mb-4 ml-4 font-roboto">
-                        SMP Purnama Sempor : Jl. Pogung Jatinegara</li>    
+                        SMP Purnama Sempor : Jl. Pogung Jatinegara</li>
+                    <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">    
                 </ol> 
             </div>
         </div>

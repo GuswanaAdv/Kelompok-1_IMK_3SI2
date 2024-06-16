@@ -99,14 +99,6 @@ body {
       </div>
       <!-- End of Float Share -->
 
-      <!-- Back to top button -->
-      <button type="button" class="fixed bottom-4 right-2 rounded-full bg-green-700 hover:bg-green-500 p-2 sm:p-3 md:p-4 text-base text-white shadow-md" id="btn-back-to-top">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="transform: scale(1.3);">
-        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
-      </svg>
-      </button>
-      <!-- End of Back to top button -->
-
       <div class="separator border-t border-gray-300"></div>
       <div data-collapse="collapse" class="hidden sm:block h-0 w-full mb-4 basis-full overflow-hidden transition-all duration-300 ease-in-out">
         <div class="relative w-full bg-green-700 bg-clip-border text-gray-700 flex justify-center items-center">
@@ -133,7 +125,7 @@ body {
               </svg>
             </a>
         </div>
-        <p class="text-white text-sm" id="url"></p>
+        <p class="text-white text-sm max-w-full truncate" id="url"></p>
         <div class="mx-0 sm:mx-5 bg-green-100 text-green-700 py-2 px-2 rounded-xl font-bold text-xs">
           <button id="urlcopy" onclick="copyurl()">URL copy</button>
         </div>
@@ -293,28 +285,5 @@ document.getElementById('overlay').addEventListener('click', function() {
     document.getElementById('close').classList.add('hidden');
     document.getElementById('share').classList.remove('hidden');
 });
-</script>
-<script>
-  const mybutton = document.getElementById("btn-back-to-top");
-
-  // When the user scrolls down 20px from the top of the document, show the button
-  const scrollFunction = () => {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      mybutton.classList.remove("hidden");
-    } else {
-      mybutton.classList.add("hidden");
-    }
-  };
-  const backToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  // When the user clicks on the button, scroll to the top of the document
-  mybutton.addEventListener("click", backToTop);
-  window.addEventListener("scroll", scrollFunction);
-
 </script>
 @endsection

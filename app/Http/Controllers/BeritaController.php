@@ -21,28 +21,37 @@ class BeritaController extends Controller
         ]);
     }
 
-    public function sort(Request $request)
+    public function sort()
     {
-        $query = Berita::query();
+        $kategori = !empty(request('kategori'))?explode(',',request('kategori')):array();
+        $search = request('cari_berita1');
+        $sort = request('sort');
 
         // Handle sort query
-        if ($request->has('sort')) {
-            if ($request->sort == 'populer') {
-                $query->orderBy('views', 'desc');
-            } elseif ($request->sort == 'terbaru') {
-                $query->orderBy('published_datetime', 'desc');
+        if($sort === 'populer') {
+            if (!empty($kategori)) {
+                $berita = Berita::where('judul', 'like', "%$search%")->orderBy('views', 'desc');
+                $berita = $berita->whereIn('kategori', $kategori)->paginate(6)->withQueryString();
+            } else {
+                $berita = Berita::where('judul', 'like', "%$search%")->orderBy('views', 'desc')->paginate(6)->withQueryString();
             }
-        } else {
-            // Default sorting jika tidak ada query parameter sort
-            $query->orderBy('published_datetime', 'desc');
+         } else{
+            if (!empty($kategori)) {
+                $berita = Berita::where('judul', 'like', "%$search%")->orderBy('published_datetime', 'desc');
+                $berita = $berita->whereIn('kategori', $kategori)->paginate(6)->withQueryString();
+            } else {
+                $berita = Berita::where('judul', 'like', "%$search%")->orderBy('published_datetime', 'desc')->paginate(6)->withQueryString();
+            }
         }
 
-        $berita = $query->paginate(6);
+        $message = $berita->isEmpty() ? 'berita yang anda cari tidak ditemukan' : '';
 
         return view('gabungan', [
             'berita' => $berita,
-            'kategori' => [],
-            'judul_halaman' => 'Berita'
+            'kategori' => $kategori,
+            'search' => $search,
+            'judul_halaman' => 'Berita',
+            'message' => $message
         ]);
     }
 
@@ -55,14 +64,10 @@ class BeritaController extends Controller
         $kategori = array_merge($berita, $lembaga, $produk);
 
         if (!empty($kategori)) {
-            $berita = Berita::where('judul', 'like', "%$search%")
-                ->whereIn('kategori', $kategori)
-                ->paginate(6)
-                ->withQueryString();
+            $berita = Berita::where('judul', 'like', "%$search%");
+            $berita = $berita->whereIn('kategori', $kategori)->paginate(6)->withQueryString();
         } else {
-            $berita = Berita::where('judul', 'like', "%$search%")
-                ->paginate(6)
-                ->withQueryString();
+            $berita = Berita::where('judul', 'like', "%$search%")->paginate(6)->withQueryString();
         }
 
         $message = $berita->isEmpty() ? 'berita yang anda cari tidak ditemukan' : '';
@@ -85,10 +90,8 @@ class BeritaController extends Controller
         $kategori = array_merge($berita, $lembaga, $produk);
 
         if (!empty($kategori)) {
-            $berita = Berita::where('judul', 'like', "%$search%")
-                ->whereIn('kategori', $kategori)
-                ->paginate(6)
-                ->withQueryString();
+            $berita = Berita::where('judul', 'like', "%$search%");
+            $berita = $berita->whereIn('kategori', $kategori)->paginate(6)->withQueryString();
         } else {
             $berita = Berita::where('judul', 'like', "%$search%")
                 ->paginate(6)

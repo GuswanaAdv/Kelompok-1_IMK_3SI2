@@ -28,6 +28,7 @@
   <div class="px-10">
     @yield('content')
   </div>
+  @include('partials.top_button')
 
   {{--Foter--}}
   <div class="">
