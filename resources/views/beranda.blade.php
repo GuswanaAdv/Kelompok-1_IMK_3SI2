@@ -1,8 +1,12 @@
 @extends('layouts.app')
 @section('main-class', 'px-0 sm:px-0')
 @section('content')
-<div class="relative pt-24 h-max  lg:bg-white px-4">
-    <div class="top-28 right-0 grid lg:grid-cols-2 grid-cols-1">
+<div class="relative pt-24 h-max  lg:bg-white bg-greenleaves2">
+    <div class="hidden lg:block w-[589px] h-[589px] bg-greenleaves rounded-full absolute z-10 top-24 left-[-50px] translate-x-[-30%] translate-y-[20%] blur-lg">
+    </div>
+    <div class="hidden lg:block w-[548px] h-[548px] bg-greenleaves2 rounded-full absolute z-10 top-0 right-0 translate-x-0 translate-y-[-25%] blur-[100px]">
+    </div>
+    <div class="right-0 grid lg:grid-cols-2 grid-cols-1 z-20 relative h-96 mb-72 ">
         <div class="lg:px-4 lg:pt-24 lg:pl-12 lg:text-left text-center w-full">
             <div class="text-4xl lg:text-8xl font-roboto font-extrabold bg-gradient-to-r from-green-900 from-10% via-green-500 via-30% to-green-500 to-90% lg:inline-block text-transparent bg-clip-text">Desa</div>
             <div class="lg:h-32 text-4xl lg:text-8xl font-roboto font-extrabold bg-gradient-to-r from-green-900 from-10% via-green-500 via-30% to-green-500 to-90% lg:inline-block text-transparent bg-clip-text">/Jatinegara/</div>
@@ -19,14 +23,14 @@
         </div>
         <img class="block lg:hidden pt-24 w-full h-auto z-30 absolute left-0 right-0" src="{{asset ('images/layered-waves-haikei (10).png')}}" alt="" srcset="">
         <img class="block lg:hidden pt-80 w-full h-auto z-30 absolute left-0 right-0" src="{{asset ('images/layered-waves-haikei (4).png')}}" alt="" srcset="">
-        <div class="block lg:hidden w-full mt-8">
-            <div class="grid grid-cols-2 gap-4 m-8">
-                <img class="w-full h-44 rounded-[30px] object-cover z-40" src="{{asset ('images/berita-3.jpg')}}" alt="" srcset="">
-                <img class="w-full h-44 rounded-[30px] object-cover z-40" src="{{asset ('images/berita-3.jpg')}}" alt="" srcset="">
+        <div class="block lg:hidden w-full top-64 absolute">
+            <div class="grid grid-cols-2 gap-4 mx-8">
+                <img class="w-full h-44 md:h-full rounded-[30px] object-cover z-40" src="{{asset ('images/berita-3.jpg')}}" alt="" srcset="">
+                <img class="w-full h-44 md:h-full rounded-[30px] object-cover z-40" src="{{asset ('images/berita-3.jpg')}}" alt="" srcset="">
             </div>
         </div>
         <div class="block lg:hidden w-full flex justify-center">
-            <img class="w-36 h-64 rounded-[30px] object-cover z-50 absolute top-72" src="{{asset ('images/kec-sempor.jpg')}}" alt="" srcset="">
+            <img class="w-36 md:w-auto h-64 md:h-96 rounded-[30px] object-cover z-50 absolute top-52" src="{{asset ('images/kec-sempor.jpg')}}" alt="" srcset="">
         </div>
         <div class="hidden lg:block pl-12">
             <div class="flex flex-row">
@@ -41,7 +45,7 @@
 </div>
 
 <!--Information-->
-<section class="pt-12 px-32 lg:px-36 md:gap-8 gap-8 grid lg:grid-cols-3 grid-cols-1 place-content-center w-full h-max pt-32 pb-32">
+<section class="pt-0 px-32 lg:px-36 md:gap-8 gap-8 grid lg:grid-cols-3 grid-cols-1 place-content-center w-full h-max pb-32">
     <div class="flex justify-items-center items-center grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div class="text-center">
             <img class="h-24 w-auto lg:h-16 lg:w-auto" src="{{asset('images/visitor.png')}} ">
@@ -76,20 +80,22 @@
     <div class="bg-white shadow-xl p-4">
         <div class="inline-flex items-center justify-center w-full">
             <hr class="lg:hidden w-64 h-px my-8 bg-black border-0 dark:bg-black">
-            <a href="{{route('berita.index')}}"><h1 class="font-roboto font-bold text-2xl px-4">Berita</h1></a>
+            <a href="{{route('berita.index')}}">
+                <h1 class="font-roboto font-bold text-2xl px-4">Berita</h1>
+            </a>
             <hr class="lg:hidden w-64 h-px my-8 bg-black border-0 dark:bg-black">
         </div>
         <div class="gird grid-cols-1">
             @foreach($beritaTerbaru as $berita)
-            <a href= "{{ route('beritapage', $berita->slug) }}">
-            <div class="flex lg:items-center">
-                <img class="w-24 h-24 lg:w-[224px] lg:h-[140.92px] object-cover" src="{{ $berita->thumbnail }}" alt="" srcset="">
-                <div class="p-4">
-                    <h1 class="font-plusjakartasans font-medium text-xl lg:text-2xl">{{ $berita->judul }}</h1>
-                    <p class="hidden lg:block text-sm font-roboto">{{ $berita->preview }}</p>
+            <a href="{{ route('beritapage', $berita->slug) }}">
+                <div class="flex lg:items-center">
+                    <img class="w-24 h-24 lg:w-[224px] lg:h-[140.92px] object-cover" src="{{ $berita->thumbnail }}" alt="" srcset="">
+                    <div class="p-4">
+                        <h1 class="font-plusjakartasans font-medium text-xl lg:text-2xl">{{ $berita->judul }}</h1>
+                        <p class="hidden lg:block text-sm font-roboto">{{ $berita->preview }}</p>
+                    </div>
                 </div>
-            </div>
-            <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
+                <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
             </a>
             @endforeach
         </div>
@@ -106,14 +112,14 @@
             <hr class="lg:hidden w-64 h-px my-8 bg-black border-0 dark:bg-black">
         </div>
         <div class="gird grid-cols-1">
-        @foreach($beritaPopular as $berita)
-        <a href= "{{ route('beritapage', $berita->slug) }}">
-            <div class="p-4">
-                <h1 class="font-plusjakartasans font-medium text-xl">{{ $berita->judul }}</h1>
-            </div>
-            <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
-        </a>
-        @endforeach
+            @foreach($beritaPopular as $berita)
+            <a href="{{ route('beritapage', $berita->slug) }}">
+                <div class="p-4">
+                    <h1 class="font-plusjakartasans font-medium text-xl">{{ $berita->judul }}</h1>
+                </div>
+                <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
+            </a>
+            @endforeach
         </div>
     </div>
 </section>
@@ -180,10 +186,10 @@
         </div>
         <div class="border-2 border-black px-12 lg:px-32 rounded-[30px] shadow-2xl">
             <div class="grid grid-cols-1 lg:grid-flow-col lg:grid-cols-4 gap-4 m-8">
-                <img class="w-18 lg:w-24 lg:h-auto object-cover" src="{{asset('images/logo-1.jpg')}} ">
-                <img class="w-18 lg:w-24 lg:h-auto object-cover" src="{{asset('images/logo-2.jfif')}} ">
-                <img class="w-18 lg:w-24 lg:h-auto object-cover" src="{{asset('images/logo-3.jfif')}} ">
-                <img class="w-18 lg:w-auto lg:h-24 object-cover" src="{{asset('images/logo-4.png')}} ">
+                <img class="w-18 md:w-36 lg:w-24 lg:h-auto object-cover" src="{{asset('images/logo-1.jpg')}} ">
+                <img class="w-18 md:w-36 lg:w-24 lg:h-auto object-cover" src="{{asset('images/logo-2.jfif')}} ">
+                <img class="w-18 md:w-36 lg:w-24 lg:h-auto object-cover" src="{{asset('images/logo-3.jfif')}} ">
+                <img class="w-18 md:w-36 lg:w-24 lg:h-auto object-cover" src="{{asset('images/persak.png')}} ">
             </div>
         </div>
     </div>
