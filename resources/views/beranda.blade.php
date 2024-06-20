@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('main-class', 'px-0 sm:px-0')
 @section('content')
 <div class="relative pt-24 h-max  lg:bg-white px-4">
     <div class="top-28 right-0 grid lg:grid-cols-2 grid-cols-1">

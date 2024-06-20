@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('main-class', 'px-4 sm:px-10')
+
 @section('head')
 <style>
   body {
