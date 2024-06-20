@@ -35,7 +35,7 @@
   </script>
 
       {{-- header --}}
-      <main class="mx-auto max-w-7xl px-0 sm:px-6 lg:px-8">
+      <main class="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8">
         <div class="flex items-end justify-between border-b border-gray-200 pb-0 pt-6">
           <h1 class="text-3xl font-bold tracking-tight text-gray-900 mr-2 pb-3 sm:pb-1">Berita</h1>
   
