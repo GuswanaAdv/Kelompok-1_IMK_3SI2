@@ -20,22 +20,22 @@
             <ol class="list-decimal list-inside ml-4">
                 <li class="mb-4 ml-4 font-roboto">
                     Puskesmas Sempor 1 : Jl. Kaligandu, Jatinegara</li>
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
+                <img src="https://unair.ac.id/wp-content/uploads/2023/08/IL-by-Radar-Tarakan.jpeg" style="height: 300px" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                 <li class="mb-4 ml-4 font-roboto">
                     Klinik Keluarga : Jl. Tentara Pelajar Jatinegara</li>
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
+                <img src="https://unair.ac.id/wp-content/uploads/2023/08/IL-by-Radar-Tarakan.jpeg" style="height: 300px" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                 <li class="mb-4 ml-4 font-roboto">
                     Klinik Delima : Jl. Tentara Pelajar Jatinegara</li>
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
+                <img src="https://unair.ac.id/wp-content/uploads/2023/08/IL-by-Radar-Tarakan.jpeg" style="height: 300px" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                 <li class="mb-4 ml-4 font-roboto">
                     Praktik Drg. Isodora : Jl. Jl. Tentara Pelajar Jatinegara </li>
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
+                <img src="https://unair.ac.id/wp-content/uploads/2023/08/IL-by-Radar-Tarakan.jpeg" style="height: 300px" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                 <li class="mb-4 ml-4 font-roboto">
                     Apotik Pandya : Jl. Tentara Pelajar Jatinegara</li>
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
+                <img src="https://unair.ac.id/wp-content/uploads/2023/08/IL-by-Radar-Tarakan.jpeg" style="height: 300px" alt="Article Image" class="w-full mx-auto mb-4 rounded">
                 <li class="mb-4 ml-4 font-roboto">
                     Apotik Jatinegara : Jl. Tentara Pelajar Jatinegara</li>
-                <img src="https://picsum.photos/id/188/800/200" alt="Article Image" class="w-full mx-auto mb-4 rounded">
+                <img src="https://unair.ac.id/wp-content/uploads/2023/08/IL-by-Radar-Tarakan.jpeg" style="height: 300px" alt="Article Image" class="w-full mx-auto mb-4 rounded">
             </ol>
 
         </div>

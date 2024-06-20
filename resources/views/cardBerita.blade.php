@@ -29,7 +29,7 @@ tabs.forEach(tab =>{
   </script>
 {{-- <section class="md:h-full flex items-center text-gray-600"> --}}
     <section class="flex items-center text-gray-600">
-        <div class="container px-5 py-0 mx-auto">
+        <div class="container px-0 sm:px-5 py-0 mx-auto">
        
             <div class="flex flex-wrap -m-4">
            

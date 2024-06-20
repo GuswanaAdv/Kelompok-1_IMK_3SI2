@@ -8,10 +8,12 @@
   <link href="{{ asset('js/app.js') }}" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    .sidebar-item:hover, .sidebar-item:focus, .sidebar-item:active {
-        /* background-color: #93C13D !important; */
-        background-color: #FFFFFF;
-        color: white !important;
+    .sidebar-item:hover,
+    .sidebar-item:focus,
+    .sidebar-item:active {
+      /* background-color: #93C13D !important; */
+      background-color: #FFFFFF;
+      color: white !important;
     }
   </style>
 
@@ -21,12 +23,16 @@
 <body class="">
   {{--Navbar--}}
   @include('partials.navbar')
-  @include('partials.breadcrumbs')
+  @if($judul_halaman=='Beranda')
+
+  @else
+    @include('partials.breadcrumbs')
+  @endif
 
   {{--Sidebar--}}
 
   {{--Main--}}
-  <div class="@yield('main-class', 'px-10')">
+  <div class="@yield('main-class')">
     @yield('content')
   </div>
   @include('partials.top_button')
@@ -35,6 +41,7 @@
   <div class="">
     @include('partials.footer')
   </div>
-  
+
 </body>
+
 </html>
