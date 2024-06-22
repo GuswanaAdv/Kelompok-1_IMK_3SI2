@@ -124,9 +124,9 @@ class BeritaController extends Controller
             }
     
             // Gantikan [h] dengan <h1> dan [p] dengan <p>
-            $berita->konten = str_replace('[h]', '<h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-green-700 mb-0">', $berita->konten);
+            $berita->konten = str_replace('[h]', '<h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-green-700 mb-0 fade-down">', $berita->konten);
             $berita->konten = str_replace('[/h]', '</h3>', $berita->konten);
-            $berita->konten = str_replace('[p]', '<p class="text-sm sm:text-base md:text-lg lg:text-xl">', $berita->konten);
+            $berita->konten = str_replace('[p]', '<p class="text-sm sm:text-base md:text-lg lg:text-xl fade-left">', $berita->konten);
             $berita->konten = str_replace('[/p]', '</p>', $berita->konten);
     
             // Tambahkan spasi antara paragraf dan judul

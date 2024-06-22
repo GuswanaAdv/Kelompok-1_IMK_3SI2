@@ -15,14 +15,14 @@
 <div class="pt-0">
   <main class="container mx-auto my-2 bg-white py-8 px-5 md:px-15 lg:px-28 rounded-lg shadow-lg">
     <article>
-      <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-4">{{ $berita->judul}}</h2>
+      <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-4 fade-down">{{ $berita->judul}}</h2>
       <div class="flex justify-between items-center mb-2">
-        <div class="text-gray-500 text-xs sm:text-sm">
+        <div class="text-gray-500 text-xs sm:text-sm fade-in">
           <span>{{ \Illuminate\Support\Carbon::parse($berita->published_datetime)->format('j F Y') }}</span>
           <span> oleh Jatinegara</span>
         </div>
         <div class="flex items-center">
-          <div class="flex items-center space-x-2">
+          <div class="flex items-center space-x-2 fade-left">
             <span class="hidden sm:block text-gray-500">Share</span>
             <button data-collapse-target="collapse" class="hidden sm:block btn_share text-gray-500 flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
@@ -103,7 +103,7 @@
       </div>
       <!-- End of Float Share -->
 
-      <div class="separator border-t border-gray-300"></div>
+      <div class="separator border-t border-gray-300 fade-right"></div>
 
       <!-- Media Social Share -->
       <div data-collapse="collapse" class="hidden sm:block h-0 w-full mb-4 basis-full overflow-hidden transition-all duration-300 ease-in-out">
@@ -138,30 +138,30 @@
         </div>
       </div>
 
-      <img src=" {{ $berita->thumbnail }} " alt="Article Image" class="w-full h-48 sm:h-64 mx-auto mb-4 rounded">
+      <img src=" {{ $berita->thumbnail }} " alt="Article Image" class="w-full h-48 sm:h-64 mx-auto mb-4 rounded fade-in">
       
       <div id="konten" class="mb-6">
         {!! $berita->konten !!}
       </div>
       
-      <div class=" separator border-t border-gray-300 mb-4"></div>
+      <div class=" separator border-t border-gray-300 mb-4 fade-right"></div>
       
-      <div class="mb-4 text-sm sm:text-base md:text-lg">
+      <div class="mb-4 text-sm sm:text-base md:text-lg fade-in">
         <a href="{{ route('berita.pagination', ['berita[]' => $berita->kategori]) }}">
           <button name="berita[]" value="{{ $berita->kategori }}" class="bg-green-100 text-green-700 py-0 px-4 rounded-lg mr-2">{{$berita->kategori}}</button>
         </a>
       </div>
     </article>
     
-    <div class=" separator border-t border-gray-300 mb-4"></div>
+    <div class=" separator border-t border-gray-300 mb-4 fade-right"></div>
 
     <section>
-      <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-4">ARTIKEL TERKAIT</h3>
+      <h3 class="text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-4 fade-down">ARTIKEL TERKAIT</h3>
       @if($relatedArticles->isEmpty())
       <p class="text-gray-500 text-sm sm:text-base md:text-lg lg:text-xl">Tidak ada artikel terkait.</p>
       @else
       <!-- Container for all cards -->
-      <div class="grid sm:grid-cols-1 lg:grid-cols-4 gap-4 fade-up">
+      <div class="grid sm:grid-cols-1 lg:grid-cols-4 gap-4 artikel">
         @foreach($relatedArticles as $article)
         <!-- Card -->
         <a href="{{ route('beritapage', $article->slug) }}">
@@ -305,8 +305,8 @@
     gsap.registerPlugin(ScrollTrigger);
 
     // Create a GSAP animation for elements with the class 'gsap-fade-up'
-    gsap.utils.toArray('p').forEach(p => {
-        gsap.fromTo(p, {
+    gsap.utils.toArray('.fade-left').forEach(element => {
+        gsap.fromTo(element, {
           opacity: 0,
           x: 90,
       },{
@@ -314,14 +314,27 @@
           x: 0,
           duration: 1,
           delay: 0.5,
-          scrollTrigger:p
+          scrollTrigger:element
       });
     })
 
-    gsap.utils.toArray('.fade-up').forEach(element => {
+    gsap.utils.toArray('.fade-right').forEach(element => {
         gsap.fromTo(element, {
           opacity: 0,
-          y: -90,
+          x: -90,
+      },{
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:element
+      });
+    })
+
+    gsap.utils.toArray('.fade-down').forEach(element => {
+        gsap.fromTo(element, {
+          opacity: 0,
+          y: -40,
       },{
           opacity: 1,
           y: 0,
@@ -329,6 +342,45 @@
           delay: 0.5,
           scrollTrigger:element
       });
+    })
+
+    gsap.utils.toArray('.fade-up').forEach(element => {
+        gsap.fromTo(element, {
+          opacity: 0,
+          y: 70,
+      },{
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:element
+      });
+    })
+
+    gsap.utils.toArray('.fade-in').forEach(element => {
+        gsap.fromTo(element, {
+          opacity: 0,
+      },{
+          opacity: 1,
+          duration: 3,
+          delay: 0.5,
+          scrollTrigger:element
+      });
+    })
+
+    const artikel_items = document.querySelector('.artikel')
+    gsap.fromTo(artikel_items.children,{
+          opacity: 0,
+          x: 50,
+      },{
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:artikel_items,
+          stagger:{
+            amount:1
+          }
     })
 </script>
 @endsection
