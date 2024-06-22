@@ -24,26 +24,26 @@
     @include('partials.sidebar')
     
     <!-- Main Content -->
-    <main class="md:w-3/4 md:ml-4 sm:px-6 lg:px-8 bg-white shadow-md">
-        <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4">Profil Umum</h2>
+    <main class="md:w-3/4 md:ml-4 p-4 bg-white shadow-md">
+        <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4 fade-down">Profil Umum</h2>
         <div class="mb-4">
-            <h3 class="mb-4 ml-4 font-roboto font-bold">Wilayah Administratif:</h3>
+            <h3 class="mb-4 ml-4 font-roboto font-bold fade-in">Wilayah Administratif:</h3>
             <ul class="list-disc list-inside ml-4">
-                <li class="mb-4 ml-4 font-roboto">Kec. Sempor, Kab. Kebumen, Jawa Tengah, Kode Desa: 3305182004</li>
+                <li class="mb-4 ml-4 font-roboto fade-up">Kec. Sempor, Kab. Kebumen, Jawa Tengah, Kode Desa: 3305182004</li>
             </ul>
         </div>
 
         <div class="mb-4 border-t pt-4">
-            <h3 class="mb-4 ml-4 font-roboto font-bold">Rincian Wilayah</h3>
+            <h3 class="mb-4 ml-4 font-roboto font-bold fade-left">Rincian Wilayah</h3>
             <ul class="list-disc list-inside ml-4">
-                <li class="mb-4 ml-4 font-roboto">Luas Wilayah: 224 Hektar</li>
-                <li class="mb-4 ml-4 font-roboto">Bujur: 109.4999611</li>
-                <li class="mb-4 ml-4 font-roboto">Lintang: -7.578013</li>
+                <li class="mb-4 ml-4 font-roboto fade-right">Luas Wilayah: 224 Hektar</li>
+                <li class="mb-4 ml-4 font-roboto fade-left">Bujur: 109.4999611</li>
+                <li class="mb-4 ml-4 font-roboto fade-right">Lintang: -7.578013</li>
             </ul>
         </div>
 
         {{-- Map --}}
-        <div class="mb-4"> 
+        <div class="mb-4 fade-up"> 
             <div class="max-w-7xl mx-auto p-6 lg:p-8 rounded-full">
                 <div id='map' class='rounded' style='width: 100%;'></div>
                 <script src='https://unpkg.com/leaflet@1.8.0/dist/leaflet.js' crossorigin=''></script>
@@ -112,4 +112,17 @@
         </div>
     </main>
 </div>
+
+<script>
+    gsap.utils.toArray('img').forEach(img => {
+        gsap.fromTo(img, {
+          opacity: 0,
+      },{
+          opacity: 1,
+          duration: 3,
+          delay: 0.5,
+          scrollTrigger:img
+      });
+    })
+</script>
 @endsection 

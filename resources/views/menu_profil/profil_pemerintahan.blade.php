@@ -11,10 +11,10 @@
     @include('partials.sidebar')
 
     <!-- Main Content -->
-    <main class="md:w-3/4 ml-0 md:ml-4 sm:px-6 lg:px-8 sm:p-4 bg-white text-xs sm:text-base shadow-md">
-        <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4">Profil Pemerintahan</h2>
+    <main class="md:w-3/4 ml-0 md:ml-4 p-2 sm:p-4 bg-white text-xs sm:text-base shadow-md">
+        <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4 fade-up">Profil Pemerintahan</h2>
         <div class="bg-white">
-            <div class="mx-auto max-w-2xl px-4 py-4">
+            <div class="mx-auto max-w-2xl px-4 py-4 fade-left">
                 <h2 class="text-center mb-4">Kepala Desa</h2>
                 <div class="flex flex-col items-center gap-y-1">
                     <div><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Bupati_Kebumen_Arif_Sugiyanto.jpg/220px-Bupati_Kebumen_Arif_Sugiyanto.jpg" width="100"></div>
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div class="mx-auto max-w-2xl border-t px-4 py-4">
+            <div class="mx-auto max-w-2xl border-t px-4 py-4 fade-right">
                 <h2 class="text-center mb-4">Sekretaris Desa</h2>
                 <div class="flex flex-col items-center gap-y-1">
                     <div><img src="https://upload.wikimedia.org/wikipedia/id/b/b2/Yahya.jpg" width="100"></div>
@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <div class="mx-auto max-w-2xl border-t px-4 py-4">
+            <div class="mx-auto max-w-2xl border-t px-4 py-4 fade-left">
                 <h2 class="text-center mb-4">Kepala Seksi Desa</h2>
                 <div class="grid grid-cols-3 gap-x-6 gap-y-10">
                     <div class="flex flex-col items-center gap-y-1">
@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-            <div class="mx-auto max-w-2xl border-t px-4 py-4">
+            <div class="mx-auto max-w-2xl border-t px-4 py-4 fade-right">
                 <h2 class="text-center mb-4">Kepala Urusan Desa</h2>
                 <div class="grid grid-cols-3 gap-x-6 gap-y-10">
                     <div class="flex flex-col items-center gap-y-1">
@@ -90,7 +90,7 @@
                 </div>
             </div>
 
-            <div class="mx-auto max-w-2xl border-t px-4 py-4">
+            <div class="mx-auto max-w-2xl border-t px-4 py-4 fade-left">
                 <h2 class="text-center mb-4">Kepala Dusun</h2>
                 <div class="grid grid-cols-3 gap-x-6 gap-y-10">
                     <div class="flex flex-col items-center gap-y-1">
@@ -120,4 +120,17 @@
 
     </main>
 </div>
+
+<script>
+    gsap.utils.toArray('img').forEach(img => {
+        gsap.fromTo(img, {
+          opacity: 0,
+      },{
+          opacity: 1,
+          duration: 3,
+          delay: 0.5,
+          scrollTrigger:img
+      });
+    })
+</script>
 @endsection
