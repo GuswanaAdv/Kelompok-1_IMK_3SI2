@@ -39,10 +39,11 @@
       </div>
 
       <!-- Overlay -->
+      <div class="absolute z-30">
       <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden"></div>
-
+      </div>
       <!-- Float Share (Mobile) -->
-      <div>
+      <div class="z-40 absolute">
         <div class="fixed bottom-14 right-2">
           <div class="other-buttons hidden">
             <button id="mail" class="block sm:hidden bg-gray-200 hover:bg-white text-black font-bold py-2 px-2 rounded-full shadow-lg">
