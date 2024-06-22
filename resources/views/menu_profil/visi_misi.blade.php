@@ -45,4 +45,65 @@
         </div>
     </main>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+<script>
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Create a GSAP animation for elements with the class 'gsap-fade-up'
+    gsap.utils.toArray('h2').forEach(h2 => {
+        gsap.fromTo(h2, {
+          opacity: 0,
+          x: -90,
+      },{
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:h2
+      });
+    })
+
+    // Create a GSAP animation for elements with the class 'gsap-fade-up'
+    gsap.utils.toArray('h3').forEach(h3 => {
+        gsap.fromTo(h3, {
+          opacity: 0,
+          x: -90,
+      },{
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:h3
+      });
+    })
+
+    gsap.utils.toArray('p').forEach(p => {
+        gsap.fromTo(p, {
+          opacity: 0,
+          x: 90,
+      },{
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:p
+      });
+    })
+
+    gsap.utils.toArray('li').forEach(li => {
+        gsap.fromTo(li, {
+          opacity: 0,
+          x: 90,
+      },{
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:li
+      });
+    })
+</script>
 @endsection 

@@ -28,3 +28,24 @@
     window.addEventListener("scroll", scrollFunction);
   
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+<script>
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Create a GSAP animation for elements with the class 'gsap-fade-up'
+    gsap.utils.toArray('#btn-back-to-top').forEach(element => {
+        gsap.fromTo(element, {
+          opacity: 0,
+          y: 90,
+      },{
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:element
+      });
+    })
+</script>
