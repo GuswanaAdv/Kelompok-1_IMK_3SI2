@@ -1,21 +1,21 @@
 @extends('layouts.app')
 @section('content')
 <style>
-    body{
-        background-color:white;
+    body {
+        background-color: white;
     }
 </style>
 
 <div class="container mx-auto mt-0 flex">
     <!-- Sidebar -->
     @include('partials.sidebar')
-    
+
     <!-- Main Content -->
-    <main class="md:w-3/4 md:ml-4 p-4 bg-white shadow-md">
+    <main class="md:w-3/4 md:ml-4 sm:px-6 lg:px-8 bg-white shadow-md">
         <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4">Visi & Misi</h2>
         <div class="mb-4">
             <h3 class="mb-4 ml-4 font-roboto font-bold">Visi:</h3>
-            <p class="mb-4 ml-4 font-roboto">“ Terwujudnya Desa Jatinegara yang Aman,Cerdas, Berkarakter, 
+            <p class="mb-4 ml-4 font-roboto">“ Terwujudnya Desa Jatinegara yang Aman,Cerdas, Berkarakter,
                 Sehat dan Berbudaya serta Berahklak Mulia Disegala Bidang Kehidupan “</p>
         </div>
 
@@ -45,4 +45,4 @@
         </div>
     </main>
 </div>
-@endsection 
+@endsection
