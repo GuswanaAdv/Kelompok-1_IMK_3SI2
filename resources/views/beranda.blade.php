@@ -13,12 +13,12 @@
             <div class="w-full flex justify-center lg:justify-start h-24">
                 <div class="pt-8 lg:pt-4 grid grid-cols-2 w-4/5 lg:w-max gap-1 lg:gap-1">
                     <div>
-                        <a href="{{ route('datadesa') }}">
+                        <a href="{{route('datadesa')}}">
                             <button class="bg-darkgreen rounded-[36px] text-white px-8 lg:px-12 py-1 lg:py-3 lg:mr-4 font-inter outline outline-darkgreen">Cari Data</button>
                         </a>
                     </div>
                     <div>
-                        <a href="{{ route('profil') }}">
+                        <a href="{{route('profil')}}">
                             <button class="border-1 border-darkgreen rounded-[36px] px-4 lg:px-8 py-1 lg:py-3 outline outline-darkgreen font-inter">Tentang Desa</button>
                         </a>
                     </div>
