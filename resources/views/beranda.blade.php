@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('main-class', 'px-0 sm:px-0')
 @section('content')
-<div class="lg:bg-lemonlight bg-opacity-70">
-    <div class="relative pt-24 h-max">
+<div class="lg:bg-lemonlight">
+    <div class="relative pt-24 h-max bg-greenleaves2 lg:bg-lemonlight">
         <div class="hidden lg:block w-[589px] h-[589px] bg-greenleaves2 rounded-full absolute z-10 top-24 left-[-50px] translate-x-[-30%] translate-y-[20%] blur-[70px]">
         </div>
         <div class="hidden lg:block w-[548px] h-[548px] bg-greenleaves2 rounded-full absolute z-10 top-0 right-0 translate-x-0 translate-y-[-25%] blur-[100px]">
@@ -10,9 +10,9 @@
         <div class="right-0 grid lg:grid-cols-2 grid-cols-1 z-20 relative h-96 mb-72 ">
             <div class="lg:px-4 lg:pt-24 lg:pl-12 lg:text-left text-center w-full">
                 <div class="text-4xl lg:text-8xl font-roboto font-extrabold bg-darkgreen lg:inline-block text-transparent bg-clip-text">Desa</div>
-                <div class="lg:h-32 text-4xl lg:text-8xl font-roboto font-extrabold bg-gradient-to-r from-darkgreen from-10% to-lemon to-90% lg:inline-block text-transparent bg-clip-text">/Jatinegara/</div>
-                <div class="w-full flex justify-center lg:justify-start h-24">
-                    <div class="pt-8 lg:pt-[1px] grid grid-cols-2 w-4/5 lg:w-max gap-1 lg:gap-1 z-50 relative backdrop-blur-sm p-4 bg-white/30 rounded-sm">
+                <div class="lg:h-32 text-[35px] lg:text-8xl font-roboto font-extrabold bg-gradient-to-r from-darkgreen from-10% to-lemon to-90% lg:inline-block text-transparent bg-clip-text">/Jatinegara/</div>
+                <div class="w-full flex justify-center lg:justify-start h-24 pt-4 lg:pt-0">
+                    <div class="items-center lg:pt-[1px] grid grid-cols-2 w-4/5 lg:w-max gap-1 lg:gap-1 z-50 relative backdrop-blur-sm p-4 bg-white/30 rounded-sm">
                         <div>
                             <a href="{{route('datadesa')}}">
                                 <button class="bg-darkgreen hover:bg-green hover:text-black rounded-[36px] text-white px-8 lg:px-12 py-1 lg:py-3 lg:mr-4 font-inter outline outline-darkgreen">Cari Data</button>
@@ -161,7 +161,7 @@
                                 <img src="{{asset('images/Galerry/11052022081139-Jatinegara-Kebumen5.jpg')}}" alt="">
                             </div>
                             <div>
-                                <img src="{{asset('images/Galerry/11052022081140-Jatinegara-Kebumen6.jpg')}}" alt="" >
+                                <img src="{{asset('images/Galerry/11052022081140-Jatinegara-Kebumen6.jpg')}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -173,9 +173,9 @@
 <!--Logos-->
 <section class="w-full flex justify-center pt-24 bg-white">
     <div class="lg:w-3/4 place-content-center p-8">
-        <div class="inline-flex items-center justify-center w-full pb-12">
+        <div class="inline-flex items-center justify-center w-full pb-12 fade-up">
             <hr class="lg:hidden w-8 h-px my-8 bg-black border-0 dark:bg-black">
-            <h1 class="font-roboto font-bold text-2xl text-center px-4 block w-64 fade-up">DIDUKUNG OLEH</h1>
+            <h1 class="font-roboto font-bold text-2xl text-center px-4 block w-64">DIDUKUNG OLEH</h1>
             <hr class="lg:hidden w-8 h-px my-8 bg-black border-0 dark:bg-black">
         </div>
         <div class="border-2 border-black px-12 lg:px-32 rounded-[30px] shadow-2xl fade-up">

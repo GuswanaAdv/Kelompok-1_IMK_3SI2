@@ -20,7 +20,7 @@ module.exports = {
         greenleaves: '#D9F8A1',
         greenleaves2: '#D4FF82',
         lemon: '#CDED13',
-        lemonlight: '#E0FFA7',
+        lemonlight: '#EBFFC6',
       },
       fontFamily: {
         raleway: ['Raleway', 'sans-serif'],

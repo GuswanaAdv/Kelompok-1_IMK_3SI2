@@ -28,14 +28,14 @@
       </div>
       <div class="flex flex-1 items-center justify-between sm:items-stretch sm:justify-between">
         <a class="flex flex-shrink-0 items-center" href="{{ route('beranda') }}">
-          <img class="h-8 w-auto fade-up" src="https://jatinegara.kec-sempor.kebumenkab.go.id/assets/logo/kbm.png" alt="Your Company">
-          <h1 class="text-lg text-white ml-3 font-roboto font-semibold fade-down">Desa Jatinegara</h1>
+          <img class="h-8 w-auto" src="https://jatinegara.kec-sempor.kebumenkab.go.id/assets/logo/kbm.png" alt="Your Company">
+          <h1 class="text-lg text-white ml-3 font-roboto font-semibold">Desa Jatinegara</h1>
         </a>
         <div class="hidden sm:ml-6 sm:block lg:mr-52 ">
           <div class="flex space-x-4">
             <ul class="menu menu-horizontal px-2">
-              <li class="md:ml-4 lg:ml-8 fade-up"><a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'bg-green bg-opacity-50':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-2 py-2 text-xs font-roboto font-bold " aria-current="page">BERANDA</a></li>
-              <li class="md:ml-4 lg:ml-8 fade-down">
+              <li class="md:ml-4 lg:ml-8"><a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'bg-green bg-opacity-50':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-2 py-2 text-xs font-roboto font-bold " aria-current="page">BERANDA</a></li>
+              <li class="md:ml-4 lg:ml-8">
                 <details>
                   <summary id="pc-profilfasilitas" class="{{$judul_halaman=='Profil & Fasilitas'? 'bg-green bg-opacity-50 px-5':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-2 py-2 text-xs font-roboto font-bold">
                     PROFIL & FASILITAS
@@ -69,8 +69,8 @@
                   </ul>
                 </details>
               </li>
-              <li class="md:ml-4 lg:ml-8 fade-up"><a href="{{ route('berita.index') }}" class="{{$judul_halaman=='Berita'? 'bg-green bg-opacity-50':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-2 py-2 text-xs font-roboto font-bold">BERITA</a></li>
-              <li class="md:ml-4 lg:ml-8 fade-down">
+              <li class="md:ml-4 lg:ml-8"><a href="{{ route('berita.index') }}" class="{{$judul_halaman=='Berita'? 'bg-green bg-opacity-50':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-2 py-2 text-xs font-roboto font-bold">BERITA</a></li>
+              <li class="md:ml-4 lg:ml-8">
                 <details>
                   <summary id="pc-datadesa" class="{{$judul_halaman=='Data Desa'? 'bg-green bg-opacity-50':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-2 py-2 text-xs font-roboto font-bold">
                     DATA DESA
