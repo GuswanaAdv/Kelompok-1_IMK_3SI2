@@ -298,76 +298,7 @@
     document.getElementById('share').classList.remove('hidden');
   });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
 <script>
-    // Register the ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Create a GSAP animation for elements with the class 'gsap-fade-up'
-    gsap.utils.toArray('.fade-left').forEach(element => {
-        gsap.fromTo(element, {
-          opacity: 0,
-          x: 90,
-      },{
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          delay: 0.5,
-          scrollTrigger:element
-      });
-    })
-
-    gsap.utils.toArray('.fade-right').forEach(element => {
-        gsap.fromTo(element, {
-          opacity: 0,
-          x: -90,
-      },{
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          delay: 0.5,
-          scrollTrigger:element
-      });
-    })
-
-    gsap.utils.toArray('.fade-down').forEach(element => {
-        gsap.fromTo(element, {
-          opacity: 0,
-          y: -40,
-      },{
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          delay: 0.5,
-          scrollTrigger:element
-      });
-    })
-
-    gsap.utils.toArray('.fade-up').forEach(element => {
-        gsap.fromTo(element, {
-          opacity: 0,
-          y: 70,
-      },{
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          delay: 0.5,
-          scrollTrigger:element
-      });
-    })
-
-    gsap.utils.toArray('.fade-in').forEach(element => {
-        gsap.fromTo(element, {
-          opacity: 0,
-      },{
-          opacity: 1,
-          duration: 3,
-          delay: 0.5,
-          scrollTrigger:element
-      });
-    })
-
     const artikel_items = document.querySelector('.artikel')
     gsap.fromTo(artikel_items.children,{
           opacity: 0,
