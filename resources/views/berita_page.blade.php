@@ -161,7 +161,7 @@
       <p class="text-gray-500 text-sm sm:text-base md:text-lg lg:text-xl">Tidak ada artikel terkait.</p>
       @else
       <!-- Container for all cards -->
-      <div class="grid sm:grid-cols-1 lg:grid-cols-4 gap-4">
+      <div class="grid sm:grid-cols-1 lg:grid-cols-4 gap-4 fade-up">
         @foreach($relatedArticles as $article)
         <!-- Card -->
         <a href="{{ route('beritapage', $article->slug) }}">
@@ -297,5 +297,38 @@
     document.getElementById('close').classList.add('hidden');
     document.getElementById('share').classList.remove('hidden');
   });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+<script>
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Create a GSAP animation for elements with the class 'gsap-fade-up'
+    gsap.utils.toArray('p').forEach(p => {
+        gsap.fromTo(p, {
+          opacity: 0,
+          x: 90,
+      },{
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:p
+      });
+    })
+
+    gsap.utils.toArray('.fade-up').forEach(element => {
+        gsap.fromTo(element, {
+          opacity: 0,
+          y: -90,
+      },{
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.5,
+          scrollTrigger:element
+      });
+    })
 </script>
 @endsection
