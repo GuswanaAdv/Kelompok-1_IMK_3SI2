@@ -12,7 +12,7 @@
 <div class="mx-0 sm:mx-10 my-10 mt-0">
     <div class="grid md:grid-cols-2 gap-6">
         <!-- Data Table -->
-        <div class="bg-white shadow-lg p-4 rounded-lg">
+        <div class="bg-white shadow-lg p-4 rounded-lg fade-down">
             <h2 class="text-sm sm:text-lg font-bold text-center underline underline-offset-8">Tabel Data</h2>
             <div class="mt-4">
                 <label class="text-sm sm:text-base text-center">Kategori:</label>
@@ -150,7 +150,7 @@
         </div>
 
         <!-- Chart -->
-        <div class="bg-white shadow-lg p-4 rounded-lg">
+        <div class="bg-white shadow-lg p-4 rounded-lg fade-down">
             <h2 class="text-sm sm:text-lg font-bold text-center underline underline-offset-8">Grafik</h2>
             <div class="mt-4">
                 <label class="text-sm sm:text-base text-center">Kategori:</label>

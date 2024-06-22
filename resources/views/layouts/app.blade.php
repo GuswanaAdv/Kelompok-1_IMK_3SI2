@@ -15,6 +15,10 @@
       background-color: #FFFFFF;
       color: white !important;
     }
+
+    body {
+      background-color: white;
+    }
   </style>
 
   <title>{{$judul_halaman}}</title>
@@ -24,6 +28,8 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
   </script>
+  
+  @yield('head')
 </head>
 
 <body class="">
