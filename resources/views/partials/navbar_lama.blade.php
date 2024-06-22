@@ -2,7 +2,7 @@
 
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
-      <div class="absolute inset-y-0 pr-4 right-0 flex items-center sm:hidden">
+      <div class="absolute inset-y-0 pr-4 right-0 flex items-center md:hidden">
         <!-- Mobile menu button-->
         <button id="menu-button" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-green hover:bg-opacity-25 hover:text-green focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green" aria-controls="mobile-menu" aria-expanded="false">
           <span class="absolute inset-0.5"></span>
@@ -30,9 +30,9 @@
           <img class="h-8 w-auto" src="https://jatinegara.kec-sempor.kebumenkab.go.id/assets/logo/kbm.png" alt="Your Company">
           <h1 class="text-lg text-white ml-3 font-roboto font-semibold">Desa Jatinegara</h1>
         </div>
-        <div class="hidden sm:ml-6 sm:block mr-52 ">
+        <div class="hidden sm:ml-6 lg:block mr-52 ">
           <div class="flex space-x-4">
-           <a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md px-1 py-2 text-xs font-roboto" aria-current="page">BERANDA</a>
+            <a href="{{ route('beranda') }}" class="{{$judul_halaman=='Beranda'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md px-1 py-2 text-xs font-roboto" aria-current="page">BERANDA</a>
             <a href="{{ route('profil') }}" class="{{$judul_halaman=='Profil dan Fasilitas'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">PROFIL & FASILITAS<span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
             <a href="{{ route('berita.index') }}" class="{{$judul_halaman=='Berita'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">BERITA</a>
             <a href="{{ route('datadesa') }}" class="{{$judul_halaman=='Data Desa'? 'border-b border-b-white':''}} text-white hover:bg-green hover:bg-opacity-25 rounded-md hover:text-white px-1 py-2 text-xs font-roboto">DATA DESA <span class="pl-2"> <i class="fa-solid fa-angle-down"> </span></i></a>
@@ -55,13 +55,13 @@
 </nav>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function() {
     var menuButton = document.getElementById('menu-button');
     var menuIconClosed = document.getElementById('menu-icon-closed');
     var menuIconOpen = document.getElementById('menu-icon-open');
     var mobileMenu = document.getElementById('mobile-menu');
 
-    menuButton.addEventListener('click', function () {
+    menuButton.addEventListener('click', function() {
       // Toggle menu visibility
       mobileMenu.classList.toggle('hidden');
 
