@@ -157,6 +157,7 @@ function updateChartFromTable() {
     const categories = [];
     const maleData = [];
     const femaleData = [];
+    const dataLabels = ['Belum Kerja', 'Pelajar', 'PNS', 'Pedagang', 'Karyawan', 'Buruh', 'Wiraswasta', 'Lainnya']
 
     for (let i = 0; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName('td');
@@ -181,7 +182,7 @@ function updateChartFromTable() {
     window.allChart = new Chart(ctxAll, {
         type: 'bar',
         data: {
-            labels: categories,
+            labels: dataLabels,
             datasets: [
                 {
                     label: 'Laki-laki',
@@ -211,7 +212,7 @@ function updateChartFromTable() {
     window.menChart = new Chart(ctxMen, {
         type: 'bar',
         data: {
-            labels: categories,
+            labels: dataLabels,
             datasets: [
                 {
                     label: 'Laki-laki',
@@ -234,7 +235,7 @@ function updateChartFromTable() {
     window.femChart = new Chart(ctxFem, {
         type: 'bar',
         data: {
-            labels: categories,
+            labels: dataLabels,
             datasets: [
                 {
                     label: 'Perempuan',

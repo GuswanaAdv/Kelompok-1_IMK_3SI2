@@ -11,7 +11,7 @@
     @include('partials.sidebar')
 
     <!-- Main Content -->
-    <main class="md:w-3/4 ml-0 md:ml-4 p-2 sm:p-4 bg-white text-xs sm:text-base shadow-md">
+    <main class="md:w-3/4 ml-0 md:ml-4 sm:px-6 lg:px-8 sm:p-4 bg-white text-xs sm:text-base shadow-md">
         <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4">Profil Pemerintahan</h2>
         <div class="bg-white">
             <div class="mx-auto max-w-2xl px-4 py-4">
