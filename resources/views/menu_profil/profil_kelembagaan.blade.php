@@ -11,14 +11,14 @@
     @include('partials.sidebar')
     
     <!-- Main Content -->
-    <main class="md:w-3/4 md:ml-4 sm:px-6 lg:px-8 bg-white shadow-md">
-        <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4">Profil Kelembagaan</h2>
+    <main class="md:w-3/4 md:ml-4 p-4 bg-white shadow-md">
+        <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4 fade-up">Profil Kelembagaan</h2>
 
-        <div class="mb-4 pt-4">
+        <div class="mb-4 pt-4 fade-in">
             <h3 class="mb-4 ml-4 font-roboto font-bold text-xl">Lembaga Desa</h3>
         </div>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-left">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 1. BPD
@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-right">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 2. PKK
@@ -89,7 +89,7 @@
             </div>
         </div>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-left">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 3. Posyandu
@@ -131,7 +131,7 @@
             </div>
         </div>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-right">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 4. Karang Taruna
@@ -161,7 +161,7 @@
             </div>
         </div>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-left">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 5. Rukun Warga
@@ -183,7 +183,7 @@
             </div>
         </div>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-right">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 6. Rukun Tetangga
@@ -217,49 +217,15 @@
     </main>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
 <script>
-    // Register the ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Create a GSAP animation for elements with the class 'gsap-fade-up'
-    gsap.utils.toArray('h2').forEach(h2 => {
-        gsap.fromTo(h2, {
+    gsap.utils.toArray('img').forEach(img => {
+        gsap.fromTo(img, {
           opacity: 0,
-          x: -90,
       },{
           opacity: 1,
-          x: 0,
-          duration: 1,
+          duration: 3,
           delay: 0.5,
-          scrollTrigger:h2
-      });
-    })
-
-    gsap.utils.toArray('.collapse').forEach(element => {
-        gsap.fromTo(element, {
-          opacity: 0,
-          y: 90,
-      },{
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          delay: 0.5,
-          scrollTrigger:element
-      });
-    })
-
-    gsap.utils.toArray('li').forEach(li => {
-        gsap.fromTo(li, {
-          opacity: 0,
-          x: -90,
-      },{
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          delay: 0.5,
-          scrollTrigger:li
+          scrollTrigger:img
       });
     })
 </script>
