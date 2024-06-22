@@ -32,7 +32,7 @@
   {{--Sidebar--}}
 
   {{--Main--}}
-  <div class="@yield('main-class')">
+  <div class="@yield('main-class', 'px-4 sm:px-0')">
     @yield('content')
   </div>
   @include('partials.top_button')

@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
 <style>
-    body{
-        background-color:white;
+    body {
+        background-color: white;
     }
 </style>
 
 <div class="container mx-auto mt-0 flex">
     <!-- Sidebar -->
     @include('partials.sidebar')
-    
+
     <!-- Main Content -->
     <main class="md:w-3/4 ml-0 md:ml-4 p-2 sm:p-4 bg-white text-xs sm:text-base shadow-md">
         <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4">Profil Pemerintahan</h2>
@@ -120,4 +120,4 @@
 
     </main>
 </div>
-@endsection 
+@endsection
