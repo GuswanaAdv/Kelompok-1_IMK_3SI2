@@ -13,7 +13,7 @@
 
 @section('content')
 <div class="pt-0">
-  <main class="container mx-auto my-2 bg-white py-8 px-5 md:px-15 lg:px-28 rounded-lg shadow-lg">
+  <main class="container mx-auto my-2 bg-white py-2 px-5 md:px-15 lg:px-28 rounded-lg shadow-lg">
     <article>
       <h2 class="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-4 fade-down">{{ $berita->judul}}</h2>
       <div class="flex justify-between items-center mb-2">
@@ -302,7 +302,7 @@
     const artikel_items = document.querySelector('.artikel')
     gsap.fromTo(artikel_items.children,{
           opacity: 0,
-          x: 50,
+          x: window.innerWidth > 640 ? 50 : 20,
       },{
           opacity: 1,
           x: 0,

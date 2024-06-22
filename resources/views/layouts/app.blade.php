@@ -65,7 +65,7 @@
     gsap.utils.toArray('.fade-left').forEach(element => {
         gsap.fromTo(element, {
           opacity: 0,
-          x: 90,
+          x: window.innerWidth > 640 ? 90 : 20,
       },{
           opacity: 1,
           x: 0,
@@ -78,7 +78,7 @@
     gsap.utils.toArray('.fade-right').forEach(element => {
         gsap.fromTo(element, {
           opacity: 0,
-          x: -90,
+          x: window.innerWidth > 640 ? -90 : -20,
       },{
           opacity: 1,
           x: 0,
