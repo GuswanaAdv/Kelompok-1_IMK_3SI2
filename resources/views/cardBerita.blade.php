@@ -44,7 +44,7 @@ tabs.forEach(tab =>{
             @endif
 
         @foreach($berita as $berita)
-        <div class="p-4 w-full md:w-1/2">
+        <div class="p-4 w-full md:w-1/2 fade-right">
             <a href= "{{ route('beritapage', $berita->slug) }}">
             <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden relative">
                 <img class="lg:h-72 md:h-48 w-full object-cover object-center" src="{{ $berita->thumbnail }}" alt="blog">

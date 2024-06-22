@@ -1,4 +1,4 @@
-<div class="text-xs sm:text-sm breadcrumbs pt-24 pb-8 px-4 lg:px-8 font-bold">
+<div class="text-xs sm:text-sm breadcrumbs pt-24 pb-8 px-4 lg:px-8 font-bold fade-right">
     <ul>
         @if($judul_halaman=='Beranda')
             

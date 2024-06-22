@@ -11,10 +11,10 @@
     @include('partials.sidebar')
     
     <!-- Main Content -->
-    <main class="md:w-3/4 md:ml-4 sm:px-6 lg:px-8 bg-white shadow-md">
-        <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4">Fasilitas Pendidikan</h2>
+    <main class="md:w-3/4 md:ml-4 p-4 bg-white shadow-md">
+        <h2 class="bg-darkgreen text-white py-2 rounded text-center text-2xl font-bold mb-4 fade-up">Fasilitas Pendidikan</h2>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-left">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 Pendidikan Anak Usia Dini (PAUD)
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-right">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 Taman Kanak-Kanak (TK)
@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-left">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 Sekolah Dasar (SD) Sederajat
@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0">
+        <div class="collapse w-4/4 mb-4 rounded shadow-md collapse-arrow py-0 fade-right">
             <input type="checkbox" /> 
             <div class="collapse-title font-roboto font-bold">
                 Sekolah Menengah Pertama (SMP) Sederajat
@@ -98,4 +98,17 @@
         <script src="{{ asset('js/app.js') }}"></script>
     </main>
 </div>
+
+<script>
+    gsap.utils.toArray('img').forEach(img => {
+        gsap.fromTo(img, {
+          opacity: 0,
+      },{
+          opacity: 1,
+          duration: 3,
+          delay: 0.5,
+          scrollTrigger:img
+      });
+    })
+</script>
 @endsection 
