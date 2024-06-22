@@ -8,8 +8,8 @@
     </div>
     <div class="right-0 grid lg:grid-cols-2 grid-cols-1 z-20 relative h-96 mb-72 ">
         <div class="lg:px-4 lg:pt-24 lg:pl-12 lg:text-left text-center w-full">
-            <div class="text-4xl lg:text-8xl font-roboto font-extrabold bg-gradient-to-r from-green-900 from-10% via-green-500 via-30% to-green-500 to-90% lg:inline-block text-transparent bg-clip-text">Desa</div>
-            <div class="lg:h-32 text-4xl lg:text-8xl font-roboto font-extrabold bg-gradient-to-r from-green-900 from-10% via-green-500 via-30% to-green-500 to-90% lg:inline-block text-transparent bg-clip-text">/Jatinegara/</div>
+            <div class="text-4xl lg:text-8xl font-roboto font-extrabold bg-darkgreen lg:inline-block text-transparent bg-clip-text">Desa</div>
+            <div class="lg:h-32 text-4xl lg:text-8xl font-roboto font-extrabold bg-gradient-to-r from-darkgreen from-10% to-lemon to-90% lg:inline-block text-transparent bg-clip-text">/Jatinegara/</div>
             <div class="w-full flex justify-center lg:justify-start h-24">
                 <div class="pt-8 lg:pt-4 grid grid-cols-2 w-4/5 lg:w-max gap-1 lg:gap-1">
                     <div>
